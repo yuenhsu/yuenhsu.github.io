@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/posts.html",
     "items": [
       "/posts/us-states-territories.html",
       "/posts/quarto-github-cpanel.html",
@@ -8,6 +8,15 @@
       "/posts/apple-health-tableau.html",
       "/posts/web-scrape-selenium.html",
       "/posts/itaiwan-tableau.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/greenbeans.html",
+      "/projects/predict-contraception-report.html",
+      "/projects/education-liberia.html",
+      "/projects/cityline-syracuse.html"
     ]
   }
 ]

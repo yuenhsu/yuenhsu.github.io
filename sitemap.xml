@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yuenhsu.github.io/about.html</loc>
-    <lastmod>2025-08-06T17:04:21.237Z</lastmod>
+    <loc>https://yuenhsu.com/posts.html</loc>
+    <lastmod>2025-03-07T19:26:15.926Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/projects/cityline-syracuse.html</loc>
+    <loc>https://yuenhsu.com/index.html</loc>
+    <lastmod>2025-08-06T18:07:01.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/projects/cityline-syracuse.html</loc>
     <lastmod>2025-03-07T19:26:15.933Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/projects/greenbeans.html</loc>
+    <loc>https://yuenhsu.com/projects/greenbeans.html</loc>
     <lastmod>2025-03-07T19:26:15.933Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/itaiwan-tableau.html</loc>
+    <loc>https://yuenhsu.com/posts/itaiwan-tableau.html</loc>
     <lastmod>2025-03-07T19:26:15.930Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/us-states-territories.html</loc>
+    <loc>https://yuenhsu.com/posts/us-states-territories.html</loc>
     <lastmod>2025-04-20T01:04:01.013Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/quarto-github-cpanel.html</loc>
+    <loc>https://yuenhsu.com/posts/quarto-github-cpanel.html</loc>
     <lastmod>2025-08-06T17:04:21.240Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/web-scrape-selenium.html</loc>
+    <loc>https://yuenhsu.com/posts/web-scrape-selenium.html</loc>
     <lastmod>2025-03-07T19:26:15.931Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/altair-hrbr.html</loc>
+    <loc>https://yuenhsu.com/posts/altair-hrbr.html</loc>
     <lastmod>2025-04-20T00:54:58.974Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/posts/apple-health-tableau.html</loc>
+    <loc>https://yuenhsu.com/posts/apple-health-tableau.html</loc>
     <lastmod>2025-04-20T00:35:25.399Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/projects/education-liberia.html</loc>
+    <loc>https://yuenhsu.com/projects/education-liberia.html</loc>
     <lastmod>2025-03-07T19:26:15.933Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/projects/predict-contraception-report.html</loc>
+    <loc>https://yuenhsu.com/projects/predict-contraception-report.html</loc>
     <lastmod>2025-03-07T19:26:15.935Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.github.io/index.html</loc>
-    <lastmod>2025-08-06T17:04:21.239Z</lastmod>
+    <loc>https://yuenhsu.com/projects.html</loc>
+    <lastmod>2025-03-07T19:26:15.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/about.html</loc>
+    <lastmod>2025-08-06T17:04:21.237Z</lastmod>
   </url>
 </urlset>

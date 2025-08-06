@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,6 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/pelican.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -126,6 +147,9 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/pelican.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Yu-En Hsu</span>
     </a>
@@ -135,20 +159,22 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -246,10 +272,10 @@ Figure&nbsp;1
 </figcaption>
 </figure>
 </div>
-<p>I find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% <span class="citation" data-cites="jcm12083045">[@jcm12083045]</span> of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?</p>
+<p>I find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% <span class="citation" data-cites="jcm12083045">(<a href="#ref-jcm12083045" role="doc-biblioref">Banashefski, Rhee, and Lema 2023</a>)</span> of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?</p>
 <section id="hrbrthemes-inspired-altair-theme" class="level2">
 <h2 class="anchored" data-anchor-id="hrbrthemes-inspired-altair-theme">hrbrthemes inspired altair theme</h2>
-<p>I am using Roboto Condensed as the example here, but hrbrthemes <span class="citation" data-cites="bob_rudis_2019_2545422">[@bob_rudis_2019_2545422]</span> provides other font options.</p>
+<p>I am using Roboto Condensed as the example here, but hrbrthemes <span class="citation" data-cites="bob_rudis_2019_2545422">(<a href="#ref-bob_rudis_2019_2545422" role="doc-biblioref">Rudis et al. 2019</a>)</span> provides other font options.</p>
 <div id="fig-rc-example" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rc-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -435,10 +461,18 @@ Figure&nbsp;4: Altair outputs
 </div>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-jcm12083045" class="csl-entry" role="listitem">
+Banashefski, Bryana, Michelle K. Rhee, and Gareth M. C. Lema. 2023. <span>“High Myopia Prevalence Across Racial Groups in the United States: A Systematic Scoping Review.”</span> <em>Journal of Clinical Medicine</em> 12 (8). <a href="https://doi.org/10.3390/jcm12083045">https://doi.org/10.3390/jcm12083045</a>.
+</div>
+<div id="ref-bob_rudis_2019_2545422" class="csl-entry" role="listitem">
+Rudis, boB, Joris Meys, Matthew Pancia, Karl Dunkle Werner, Xavier A, Phil, Lukas Burk, Jacob, Bhaskar V. Karambelkar, and Ben Marwick. 2019. <span>“Hrbrmstr/Hrbrthemes: Dark Matter.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.2545422">https://doi.org/10.5281/zenodo.2545422</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -846,6 +880,19 @@ Figure&nbsp;4: Altair outputs
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

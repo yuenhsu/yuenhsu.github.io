@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yu-En Hsu">
-<meta name="dcterms.date" content="2019-12-30">
-<meta name="description" content="Visualising geospatial data in Tableau">
 
-<title>iTaiwan Free Wifi – Yu-En Hsu</title>
+<title>Projects – Yu-En Hsu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,24 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/pelican.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/pelican.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-date','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRQ30Q4RJP"></script>
 
 <script type="text/javascript">
@@ -81,21 +109,50 @@ gtag('js', new Date());
 gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../assets/styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/pelican.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/pelican.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Yu-En Hsu</span>
     </a>
   </div>
@@ -106,19 +163,19 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> 
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts.html"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -129,91 +186,135 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Projects</h1>
+            <p class="subtitle lead">Essentially longer posts focusing more on research and writing</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="RGF0YSUyMFZpc3VhbGlzYXRpb24=">Data Visualisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFjaGluZSUyMExlYXJuaW5n">Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TmVlZHMlMjBBc3Nlc3NtZW50">Needs Assessment <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">iTaiwan Free Wifi</h1>
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="TmVlZHMlMjBBc3Nlc3NtZW50" data-listing-date-sort="1610254800000" data-listing-file-modified-sort="1741375575933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="246">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/greenbeans.html" class="no-external">GreenBeans</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TmVlZHMlMjBBc3Nlc3NtZW50'); return false;">Needs Assessment</div>
+
 </div>
-
-<div>
-  <div class="description">
-    Visualising geospatial data in Tableau
-  </div>
+<div class="delink listing-description"><a href="./projects/greenbeans.html" class="no-external">
+<p>Proposal submission to 2020 Geneva Challenge, a contest for graduate students to address the challenges of social inclusion. My team and I applied various evaluation approaches, such as needs assessment and theory of change, and had a great time putting what we learnt into practice.</p>
+</a></div>
 </div>
+<div class="metadata">
+<a href="./projects/greenbeans.html" class="no-external">
+<div class="listing-date">
+2021/01/10
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="TWFjaGluZSUyMExlYXJuaW5n" data-listing-date-sort="1606712400000" data-listing-file-modified-sort="1741375575935" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1764">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/predict-contraception-report.html" class="no-external">Predicting Use of Contraception in Asia with Machine Learning Algorithms</a>
+</h3>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
 
-<div class="quarto-title-meta">
+</div>
+<div class="delink listing-description"><a href="./projects/predict-contraception-report.html" class="no-external">
+<p>Using survey micro-data from the 6th MICS, I built classification models to predict the use of contraception from demographic and socio-economic factors. The report was finished in late 2020 for predictive analysis class in grad school.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./projects/predict-contraception-report.html" class="no-external">
+<div class="listing-date">
+2020/11/30
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="TmVlZHMlMjBBc3Nlc3NtZW50" data-listing-date-sort="1577163600000" data-listing-file-modified-sort="1741375575933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="675">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/education-liberia.html" class="no-external">Getting the Best Education</a>
+</h3>
+<div class="listing-categories">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Yu-En Hsu </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 30, 2019</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
+<div class="listing-category" onclick="window.quartoListingCategory('TmVlZHMlMjBBc3Nlc3NtZW50'); return false;">Needs Assessment</div>
 
+</div>
+<div class="delink listing-description"><a href="./projects/education-liberia.html" class="no-external">
+<p>Development project proposal for improving the quality of early childhood education in Liberia</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./projects/education-liberia.html" class="no-external">
+<div class="listing-date">
+2019/12/24
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="RGF0YSUyMFZpc3VhbGlzYXRpb24lMkNQeXRob24=" data-listing-date-sort="1576990800000" data-listing-file-modified-sort="1741375575933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="883">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/cityline-syracuse.html" class="no-external">Cityline Syracuse</a>
+</h3>
+<div class="listing-categories">
 
-</header>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFZpc3VhbGlzYXRpb24='); return false;">Data Visualisation</div>
 
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
 
-<p>I came across <a href="https://data.gov.tw/dataset/5962">this dataset</a> that contains latitude and longitude for each hotspot, which is perfect for me to explore Tableau’s mapping function. Since it only includes geographic information, I merged <a href="https://statdb.dgbas.gov.tw/pxweb/Dialog/statfile9.asp">the land area and population statistics</a> to analyse the spatial distribution and density.</p>
-<p>As I am relatively new to Tableau, I focus on applying different tools and editing the styles, not exploratory data analysis. Therefore, the narratives below will emphasise on the functions that I used for this viz.</p>
-<section id="tableau-viz" class="level2">
-<h2 class="anchored" data-anchor-id="tableau-viz">Tableau Viz</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3ibOAoGmkAY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>Check out the viz <a href="https://public.tableau.com/profile/yuenhsu#!/vizhome/iTaiwanFreeWifiDistribution/iTaiwanHotspot">here</a>!</p>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p><img src="../posts/images/iTaiwan-Tableau-Sheet-1.png" class="img-fluid"></p>
-<p>The top row shows the total number of hotspots, the total number of administrative agencies responsible, and the average number of user per hotspot across the nation. I had to create a placeholder of 1 and put three copies of it in the column shelf with a bar chart layout to make the text appear to be in the middle.</p>
-<p>The bottom row demonstrated the number for each city, instead of the entire country. As I am writing now, I realised that I could have used the “size” mark for each circle, rather than just using colours.</p>
-</section>
-<section id="hotspot-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="hotspot-distribution">Hotspot Distribution</h2>
-<p>I set the value type to latitude and longitude and Tableau automatically generated the map. Considering my previous mapping was done in Python with geopandas and folium, this process is significantly easier than I expected, just simply drag and drop.</p>
-<p>I decided to show each hotspot instead of using a density map as I previously planned as I believe the colour code gives user a clear distinction between the cities.</p>
-<p><img src="../posts/images/iTaiwan-Tableau-Sheet-3-Map.png" class="img-fluid"></p>
-</section>
-<section id="hotspot-counts-and-density" class="level2">
-<h2 class="anchored" data-anchor-id="hotspot-counts-and-density">Hotspot Counts and Density</h2>
-<p>Sheet 2 has already shown the number of hotspots in each city. Still, I prefer to see the values directly over hovering.</p>
-<p>Following, a scatter plot that shows the average number of citizens sharing one hotspot. Again, as I am writing, I realised the word “density” is incorrect for the graph.</p>
-<p><img src="../posts/images/iTaiwan-Tableau-Sheet-4.png" class="img-fluid"></p>
-<p><img src="../posts/images/iTaiwan-Tableau-Sheet-5.png" class="img-fluid"></p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Although major cities have much more hotspots, the large numbers of citizens resulted in a high number of average users per hotspot. For example, Taichung City has 2.8 million residents sharing 1,719 hotspots, average 1,631 users per hotspot, and Lien Jiang County has 13,056 residents sharing 112 hotspots, averaging 117 users per hotspot.</p>
-<p>All of the iTaiwan Wifi is available in government buildings. While Lien Jiang County has only a small number of residents, it still has a city hall and public service facilities; therefore, it is understandable that it has the lowest number of average users per hotspot.</p>
-<p>On the contrary, it is obvious that there’s a lack of hotspots in major cities, such as Taipei, Taichung, and Kaohsiung. Taiwanese government should consider installing more iTaiwan Wifi connection point in these big cities and offer accessible and fast internet for all everyone.</p>
-</section>
-<section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>I noticed several mistakes after I uploaded the graph because I didn’t take time to plan my visualisation and examine my final dashboard. It is always so exciting to start a new vis that I jumped right in. However, the initial analysis is just as critical as the final product.</p>
-<p>Still, I am thrilled with this experiment as it allowed me to explore the mapping function. Next time, I should think about what information I can present, what other data I need to obtain for the information, and what sheets I should include in the dashboard. Just because I have a sheet ready does not mean it should be in the panel.</p>
-<p>Lastly, I would like to thank <a href="http://www.lindseypoulter.com/">Lindsey Poulter</a> for her <a href="https://public.tableau.com/profile/lindsey.poulter8872#!/vizhome/RestaurantRivalRevealerIronVizData19_15738357790290/restaurantrivalrevealer">restaurant rival revealer vis</a> on Tableau. Without her generously making this vis available for download, I wouldn’t be able to examine in detail and replicate the design. The dashboard was done on 30 December, 2019.</p>
-
-
-</section>
-
-</main> <!-- /main -->
+</div>
+<div class="delink listing-description"><a href="./projects/cityline-syracuse.html" class="no-external">
+<p>Using Cityline and Census data, I examine and visualise income, education level, and resolve time distribution for trash related complaints.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./projects/cityline-syracuse.html" class="no-external">
+<div class="listing-date">
+2019/12/22
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

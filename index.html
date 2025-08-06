@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yu-En Hsu">
+<meta name="dcterms.date" content="2025-04-20">
+<meta name="description" content="This is where I share things">
 
-<title>Test Blog – Yu-En Hsu</title>
+<title>Yu-En Hsu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./assets/pelican.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRQ30Q4RJP"></script>
 
 <script type="text/javascript">
@@ -109,46 +80,20 @@ gtag('js', new Date());
 gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/pelican.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Yu-En Hsu</span>
     </a>
@@ -158,20 +103,22 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -181,189 +128,22 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Test Blog</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Yu-En Hsu </p>
-            </div>
-    </div>
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Y1BhbmVs">cPanel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<p>Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun!</p>
+<p>I am currently moving my website from WordPress to Quarto.</p>
 
 
 
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1731301200000" data-listing-file-modified-sort="1745111041013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="446">
-<div class="thumbnail"><a href="./posts/us-states-territories.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/us-states-territories.html" class="no-external">States and territories of the US</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/us-states-territories.html" class="no-external">
-<p>Names and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/us-states-territories.html" class="no-external">
-<div class="listing-date">
-Nov 11, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UXVhcnRvJTJDY1BhbmVs" data-listing-date-sort="1714363200000" data-listing-file-modified-sort="1754499861240" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1146">
-<div class="thumbnail"><a href="./posts/quarto-github-cpanel.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/images/ssh_cli_annotated.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/quarto-github-cpanel.html" class="no-external">Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y1BhbmVs'); return false;">cPanel</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/quarto-github-cpanel.html" class="no-external">
-<p>Cloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/quarto-github-cpanel.html" class="no-external">
-<div class="listing-date">
-Apr 29, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1713844800000" data-listing-file-modified-sort="1745110498974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1208">
-<div class="thumbnail"><a href="./posts/altair-hrbr.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/images/altair_output_system_font.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/altair-hrbr.html" class="no-external">Altair + hrbrthemes = Beautiful and readable charts in Python</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/altair-hrbr.html" class="no-external">
-<p>Custom altair theme config with hrbrthemes styling for aesthetic and readability</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/altair-hrbr.html" class="no-external">
-<div class="listing-date">
-Apr 23, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1610341200000" data-listing-file-modified-sort="1745109325399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="611">
-<div class="thumbnail"><a href="./posts/apple-health-tableau.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/images/health_export_1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/apple-health-tableau.html" class="no-external">Export Apple Health Data and Visualise with Tableau</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/apple-health-tableau.html" class="no-external">
-<p>Step by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/apple-health-tableau.html" class="no-external">
-<div class="listing-date">
-Jan 11, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1610168400000" data-listing-file-modified-sort="1741375575931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1597">
-<div class="thumbnail"><a href="./posts/web-scrape-selenium.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/images/screenshot-input.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/web-scrape-selenium.html" class="no-external">Automate Data Collection with Selenium in Python</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/web-scrape-selenium.html" class="no-external">
-<p>Using Selenium to automate Google Chrome for data collection in python, including iterating through a date-picker and a dropdown list, clicking submit button, waiting for results, and extracting returned result</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/web-scrape-selenium.html" class="no-external">
-<div class="listing-date">
-Jan 9, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1577682000000" data-listing-file-modified-sort="1741375575930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="605">
-<div class="thumbnail"><a href="./posts/itaiwan-tableau.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/images/iTaiwan-Tableau-Sheet-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/itaiwan-tableau.html" class="no-external">iTaiwan Free Wifi</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/itaiwan-tableau.html" class="no-external">
-<p>Visualising geospatial data in Tableau</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/itaiwan-tableau.html" class="no-external">
-<div class="listing-date">
-Dec 30, 2019
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -771,6 +551,19 @@ Dec 30, 2019
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

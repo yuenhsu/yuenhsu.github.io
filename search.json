@@ -1,31 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
     "section": "",
-    "text": "Medium\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n\n  \n  \n\n\nJust like the United Nations (UN)!\nI am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity."
+    "text": "States and territories of the US\n\n\nNames and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023.\n\n\n\n\n\n2024/11/11\n\n\n\n\n\n\n\nHosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel\n\n\n\nQuarto\n\ncPanel\n\n\n\nCloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder\n\n\n\n\n\n2024/04/29\n\n\n\n\n\n\n\nAltair + hrbrthemes = Beautiful and readable charts in Python\n\n\nCustom altair theme config with hrbrthemes styling for aesthetic and readability\n\n\n\n\n\n2024/04/23\n\n\n\n\n\n\n\nExport Apple Health Data and Visualise with Tableau\n\n\nStep by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.\n\n\n\n\n\n2021/01/11\n\n\n\n\n\n\n\nAutomate Data Collection with Selenium in Python\n\n\nUsing Selenium to automate Google Chrome for data collection in python, including iterating through a date-picker and a dropdown list, clicking submit button, waiting for results, and extracting returned result\n\n\n\n\n\n2021/01/09\n\n\n\n\n\n\n\niTaiwan Free Wifi\n\n\nVisualising geospatial data in Tableau\n\n\n\n\n\n2019/12/30\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\nMaster of Public Administration | Dec 2020\n  Maxwell School of Citizenship and Public Affairs, Syracuse University | Syracuse, NY\n\nBachelor of Business Administration | Jun 2017\n  Fu Jen Catholic University | Taipei, Taiwan"
-  },
-  {
-    "objectID": "about.html#awards-and-scholarships",
-    "href": "about.html#awards-and-scholarships",
-    "title": "About",
-    "section": "Awards and Scholarships",
-    "text": "Awards and Scholarships\n\nMaxwell Dean’s Award ($10,098) | Aug 2020\nCenter of Policy Research Scholarship ($500) | Aug 2020\nAjello Fellowship ($2,500) | Aug 2020\nMaxwell Dean’s Award ($1,683) | May 2020\nGeorge Schaefer Spring Scholarship ($1,000) | Mar 2020"
-  },
-  {
-    "objectID": "about.html#cool-things",
-    "href": "about.html#cool-things",
-    "title": "About",
-    "section": "Cool things",
-    "text": "Cool things\n\nGeneva Challenge Contestant | Apr 2020 – Jul 2020\nHosted by The Graduate Institute, Geneva (IHEID)\nCreated development proposal for promoting social inclusion and sustainability\nInternational Student Ambassador | Sep 2019 – Jun 2020 Public Administration International Relations Association, Syracuse, NY Represented international students in meetings and organised events to promote inclusivity\nWinner at simulation competition | Aug 13-15, 2019 Sponsored by the Maxwell School ﹘ Negotiated a redevelopment plan for a post-war country Disaster Recovery Volunteer Dec 2017 – Jan 2018 All Hands and Hearts, Baton Rouge, LA & Port Aransas, TX ﹘ Assisted in community reconstruction after the 2016 Louisiana floods and emergency response in Texas following Hurricane Harvey Sea Turtle Rescue Nov 2017 Turtle Conservation, Las Penitas, Nicaragua ﹘ Participated in mangrove reforestation and beach clean-up; observed turtle hatching with marine biologists Team Member Sep 2016 – May 2017 You Sei Fantastic Association, Taitung, Taiwan ﹘ Developed and executed a social project to host winter camp for students in rural area; raised money through crowdfunding with farm produces from students’ families English Instructor Jun 2016 – Jul 2016 The Happy School, Phnom Penh, Cambodia ﹘ Designed course curriculum to provide a systematic approach to improve children’s English ability, communicated children’s performance with parents, talked to tuk-tuk drivers on the street and encouraged them to allow their children to receive free education Renovation Volunteer Jan 2016 – Feb 2016 The Mirror Foundation, Chiang Rai, Thailand ﹘ Contributed to museum construction Community Outreach Intern Jun 2012 – Aug 2012 Eurogems, Treviso, Italy ﹘ Organised events to engage members of the community, encouraging participation of social programs and reducing cultural distances"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yu-En Hsu",
+    "section": "",
+    "text": "Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun!\nI am currently moving my website from WordPress to Quarto."
   },
   {
     "objectID": "projects/cityline-syracuse.html",
@@ -172,7 +158,7 @@
     "href": "posts/us-states-territories.html#questions-i-had",
     "title": "States and territories of the US",
     "section": "Questions I had",
-    "text": "Questions I had\n\nWhat are the five territories?\n\nAmerican Samoa,\nGuam,\nNorthern Mariana Islands,\nPuerto Rico, and\nU.S. Virgin Islands.\n\nTechnically, there are more territories; however, they are either uninhabited or disputed. Given the purpose of the list is to use in forms, there’s no reason to list out other territories.\n\n\nHow about Micronesia, Marshall Islands, and Palau?\nAll of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)[@cia-no-dateA], on the Marshall Islands[@cia-no-dateB], and on Palau[@cia-no-dateC],\n\nIn 1982, the FSM signed a Compact of Free Association (COFA) with the US, which granted the [FSM/Marshall Islands] financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nin 1982, the Marshall Islands signed a Compact of Free Association (COFA) with the US, which granted the Marshall Islands financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nIn 1982, Palau signed a Compact of Free Association (COFA) with the US, which granted Palau financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities.\n\nThey are not US territories, but they have tight connections with the US government on diplomatic, economic, and military relations. But again, many countries have tight connections with the US. To sum, as long as the scope of the form focus on domestic area, FSM, Marshall Islands, and Palau should not be listed as choices for states."
+    "text": "Questions I had\n\nWhat are the five territories?\n\nAmerican Samoa,\nGuam,\nNorthern Mariana Islands,\nPuerto Rico, and\nU.S. Virgin Islands.\n\nTechnically, there are more territories; however, they are either uninhabited or disputed. Given the purpose of the list is to use in forms, there’s no reason to list out other territories.\n\n\nHow about Micronesia, Marshall Islands, and Palau?\nAll of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)(CIA, n.d.b), on the Marshall Islands(CIA, n.d.a), and on Palau(CIA, n.d.c),\n\nIn 1982, the FSM signed a Compact of Free Association (COFA) with the US, which granted the [FSM/Marshall Islands] financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nin 1982, the Marshall Islands signed a Compact of Free Association (COFA) with the US, which granted the Marshall Islands financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nIn 1982, Palau signed a Compact of Free Association (COFA) with the US, which granted Palau financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities.\n\nThey are not US territories, but they have tight connections with the US government on diplomatic, economic, and military relations. But again, many countries have tight connections with the US. To sum, as long as the scope of the form focus on domestic area, FSM, Marshall Islands, and Palau should not be listed as choices for states."
   },
   {
     "objectID": "posts/quarto-github-cpanel.html",
@@ -284,14 +270,14 @@
     "href": "posts/altair-hrbr.html",
     "title": "Altair + hrbrthemes = Beautiful and readable charts in Python",
     "section": "",
-    "text": "Code\nfrom dotenv import dotenv_values\nimport pandas as pd\nfrom requests import request\nimport altair as alt\n\nconfig = dotenv_values(\".env\")\nresponse = request(\"GET\", f\"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={config['API_KEY_EIA']}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000\")\nresult = response.json()\n\nraw_data = pd.json_normalize(result['response']['data'])\none_cols = raw_data.nunique().loc[lambda x: x==1].index\nref = raw_data[\n    raw_data.nunique().loc[lambda x: x==1].index\n].drop_duplicates().T.to_dict()[0]\n\ndf = raw_data.drop(columns=one_cols).assign(\n    period=pd.to_datetime(raw_data['period']+\"-01\"),\n    customers=pd.to_numeric(raw_data['customers']),\n    price=pd.to_numeric(raw_data['price'])\n)\nalt.Chart(\n    df, \n    width=\"container\",\n    title=alt.Title(\n        \"Average monthly price of electricity\", \n        subtitle=[\"Source: U.S. Energy Information Administration\"])\n).mark_line().encode(\n    x=alt.X(\"period\", title=\"Period\"), \n    y=alt.Y(\"price:Q\", title=\"Cents per kWh\"), \n    color=alt.Color(\"stateid:N\", title=\"Region\").sort(\"-y\"),\n).display(actions=False)\n\n\nFigure 1\nI find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% [@jcm12083045] of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?"
+    "text": "Code\nfrom dotenv import dotenv_values\nimport pandas as pd\nfrom requests import request\nimport altair as alt\n\nconfig = dotenv_values(\".env\")\nresponse = request(\"GET\", f\"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={config['API_KEY_EIA']}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000\")\nresult = response.json()\n\nraw_data = pd.json_normalize(result['response']['data'])\none_cols = raw_data.nunique().loc[lambda x: x==1].index\nref = raw_data[\n    raw_data.nunique().loc[lambda x: x==1].index\n].drop_duplicates().T.to_dict()[0]\n\ndf = raw_data.drop(columns=one_cols).assign(\n    period=pd.to_datetime(raw_data['period']+\"-01\"),\n    customers=pd.to_numeric(raw_data['customers']),\n    price=pd.to_numeric(raw_data['price'])\n)\nalt.Chart(\n    df, \n    width=\"container\",\n    title=alt.Title(\n        \"Average monthly price of electricity\", \n        subtitle=[\"Source: U.S. Energy Information Administration\"])\n).mark_line().encode(\n    x=alt.X(\"period\", title=\"Period\"), \n    y=alt.Y(\"price:Q\", title=\"Cents per kWh\"), \n    color=alt.Color(\"stateid:N\", title=\"Region\").sort(\"-y\"),\n).display(actions=False)\n\n\nFigure 1\nI find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% (Banashefski, Rhee, and Lema 2023) of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?"
   },
   {
     "objectID": "posts/altair-hrbr.html#hrbrthemes-inspired-altair-theme",
     "href": "posts/altair-hrbr.html#hrbrthemes-inspired-altair-theme",
     "title": "Altair + hrbrthemes = Beautiful and readable charts in Python",
     "section": "hrbrthemes inspired altair theme",
-    "text": "hrbrthemes inspired altair theme\nI am using Roboto Condensed as the example here, but hrbrthemes [@bob_rudis_2019_2545422] provides other font options.\n\n\n\n\n\n\nFigure 2: hrbrthemes Roboto Condensed example\n\n\n\n\nAdopted features\n\nSufficient spacing around the chart and between elements\nChart title: Largest size and bold weight font\nChart subtitle: Second largest size and light weight font\nAxis label: Fontsize comparable to subtitle and normal weight font\nAxis domain/baseline and ticks: Removed\n\n\n\nNot adopted\n\nAxis title alignment\nCaption: Not available in altair\n\n\n\nFYI\n\nThe first tick is aligned to the boundary of the axis. The remaining ticks are centered.\nggplot2 doesn’t always display zero."
+    "text": "hrbrthemes inspired altair theme\nI am using Roboto Condensed as the example here, but hrbrthemes (Rudis et al. 2019) provides other font options.\n\n\n\n\n\n\nFigure 2: hrbrthemes Roboto Condensed example\n\n\n\n\nAdopted features\n\nSufficient spacing around the chart and between elements\nChart title: Largest size and bold weight font\nChart subtitle: Second largest size and light weight font\nAxis label: Fontsize comparable to subtitle and normal weight font\nAxis domain/baseline and ticks: Removed\n\n\n\nNot adopted\n\nAxis title alignment\nCaption: Not available in altair\n\n\n\nFYI\n\nThe first tick is aligned to the boundary of the axis. The remaining ticks are centered.\nggplot2 doesn’t always display zero."
   },
   {
     "objectID": "posts/altair-hrbr.html#customising-altair",
@@ -396,7 +382,7 @@
     "href": "projects/predict-contraception-report.html#introduction",
     "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
     "section": "Introduction",
-    "text": "Introduction\nContraception is designed to prevent pregnancy. By preventing unintended pregnancy, contraceptive methods help women to avoid pregnancy- and birth-related morbidity and mortality. Ensuring access to contraception advances human rights, including the right to life and liberty, freedom of opinion and expression, and the right to work and education [@Kavanaugh2013ContraceptionAB]. In 2019, among the 1.9 billion women of reproductive age (WRA) living around the world [@3849735], 190 million women had an unmet need for family planning for various reasons, such as health concerns, lack of access, or opposition from others [@30e5e46b-6671-3140-bea5-511a746c9846].\nThe study aims to build classification models with machine-learning (ML) techniques to predict the use of contraception in Thailand, Mongolia, and Laos. Specifically, the goal is to identify WRA not using contraception. ML can often be more efficient in establishing a relationship between multiple features [@kotsiantis2007supervised] and may be able to recognise patterns in characteristics associated with not using contraception. While not all have an unmet need for family planning, being able to classify these individuals can provide a basis to expand access to contraception."
+    "text": "Introduction\nContraception is designed to prevent pregnancy. By preventing unintended pregnancy, contraceptive methods help women to avoid pregnancy- and birth-related morbidity and mortality. Ensuring access to contraception advances human rights, including the right to life and liberty, freedom of opinion and expression, and the right to work and education (Kavanaugh and Anderson 2013). In 2019, among the 1.9 billion women of reproductive age (WRA) living around the world (“Contraceptive Use by Method 2019 : Data Booklet” 2019), 190 million women had an unmet need for family planning for various reasons, such as health concerns, lack of access, or opposition from others (Sedgh and Hussain 2014).\nThe study aims to build classification models with machine-learning (ML) techniques to predict the use of contraception in Thailand, Mongolia, and Laos. Specifically, the goal is to identify WRA not using contraception. ML can often be more efficient in establishing a relationship between multiple features (Kotsiantis et al. 2007) and may be able to recognise patterns in characteristics associated with not using contraception. While not all have an unmet need for family planning, being able to classify these individuals can provide a basis to expand access to contraception."
   },
   {
     "objectID": "projects/predict-contraception-report.html#method",
@@ -427,10 +413,38 @@
     "text": "Footnotes\n\n\nThe countries have different education systems and response categories. For example, Laos has “Post-Secondary” and Mongolia has “College”, and both are re-coded to “Higher”.↩︎\nIn an ideal scenario with better computing power, I would try all integers from 1 to 9. However, even with just two mtry, it took nearly an hour to run.↩︎"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Test Blog",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "States and territories of the US\n\n\nNames and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023.\n\n\n\n\n\nNov 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel\n\n\n\nQuarto\n\ncPanel\n\n\n\nCloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder\n\n\n\n\n\nApr 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAltair + hrbrthemes = Beautiful and readable charts in Python\n\n\nCustom altair theme config with hrbrthemes styling for aesthetic and readability\n\n\n\n\n\nApr 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nExport Apple Health Data and Visualise with Tableau\n\n\nStep by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.\n\n\n\n\n\nJan 11, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nAutomate Data Collection with Selenium in Python\n\n\nUsing Selenium to automate Google Chrome for data collection in python, including iterating through a date-picker and a dropdown list, clicking submit button, waiting for results, and extracting returned result\n\n\n\n\n\nJan 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\niTaiwan Free Wifi\n\n\nVisualising geospatial data in Tableau\n\n\n\n\n\nDec 30, 2019\n\n\n\n\n\nNo matching items"
+    "text": "GreenBeans\n\n\n\nNeeds Assessment\n\n\n\nProposal submission to 2020 Geneva Challenge, a contest for graduate students to address the challenges of social inclusion. My team and I applied various evaluation approaches, such as needs assessment and theory of change, and had a great time putting what we learnt into practice.\n\n\n\n\n\n2021/01/10\n\n\n\n\n\n\n\nPredicting Use of Contraception in Asia with Machine Learning Algorithms\n\n\n\nMachine Learning\n\n\n\nUsing survey micro-data from the 6th MICS, I built classification models to predict the use of contraception from demographic and socio-economic factors. The report was finished in late 2020 for predictive analysis class in grad school.\n\n\n\n\n\n2020/11/30\n\n\n\n\n\n\n\nGetting the Best Education\n\n\n\nNeeds Assessment\n\n\n\nDevelopment project proposal for improving the quality of early childhood education in Liberia\n\n\n\n\n\n2019/12/24\n\n\n\n\n\n\n\nCityline Syracuse\n\n\n\nData Visualisation\n\nPython\n\n\n\nUsing Cityline and Census data, I examine and visualise income, education level, and resolve time distribution for trash related complaints.\n\n\n\n\n\n2019/12/22\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Medium\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n\n  \n  \n\n\nJust like the United Nations (UN)!\nI am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nMaster of Public Administration | Dec 2020\n  Maxwell School of Citizenship and Public Affairs, Syracuse University | Syracuse, NY\n\nBachelor of Business Administration | Jun 2017\n  Fu Jen Catholic University | Taipei, Taiwan"
+  },
+  {
+    "objectID": "about.html#awards-and-scholarships",
+    "href": "about.html#awards-and-scholarships",
+    "title": "About",
+    "section": "Awards and Scholarships",
+    "text": "Awards and Scholarships\n\nMaxwell Dean’s Award ($10,098) | Aug 2020\nCenter of Policy Research Scholarship ($500) | Aug 2020\nAjello Fellowship ($2,500) | Aug 2020\nMaxwell Dean’s Award ($1,683) | May 2020\nGeorge Schaefer Spring Scholarship ($1,000) | Mar 2020"
+  },
+  {
+    "objectID": "about.html#cool-things",
+    "href": "about.html#cool-things",
+    "title": "About",
+    "section": "Cool things",
+    "text": "Cool things\n\nGeneva Challenge Contestant | Apr 2020 – Jul 2020\nHosted by The Graduate Institute, Geneva (IHEID)\nCreated development proposal for promoting social inclusion and sustainability\nInternational Student Ambassador | Sep 2019 – Jun 2020 Public Administration International Relations Association, Syracuse, NY Represented international students in meetings and organised events to promote inclusivity\nWinner at simulation competition | Aug 13-15, 2019 Sponsored by the Maxwell School ﹘ Negotiated a redevelopment plan for a post-war country Disaster Recovery Volunteer Dec 2017 – Jan 2018 All Hands and Hearts, Baton Rouge, LA & Port Aransas, TX ﹘ Assisted in community reconstruction after the 2016 Louisiana floods and emergency response in Texas following Hurricane Harvey Sea Turtle Rescue Nov 2017 Turtle Conservation, Las Penitas, Nicaragua ﹘ Participated in mangrove reforestation and beach clean-up; observed turtle hatching with marine biologists Team Member Sep 2016 – May 2017 You Sei Fantastic Association, Taitung, Taiwan ﹘ Developed and executed a social project to host winter camp for students in rural area; raised money through crowdfunding with farm produces from students’ families English Instructor Jun 2016 – Jul 2016 The Happy School, Phnom Penh, Cambodia ﹘ Designed course curriculum to provide a systematic approach to improve children’s English ability, communicated children’s performance with parents, talked to tuk-tuk drivers on the street and encouraged them to allow their children to receive free education Renovation Volunteer Jan 2016 – Feb 2016 The Mirror Foundation, Chiang Rai, Thailand ﹘ Contributed to museum construction Community Outreach Intern Jun 2012 – Aug 2012 Eurogems, Treviso, Italy ﹘ Organised events to engage members of the community, encouraging participation of social programs and reducing cultural distances"
   }
 ]

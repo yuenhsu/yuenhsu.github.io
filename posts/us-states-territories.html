@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,6 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/pelican.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -126,6 +147,9 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/pelican.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Yu-En Hsu</span>
     </a>
@@ -135,20 +159,22 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -248,7 +274,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </section>
 <section id="how-about-micronesia-marshall-islands-and-palau" class="level3">
 <h3 class="anchored" data-anchor-id="how-about-micronesia-marshall-islands-and-palau">How about Micronesia, Marshall Islands, and Palau?</h3>
-<p>All of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)<span class="citation" data-cites="cia-no-dateA">[@cia-no-dateA]</span>, on the Marshall Islands<span class="citation" data-cites="cia-no-dateB">[@cia-no-dateB]</span>, and on Palau<span class="citation" data-cites="cia-no-dateC">[@cia-no-dateC]</span>,</p>
+<p>All of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)<span class="citation" data-cites="cia-no-dateA">(<a href="#ref-cia-no-dateA" role="doc-biblioref">CIA, n.d.b</a>)</span>, on the Marshall Islands<span class="citation" data-cites="cia-no-dateB">(<a href="#ref-cia-no-dateB" role="doc-biblioref">CIA, n.d.a</a>)</span>, and on Palau<span class="citation" data-cites="cia-no-dateC">(<a href="#ref-cia-no-dateC" role="doc-biblioref">CIA, n.d.c</a>)</span>,</p>
 <blockquote class="blockquote">
 <p>In 1982, the FSM signed a Compact of Free Association (COFA) with the US, which granted the [FSM/Marshall Islands] financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;</p>
 </blockquote>
@@ -261,10 +287,21 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <p>They are not US territories, but they have tight connections with the US government on diplomatic, economic, and military relations. But again, many countries have tight connections with the US. To sum, as long as the scope of the form focus on domestic area, FSM, Marshall Islands, and Palau should not be listed as choices for states.</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cia-no-dateB" class="csl-entry" role="listitem">
+CIA. n.d.a. <span>“<span>Marshall Islands</span>.”</span> <a href="https://www.cia.gov/the-world-factbook/countries/marshall-islands/">https://www.cia.gov/the-world-factbook/countries/marshall-islands/</a>.
+</div>
+<div id="ref-cia-no-dateA" class="csl-entry" role="listitem">
+———. n.d.b. <span>“<span class="nocase">Micronesia, Federated States of</span>.”</span> <a href="https://www.cia.gov/the-world-factbook/countries/micronesia-federated-states-of/#introduction">https://www.cia.gov/the-world-factbook/countries/micronesia-federated-states-of/#introduction</a>.
+</div>
+<div id="ref-cia-no-dateC" class="csl-entry" role="listitem">
+———. n.d.c. <span>“<span>Palau</span>.”</span> <a href="https://www.cia.gov/the-world-factbook/countries/palau/">https://www.cia.gov/the-world-factbook/countries/palau/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -672,6 +709,19 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
