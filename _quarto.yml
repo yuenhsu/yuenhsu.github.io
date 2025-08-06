@@ -5,14 +5,23 @@ website:
   title: "Yu-En Hsu"
   google-analytics: "G-FRQ30Q4RJP"
   description: "Hey! I am Yu-En."
+  favicon: assets/pelican.png
   draft-mode: unlinked
+  site-url: "https://yuenhsu.com/"
   navbar:
-    right:
+    logo: assets/pelican.png
+    left:
+      - href: index.qmd
+        text: Home
       - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - projects.qmd
+      - posts.qmd
+  page-footer: 
+    center: |
+      <a  href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a>
+
+bibliography: references.bib
+
 format:
   html:
     theme: cosmo
@@ -21,4 +30,3 @@ format:
     link-external-newwindow: true
     link-external-filter: "(yuenhsu|yhsu10)"
     link-external-icon: true
-    author: "Yu-En Hsu"

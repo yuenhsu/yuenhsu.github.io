@@ -1,0 +1,12 @@
+---
+title: "Posts"
+subtitle: "Sharing my solution to very specific issues/questions and other fun things"
+title-block-banner: true
+listing:
+  contents: posts
+  date-format: "YYYY/MM/DD"
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [date, title, description, categories]
+---

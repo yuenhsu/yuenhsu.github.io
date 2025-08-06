@@ -1,0 +1,12 @@
+---
+title: "Projects"
+subtitle: "Essentially longer posts focusing more on research and writing"
+title-block-banner: true
+listing:
+  contents: projects
+  date-format: "YYYY/MM/DD"
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [title, date, description, categories]
+---

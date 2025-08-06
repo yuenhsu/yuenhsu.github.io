@@ -1,14 +1,10 @@
 ---
-title: "Test Blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+pagetitle: "Yu-En Hsu"
+description-meta: "This is where I share things"
+date-meta: "2025-04-20"
+toc: false
 ---
 
+Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun! 
 
+I am currently moving my website from WordPress to Quarto.
