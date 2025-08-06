@@ -28,6 +28,153 @@
     "text": "Cool things\n\nGeneva Challenge Contestant | Apr 2020 – Jul 2020\nHosted by The Graduate Institute, Geneva (IHEID)\nCreated development proposal for promoting social inclusion and sustainability\nInternational Student Ambassador | Sep 2019 – Jun 2020 Public Administration International Relations Association, Syracuse, NY Represented international students in meetings and organised events to promote inclusivity\nWinner at simulation competition | Aug 13-15, 2019 Sponsored by the Maxwell School ﹘ Negotiated a redevelopment plan for a post-war country Disaster Recovery Volunteer Dec 2017 – Jan 2018 All Hands and Hearts, Baton Rouge, LA & Port Aransas, TX ﹘ Assisted in community reconstruction after the 2016 Louisiana floods and emergency response in Texas following Hurricane Harvey Sea Turtle Rescue Nov 2017 Turtle Conservation, Las Penitas, Nicaragua ﹘ Participated in mangrove reforestation and beach clean-up; observed turtle hatching with marine biologists Team Member Sep 2016 – May 2017 You Sei Fantastic Association, Taitung, Taiwan ﹘ Developed and executed a social project to host winter camp for students in rural area; raised money through crowdfunding with farm produces from students’ families English Instructor Jun 2016 – Jul 2016 The Happy School, Phnom Penh, Cambodia ﹘ Designed course curriculum to provide a systematic approach to improve children’s English ability, communicated children’s performance with parents, talked to tuk-tuk drivers on the street and encouraged them to allow their children to receive free education Renovation Volunteer Jan 2016 – Feb 2016 The Mirror Foundation, Chiang Rai, Thailand ﹘ Contributed to museum construction Community Outreach Intern Jun 2012 – Aug 2012 Eurogems, Treviso, Italy ﹘ Organised events to engage members of the community, encouraging participation of social programs and reducing cultural distances"
   },
   {
+    "objectID": "projects/cityline-syracuse.html",
+    "href": "projects/cityline-syracuse.html",
+    "title": "Cityline Syracuse",
+    "section": "",
+    "text": "The project, for data-driven decision-making class, required students to apply Python skills to merge, clean, and analyze several datasets, and to interpret the results to make policy recommendations. My colleagues, Daniela and Hailey, and I decided to focus on trash-related complaints to the City of Syracuse. The research began with two questions:"
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#process",
+    "href": "projects/cityline-syracuse.html#process",
+    "title": "Cityline Syracuse",
+    "section": "Process",
+    "text": "Process\nThe research is based on three datasets: Cityline Calls for Service (Cityline), Parcel Data April 2018 (Parcel), and American Community Survey (ACS) 5-Year Estimates from 2013-2017. The first two datasets are collected and managed by the city of Syracuse and ACS is accessed via Social Explorer.\n\nCityline: contains 57,110 complaints about non-emergency problems in the city of Syracuse received through the Cityline system.\nParcel: contains 41,623 entries of parcel information.\nACS: contains 140 census tracts and demographic information for each tract in the county.\n\nWe used Parcel to obtain Census Tract for each of the complaints in Cityline then merged with ACS for demographic information.\n\nData cleaning and Merging\nCheck out the code on GitHub. The research is based on three datasets: Cityline Calls for Service (Cityline), Parcel Data April 2018 (Parcel), and American Community Survey (ACS) 5-Year Estimates from 2013-2017. The first two datasets are collected and managed by the city of Syracuse and ACS is accessed via Social Explorer. Cityline: contains 57,110 complaints about non-emergency problems in the city of Syracuse received through the Cityline system. Parcel: contains 41,623 entries of parcel information. ACS: contains 140 census tracts and demographic information for each tract in the county. We used Parcel to obtain Census Tract for each of the complaint in Cityline then merged with ACS for demographic information.)! The cleaning process involved the following activities:\n\nRemove incorrect addresses\nReplace direction abbreviation to full name and move it to the front\nConcatenate number and street name for full address\nRemove duplicated entries\nReformat census tract into standard FIPS\n\nAfter extracting complaint types that we wanted to work with, we had 7,064 entries left for analysis."
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#major-challenge",
+    "href": "projects/cityline-syracuse.html#major-challenge",
+    "title": "Cityline Syracuse",
+    "section": "Major Challenge",
+    "text": "Major Challenge\nThe boundaries for census tract and TNT sectors differ, however, with one census tract spreading over several sectors and one sector containing multiple census tracts (see below). Therefore the neighborhood demographic characteristic analysis would be inaccurate.\n\nAfter consulting with Professor and conducting several failed attempts to tabulate intersection in ArcGIS system, the team decided to compare the census tract map and TNT sector map side by side and assign each tract to the sector with larger proportion of the tract in order to move forward."
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#population",
+    "href": "projects/cityline-syracuse.html#population",
+    "title": "Cityline Syracuse",
+    "section": "Population",
+    "text": "Population\nThe following graph summarizes our findings regarding population. Northside indeed had a higher percentage of complaints than other sectors, accounting for 27.16% of the population and 33.49% of the trash complaints. Southside and Westside follow a similar pattern in that the proportion of complaints exceeds the proportion of the population.\nOn the contrary, around 22.53% of the population live in Eastside and only 15.69% of the complaints are from there. Downtown, Eastwood, Lakefront, and Valley sectors followed a similar trend. We can conclude that, although there is not a strong relation, the more population a neighborhood has, the more trash complaints it reports."
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#education-level",
+    "href": "projects/cityline-syracuse.html#education-level",
+    "title": "Cityline Syracuse",
+    "section": "Education Level",
+    "text": "Education Level\nWhen analyzing the Complaint Type by Education Level, the characteristics of sectors with high levels of trash complainers were from neighborhoods where residents predominantly had a high school degree, and no college degree. This trend was apparent across trash complaint types.\n\n\n\nCityline-Syracuse-Education-Complaint-Type\n\n\nThere was variation in education level by sector as well, with Downtown, Eastside and Lakefront having the greatest percentage of college graduates, and the Eastwood, Northside, Southside, Valley and Westside having highest percentages of high school graduates without a college degree.\n\n\n\nCityline-Syracuse-Education-TNT"
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#median-house-income-level",
+    "href": "projects/cityline-syracuse.html#median-house-income-level",
+    "title": "Cityline Syracuse",
+    "section": "Median House Income Level",
+    "text": "Median House Income Level\nA subtle positive relationship between complaint frequency and median income level was observed, neighborhoods with high median household income level had more trash related complaints.\nAs the following scatterplot shows, Time to Resolve varied mainly between 2.5 and 7.5 days across income levels. Interestingly, income levels above $40,000 were actually centered around a higher time to close than lower income levels.\n\n\n\nCityline-Syracuse-Median-House-Income-Time-Resolve"
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#limitations",
+    "href": "projects/cityline-syracuse.html#limitations",
+    "title": "Cityline Syracuse",
+    "section": "Limitations",
+    "text": "Limitations\n\nLack of Individual Demographic Information\nAcross all TNT sectors, none had a complaint rate over 7%. Furthermore, whether some complaints were repeatedly filed by one individual is unknown.\n\n\nProblems Establishing Geographic Boundaries\nCensus Tract boundaries do not line up with TnT Sector boundaries and so the TnT Sector demographics and time to close analyses cannot be matched perfectly.\n\n\nInaccurate Data\nThe original Cityline and Parcel datasets contain many errors. Even system information, such as open and close time, are inaccurate, and many complaints are marked to resolve at midnight, resulting in negative numbers for time to resolve."
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#conclusion",
+    "href": "projects/cityline-syracuse.html#conclusion",
+    "title": "Cityline Syracuse",
+    "section": "Conclusion",
+    "text": "Conclusion\nIn conclusion, no significant patterns were found. The number of trash related complaints is not significantly correlated with any demographic variable and time to resolve."
+  },
+  {
+    "objectID": "projects/cityline-syracuse.html#recommendations",
+    "href": "projects/cityline-syracuse.html#recommendations",
+    "title": "Cityline Syracuse",
+    "section": "Recommendations",
+    "text": "Recommendations\n\nClose times must be entered accurately and immediately after a complaint has been resolved.\nThere should also be a greater clarification as to what variables mean. The meaning of Location versus Address for example should be clear.\nIn order that more demographic analyses can be performed using the TnT sectors, theTnT non-profit should consider drawing boundaries to match with relevant census tracts.\n\n\nAdditional Information\nThe research started in September 2019 and finished in December 2019 with the guidance from Dr Matt Young."
+  },
+  {
+    "objectID": "projects/greenbeans.html",
+    "href": "projects/greenbeans.html",
+    "title": "GreenBeans",
+    "section": "",
+    "text": "Geneva Challenge is an international contest hosted by the Graduate Institute Geneva for graduate students to present innovative and pragmatic solutions to address various social issues. For more information, see the official webpage. The full report is available in PDF."
+  },
+  {
+    "objectID": "projects/greenbeans.html#executive-summary",
+    "href": "projects/greenbeans.html#executive-summary",
+    "title": "GreenBeans",
+    "section": "Executive Summary",
+    "text": "Executive Summary\nClimate change is a top concern among millennials and Gen Z, and the 2019 school strike for climate change, one of the most notable movements by students, proves the youths’ desire for more significant and actionable plans from the governments. In addition to policies for making collective progress, increasing awareness and educating citizens on climate change are crucial for contribution on individual and community levels.\nThe United Nations launched several programs to expand climate change education, starting from 1992’s Earth Summit. Although the discussions were restricted to formal education by the end of 1999, programs in the 2000s expanded to informal channels through media and network. Still, after reviewing relevant materials, the team identified a persistent need for a platform that will engage multiple stakeholders, particularly students and youths. Moreover, the existing solutions in climate change education did not provide motivations for behavioural change in real life. To address the issue, our innovation\nGreenBeans, an application for climate change education, brings together mobile and adaptive learning that utilises learning experience design to create a solution that builds community around beginning enthusiasts, climate change learners and educators, experienced eco-activists. Overall, GreenBeans provides a personalised learning journey that will provide motivations for behavioural change.\n\n\n\nCover page for the final project report"
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html",
+    "href": "posts/itaiwan-tableau.html",
+    "title": "iTaiwan Free Wifi",
+    "section": "",
+    "text": "I came across this dataset that contains latitude and longitude for each hotspot, which is perfect for me to explore Tableau’s mapping function. Since it only includes geographic information, I merged the land area and population statistics to analyse the spatial distribution and density.\nAs I am relatively new to Tableau, I focus on applying different tools and editing the styles, not exploratory data analysis. Therefore, the narratives below will emphasise on the functions that I used for this viz."
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#tableau-viz",
+    "href": "posts/itaiwan-tableau.html#tableau-viz",
+    "title": "iTaiwan Free Wifi",
+    "section": "Tableau Viz",
+    "text": "Tableau Viz\n\nCheck out the viz here!"
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#overview",
+    "href": "posts/itaiwan-tableau.html#overview",
+    "title": "iTaiwan Free Wifi",
+    "section": "Overview",
+    "text": "Overview\n\nThe top row shows the total number of hotspots, the total number of administrative agencies responsible, and the average number of user per hotspot across the nation. I had to create a placeholder of 1 and put three copies of it in the column shelf with a bar chart layout to make the text appear to be in the middle.\nThe bottom row demonstrated the number for each city, instead of the entire country. As I am writing now, I realised that I could have used the “size” mark for each circle, rather than just using colours."
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#hotspot-distribution",
+    "href": "posts/itaiwan-tableau.html#hotspot-distribution",
+    "title": "iTaiwan Free Wifi",
+    "section": "Hotspot Distribution",
+    "text": "Hotspot Distribution\nI set the value type to latitude and longitude and Tableau automatically generated the map. Considering my previous mapping was done in Python with geopandas and folium, this process is significantly easier than I expected, just simply drag and drop.\nI decided to show each hotspot instead of using a density map as I previously planned as I believe the colour code gives user a clear distinction between the cities."
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#hotspot-counts-and-density",
+    "href": "posts/itaiwan-tableau.html#hotspot-counts-and-density",
+    "title": "iTaiwan Free Wifi",
+    "section": "Hotspot Counts and Density",
+    "text": "Hotspot Counts and Density\nSheet 2 has already shown the number of hotspots in each city. Still, I prefer to see the values directly over hovering.\nFollowing, a scatter plot that shows the average number of citizens sharing one hotspot. Again, as I am writing, I realised the word “density” is incorrect for the graph."
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#conclusion",
+    "href": "posts/itaiwan-tableau.html#conclusion",
+    "title": "iTaiwan Free Wifi",
+    "section": "Conclusion",
+    "text": "Conclusion\nAlthough major cities have much more hotspots, the large numbers of citizens resulted in a high number of average users per hotspot. For example, Taichung City has 2.8 million residents sharing 1,719 hotspots, average 1,631 users per hotspot, and Lien Jiang County has 13,056 residents sharing 112 hotspots, averaging 117 users per hotspot.\nAll of the iTaiwan Wifi is available in government buildings. While Lien Jiang County has only a small number of residents, it still has a city hall and public service facilities; therefore, it is understandable that it has the lowest number of average users per hotspot.\nOn the contrary, it is obvious that there’s a lack of hotspots in major cities, such as Taipei, Taichung, and Kaohsiung. Taiwanese government should consider installing more iTaiwan Wifi connection point in these big cities and offer accessible and fast internet for all everyone."
+  },
+  {
+    "objectID": "posts/itaiwan-tableau.html#reflection",
+    "href": "posts/itaiwan-tableau.html#reflection",
+    "title": "iTaiwan Free Wifi",
+    "section": "Reflection",
+    "text": "Reflection\nI noticed several mistakes after I uploaded the graph because I didn’t take time to plan my visualisation and examine my final dashboard. It is always so exciting to start a new vis that I jumped right in. However, the initial analysis is just as critical as the final product.\nStill, I am thrilled with this experiment as it allowed me to explore the mapping function. Next time, I should think about what information I can present, what other data I need to obtain for the information, and what sheets I should include in the dashboard. Just because I have a sheet ready does not mean it should be in the panel.\nLastly, I would like to thank Lindsey Poulter for her restaurant rival revealer vis on Tableau. Without her generously making this vis available for download, I wouldn’t be able to examine in detail and replicate the design. The dashboard was done on 30 December, 2019."
+  },
+  {
+    "objectID": "posts/us-states-territories.html",
+    "href": "posts/us-states-territories.html",
+    "title": "States and territories of the US",
+    "section": "",
+    "text": "Search results for US states territories JSON return outdated results that contain former territories (e.g., Palau). The best, up-to-date resources, Wikipedia, requires extra processing to use the values, which I did and put the results in ready-to-use format. Lastly, I shared some questions and answers I had while compiling the material at the bottom of the story. Hope this resource is helpful for anyone reading!"
+  },
+  {
+    "objectID": "posts/us-states-territories.html#the-list",
+    "href": "posts/us-states-territories.html#the-list",
+    "title": "States and territories of the US",
+    "section": "The list",
+    "text": "The list\nThe lists are published in this gist. There are 3 combinations, each with array and object format.\n\n50 states: Array & Object\n50 states + federal district: Array & Object\n50 states + federal district + 5 territories: Array & Object\n\n\nArray (of object) format\n[\n    {\n        \"name\": \"Alabama\",\n        \"abbreviation\": \"AL\"\n    },\n    {\n        \"name\": \"Alaska\",\n        \"abbreviation\": \"AK\"\n    },\n]\n\n\nObject format\nThe key is the abbreviation, and the value is the full name.\n{\n    \"AL\": \"Alabama\",\n    \"AK\": \"Alaska\",\n    \"AZ\": \"Arizona\",\n}"
+  },
+  {
+    "objectID": "posts/us-states-territories.html#questions-i-had",
+    "href": "posts/us-states-territories.html#questions-i-had",
+    "title": "States and territories of the US",
+    "section": "Questions I had",
+    "text": "Questions I had\n\nWhat are the five territories?\n\nAmerican Samoa,\nGuam,\nNorthern Mariana Islands,\nPuerto Rico, and\nU.S. Virgin Islands.\n\nTechnically, there are more territories; however, they are either uninhabited or disputed. Given the purpose of the list is to use in forms, there’s no reason to list out other territories.\n\n\nHow about Micronesia, Marshall Islands, and Palau?\nAll of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)[@cia-no-dateA], on the Marshall Islands[@cia-no-dateB], and on Palau[@cia-no-dateC],\n\nIn 1982, the FSM signed a Compact of Free Association (COFA) with the US, which granted the [FSM/Marshall Islands] financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nin 1982, the Marshall Islands signed a Compact of Free Association (COFA) with the US, which granted the Marshall Islands financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;\n\n\nIn 1982, Palau signed a Compact of Free Association (COFA) with the US, which granted Palau financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities.\n\nThey are not US territories, but they have tight connections with the US government on diplomatic, economic, and military relations. But again, many countries have tight connections with the US. To sum, as long as the scope of the form focus on domestic area, FSM, Marshall Islands, and Palau should not be listed as choices for states."
+  },
+  {
     "objectID": "posts/quarto-github-cpanel.html",
     "href": "posts/quarto-github-cpanel.html",
     "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
@@ -98,10 +245,192 @@
     "text": "Troubleshooting\n\nGit error code 128\n\n\n\nGit cloning error 128\n\n\nIf you are seeing the error message shown in the symptoms section above, you must use the SSH protocol rather than the Git or HTTPS protocols. The URLs that your Git provider gives you to use for the SSH protocol might start with ssh://, or for example in the case of Github, will just start with a username: git@.\nIn short, private repository cannot be cloned this way. Follow the steps in Section 6 to clone with SSH protocol.\n\n\nPermission denied (publickey)\nssh-add ~/.ssh/KEYFILE\nRun the command to add the keyfile. If any error, start ssh agent first:\neval `ssh-agent -s`\n\n\nCould not open a connection to your authentication agent\nBecuase the ssh agent was not started. Run the following command to start:\neval `ssh-agent -s`\nAnswer from here\n\n\nCreating a config file\nFrom File Manager, navigate to .ssh folder. If there is no config file, create one and change permissions to 0600 (User Read and Write are checked and all others unchecked.)\n\n\n\ncPanel File Manager .ssh folder\n\n\n\n\n\nconfig file permission setting\n\n\nEdit the file and paste the following content with correct info:\n1Host github.com-REPO\n2    Hostname github.com\n3    IdentityFile=~/.ssh/KEYFILE\n\n1\n\nReplace REPO with repository name.\n\n2\n\nAs is\n\n3\n\nReplace KEYFILE with key filename to private key, that is, without .pub suffix.\n\n\nFor example:\nHost github.com-website-quarto\n    Hostname github.com\n    IdentityFile=~/.ssh/quarto_ecdsa"
   },
   {
+    "objectID": "posts/web-scrape-selenium.html",
+    "href": "posts/web-scrape-selenium.html",
+    "title": "Automate Data Collection with Selenium in Python",
+    "section": "",
+    "text": "In Spring 2020, I conducted research on Taiwan’s subsidy on electric scooters for my Environmental Economics course. Since electric scooters are more expensive than gasoline ones, I wanted to know whether the policy actually created incentives for people to purchase electric scooters, and I needed data.\nI immediately ran into the first challenge that I could not get the data. More specifically, the type of data, which is monthly subsidised counts for each city in Taiwan from 2009 to 2020. The only way to get it is by going to the website, looping through every city and month, and downloading the information. I decided that it would be faster for me to figure out how to automate the process. This script is for automating electric scooter subsidies data collection process on the Taiwan EPA website, using Python and Selenium Webdriver."
+  },
+  {
+    "objectID": "posts/web-scrape-selenium.html#initial-setup",
+    "href": "posts/web-scrape-selenium.html#initial-setup",
+    "title": "Automate Data Collection with Selenium in Python",
+    "section": "Initial Setup",
+    "text": "Initial Setup\nI used Visual Studio Code and Google Chrome and set up a virtual environment. Firstly, I downloaded chromedriver and use the terminal on my Macbook to move the file to user bin.\nmv ~/Downloads/chromedriver /usr/local/bin\nNext, I created the folder, file, virtual environment, and interactive shell.\nmkdir EPA_Bot #Create Python script file\ntouch EPABot.py #Set virtual environment (inside the folder)\nvirtualenv venv # Activate virtual environment\nsource venv/bin/activate #Install selenium\npip install selenium #Set interactive shell\npython -i EPABot.py"
+  },
+  {
+    "objectID": "posts/web-scrape-selenium.html#webdriver-chrome",
+    "href": "posts/web-scrape-selenium.html#webdriver-chrome",
+    "title": "Automate Data Collection with Selenium in Python",
+    "section": "Webdriver & Chrome",
+    "text": "Webdriver & Chrome\nOnce everything is set up, import libraries and fire up the Webdriver to open the destination webpage.\nfrom selenium import webdriver\nfrom time import sleep\nfrom selenium.webdriver.support.ui import Select\nimport csvdriver = webdriver.Chrome()\ndriver.get('https://www.lev.org.tw/subsidy/result.aspx')\nChrome should open a new window and redirect to the specified URL.\n\n\n\nScreenshot input\n\n\nReferencing the screenshot with annotations above, here are what I want to achieve with the script:\n\nSelect table for output (not graph)\nSelect the city\nFor each city, select the beginning year and month\nClick search\nWait for the data to be populated to an HTML table\nScrape the HTML table and record the data\nRepeat again for the next city until all 23 cities are done\nCollect all data and put them in a data frame, export to CSV\n\nWhen you browse a website and click a link, you actually performed 2 tasks: one is finding the element and one is selecting. Since the script cannot see the webpage (in some sense), you will need to specify which element and what to do. Selenium has a detailed documentary on how to locate elements. Overall, the process follows:\n\nOpen the webpage and wait for it to be loaded\nRight-click and select inspect (You can also use View Page Source, but Inspect is interactive as shown in the video)\nMake sure the top right panel is on Element\nClick the button highlighted in the following image, hover to the element, and click. The Element panel should highlight the code for that element.\nRight-click the highlighted code, click Copy, click Copy XPath\n\n\n\n\nInspect function in Google Chrome\n\n\nI needed to locate 5 elements: table output option, city, beginning year, beginning month, and search button. However, not all elements are created equal. City, year, and month are dropdown menus while the others are buttons. For buttons, the process contains two steps: locate the element and click.\n# table output option\ntbl = driver.find_element_by_xpath('//*[@id=\"rblType_1\"]')        \ntbl.click()\nFor dropdown menus, it’s a bit more complicated because I wanted to loop through all cities. I needed to 1) locate the dropdown menu element, 2) get all menu options, 3) select an option. This is done with Select from selenium.webdriver.support.ui. Without looping, the process is similar to buttons.\n# get dropdown city options\ncity = Select(driver.find_element_by_xpath('//*[@id=\"ddlCity\"]'))\ncity_list = city.options\n\n# loop through the cities\nfor c in range(len(city_list)):\n    # the same element\n    city = Select(driver.find_element_by_xpath('//*[@id=\"ddlCity\"]'))\n    # not click but select      \n    city.select_by_index(c)# No Loop\n# find the dropdown element\nyr = driver.find_element_by_xpath('//*[@id=\"ssStartYear\"]')\n\n# find the option from that element\nyro = yr.find_element_by_xpath('//*[@id=\"ssStartYear\"]/option[12]')\n\n# click the option            \nyro.click()\n\n# search button\nsearch_btn = driver.find_element_by_xpath('//*[@id=\"btSel\"]')            \nsearch_btn.click()\ndriver.implicitly_wait(2)\nI specifically asked the Webdriver to wait 2 seconds before proceeding. Once the search result is loaded, the script can start scraping the data in the table. As shown in the screenshot, the result is contained in a table. The table has a table body that includes multiple tr or table rows. So I needed the script to iterate through all rows and extract the data.\n\n\n\nSearch result screenshot\n\n\nSelenium makes it easy to do so. Instead of find_element_by_xpath, I can use find_elements_by_xpath. Please note the s following the element. The XPath for the first row is //*[@id=\"plType1\"]/table/tbody/tr[1], so I delete the bracket and the number to identify all table rows. Looping through each row, I used .text to get the text in the row.\n# locate tr\ntablerow = driver.find_elements_by_xpath('//*[@id=\"plType1\"]/table/tbody/tr')\n\nresult = []for row in tablerow:  \n# each row has two columns\n    tdata = [td.text for td in row.find_elements_by_class_name('font-g12')]\n    data = [i for i in tdata]\n    results.append({'city': c, 'data': data})\nSince the purpose is to collect data, Python will put search results in a dictionary. However, the table is dynamic and I had trouble figuring out how to format the results in a way that I want. That’s why I had to clean the output in excel afterwards. After the loop is done, csvwriter will write all the information from the dictionary in a CSV file."
+  },
+  {
+    "objectID": "posts/web-scrape-selenium.html#putting-everything-together",
+    "href": "posts/web-scrape-selenium.html#putting-everything-together",
+    "title": "Automate Data Collection with Selenium in Python",
+    "section": "Putting Everything Together",
+    "text": "Putting Everything Together\nI wrote a class for all the steps, so I can repeatedly run the script and get the latest data.\nclass EPABot():\n    def __init__(self):\n        self.driver = webdriver.Chrome()\n\n    def open(self):\n\n        self.driver.get('https://www.lev.org.tw/subsidy/result.aspx')\n        self.driver.implicitly_wait(10)\n\n    def select(self):\n        table_select = self.driver.find_element_by_xpath('//*[@id=\"rblType_1\"]')\n        table_select.click()\n\n        city = Select(self.driver.find_element_by_xpath('//*[@id=\"ddlCity\"]'))\n        str_yr = self.driver.find_element_by_xpath('//*[@id=\"ssStartYear\"]')\n        city_list = city.options\n        \n        results = []\n        for c in range(len(city_list)):\n            sleep(5)\n            city = Select(self.driver.find_element_by_xpath('//*[@id=\"ddlCity\"]'))\n            city.select_by_index(c)\n\n            str_yr = self.driver.find_element_by_xpath('//*[@id=\"ssStartYear\"]')\n            str_yr_opt = str_yr.find_element_by_xpath('//*[@id=\"ssStartYear\"]/option[12]')\n            str_yr_opt.click()\n\n            str_mo = self.driver.find_element_by_xpath('//*[@id=\"ssStartM\"]')\n            str_mo_opt = str_mo.find_element_by_xpath('//*[@id=\"ssStartM\"]/option[1]')\n            str_mo_opt.click()\n\n            end_yr = self.driver.find_element_by_xpath('//*[@id=\"ssEndYear\"]')\n            end_yr_opt = end_yr.find_element_by_xpath('//*[@id=\"ssEndYear\"]/option[1]')\n            end_yr_opt.click()\n\n            end_mo = self.driver.find_element_by_xpath('//*[@id=\"ssEndM\"]')\n            end_mo_opt = end_mo.find_element_by_xpath('//*[@id=\"ssEndM\"]/option[12]')\n            end_mo_opt.click()\n\n            search_btn = self.driver.find_element_by_xpath('//*[@id=\"btSel\"]')\n            search_btn.click()\n\n            self.driver.implicitly_wait(2)\n\n            tablerow = self.driver.find_elements_by_xpath('//*[@id=\"plType1\"]/table/tbody/tr')\n            print(c,'cities done!')\n\n            for row in tablerow:\n                tdata = [td.text for td in row.find_elements_by_class_name('font-g12')]\n                data = [i for i in tdata]\n                results.append({'city': c, 'data': data})\n            \n            sleep(5)\n            \n        with open('results.csv', 'w', newline=\"\") as csv_file:  \n            writer = csv.DictWriter(csv_file, fieldnames = ['city', 'data'])\n            writer.writeheader()\n            for result in results:\n                writer.writerow(result)\nI forgot to add the following part in the gist to actually execute the script:\nbot = EPABot()\nbot.open()\nbot.select()"
+  },
+  {
+    "objectID": "posts/web-scrape-selenium.html#conclusion",
+    "href": "posts/web-scrape-selenium.html#conclusion",
+    "title": "Automate Data Collection with Selenium in Python",
+    "section": "Conclusion",
+    "text": "Conclusion\nI briefly explained how to use selenium for automation and provided a full script for example. I hope this post helps whoever is working with selenium. While the time it took to figure out the process was probably longer than the time to manually download the data, I had fun!\nIf you want to view the GitHub repository, click here.\nThe post was initially written on 17 February 2020 and duplicated to Medium on 29 December 2020. The study was completed with the guidance from Dr Wilcoxen and Dr Popp of the Maxwell School."
+  },
+  {
+    "objectID": "posts/altair-hrbr.html",
+    "href": "posts/altair-hrbr.html",
+    "title": "Altair + hrbrthemes = Beautiful and readable charts in Python",
+    "section": "",
+    "text": "Code\nfrom dotenv import dotenv_values\nimport pandas as pd\nfrom requests import request\nimport altair as alt\n\nconfig = dotenv_values(\".env\")\nresponse = request(\"GET\", f\"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={config['API_KEY_EIA']}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000\")\nresult = response.json()\n\nraw_data = pd.json_normalize(result['response']['data'])\none_cols = raw_data.nunique().loc[lambda x: x==1].index\nref = raw_data[\n    raw_data.nunique().loc[lambda x: x==1].index\n].drop_duplicates().T.to_dict()[0]\n\ndf = raw_data.drop(columns=one_cols).assign(\n    period=pd.to_datetime(raw_data['period']+\"-01\"),\n    customers=pd.to_numeric(raw_data['customers']),\n    price=pd.to_numeric(raw_data['price'])\n)\nalt.Chart(\n    df, \n    width=\"container\",\n    title=alt.Title(\n        \"Average monthly price of electricity\", \n        subtitle=[\"Source: U.S. Energy Information Administration\"])\n).mark_line().encode(\n    x=alt.X(\"period\", title=\"Period\"), \n    y=alt.Y(\"price:Q\", title=\"Cents per kWh\"), \n    color=alt.Color(\"stateid:N\", title=\"Region\").sort(\"-y\"),\n).display(actions=False)\n\n\nFigure 1\nI find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% [@jcm12083045] of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?"
+  },
+  {
+    "objectID": "posts/altair-hrbr.html#hrbrthemes-inspired-altair-theme",
+    "href": "posts/altair-hrbr.html#hrbrthemes-inspired-altair-theme",
+    "title": "Altair + hrbrthemes = Beautiful and readable charts in Python",
+    "section": "hrbrthemes inspired altair theme",
+    "text": "hrbrthemes inspired altair theme\nI am using Roboto Condensed as the example here, but hrbrthemes [@bob_rudis_2019_2545422] provides other font options.\n\n\n\n\n\n\nFigure 2: hrbrthemes Roboto Condensed example\n\n\n\n\nAdopted features\n\nSufficient spacing around the chart and between elements\nChart title: Largest size and bold weight font\nChart subtitle: Second largest size and light weight font\nAxis label: Fontsize comparable to subtitle and normal weight font\nAxis domain/baseline and ticks: Removed\n\n\n\nNot adopted\n\nAxis title alignment\nCaption: Not available in altair\n\n\n\nFYI\n\nThe first tick is aligned to the boundary of the axis. The remaining ticks are centered.\nggplot2 doesn’t always display zero."
+  },
+  {
+    "objectID": "posts/altair-hrbr.html#customising-altair",
+    "href": "posts/altair-hrbr.html#customising-altair",
+    "title": "Altair + hrbrthemes = Beautiful and readable charts in Python",
+    "section": "Customising altair",
+    "text": "Customising altair\n\nLoading Google font\nI’m using JupyterLab, so I used magic command to load the fonts not available on my system.\n\n%%html\n&lt;style&gt;\n@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap')\n&lt;/style&gt;\n\n\n\nDefining custom theme\nIt’s essentially a function that returns a dictionary of configuration\n\ndef theme_ipsum_rc() -&gt; dict:\n    font_family = \"Roboto Condensed\"\n    weight_light = 300\n    weight_bold = 500\n    size_base = 15\n    size_sm = 13\n    size_xs = 12\n    return {\n        \"config\": {\n            \"font\": font_family,\n            \"padding\": 30,\n            \"title\": {\n                \"fontSize\": 22,\n                \"fontWeight\": weight_bold,\n                \"subtitleFontSize\": 17,\n                \"subtitleFontWeight\": weight_light,\n                \"subtitlePadding\": 10,\n                \"frame\": \"group\",\n                \"dy\": -20,\n                \"anchor\": \"start\",\n            },\n            \"axis\": {\n                \"labelFontSize\": size_base,\n                \"labelFontWeight\": weight_light,\n                \"titleFontSize\": size_xs,\n                \"titleFontWeight\": weight_bold,\n                \"domain\": False,\n                \"ticks\": False,\n            },\n            \"header\": {\n                \"labelFontSize\": 18,\n                \"labelFontWeight\": weight_bold,\n                \"labelAlign\": \"left\",\n                \"labelAnchor\": \"start\",\n                \"labelPadding\": 20,\n                \"title\": None,\n            },\n            \"legend\": {\n                \"labelFontSize\": size_sm,\n                \"titleFontSize\": size_base,\n                \"titleFontWeight\": weight_bold,\n                \"columnPadding\": 13,\n                \"rowPadding\": 8,\n                \"titlePadding\": 10,\n            },\n            \"mark\": {\n                \"fontSize\": size_base,\n            },\n            \"view\": {\"stroke\": None},\n        }\n    }\n\n\n\nRegistering and using the theme\nCalling alt.themes.enable(theme_name) affects all charts throughout the session. To only apply it on a single chart, use with statement as described in Changing the Theme.\n\n\n\n# Register\nalt.themes.register(\"theme_ipsum_rc\", theme_ipsum_rc)\n# Enable\nalt.themes.enable(\"theme_ipsum_rc\")\n\n# Chart\nalt.Chart(\n    df, \n    width=\"container\",\n    title=alt.Title(\n        \"Average monthly price of electricity\", \n        subtitle=[\"Source: U.S. Energy Information Administration\"])\n).mark_line().encode(\n    x=alt.X(\"period\", title=\"Period\"), \n    y=alt.Y(\"price:Q\", title=\"Cents per kWh\"), \n    color=alt.Color(\"stateid:N\", title=\"Region\").sort(\"-y\"),\n).display(renderer=\"svg\", actions=False)\n\n\nFigure 3\n\n\n\n\n\nExporting to PNG\nSince the font is not available on my device, saving the chart with chart.save(\"output.png\") uses the default system font. Downloading and adding the fonts could probably work, but I am looking for more of a temporary workaround. So here’s what I did:\nFirst, I download the fonts from Google Fonts and unzipped the file. Then I specified the unzipped font directory with vl_convert.\nTo install via pip:\npip install vl-convert-python\nOnce installed, import the package and specify the folder:\n\nimport vl_convert\nvl_convert.register_font_directory(font_dir='FONT_DIRECTORY')\n\nThen save the chart again, and it should use the custom font. See System font requirements for more detail.\n\n\n\n\n\n\n\n\n\n\n\n(a) System font\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Custom font\n\n\n\n\n\n\n\nFigure 4: Altair outputs"
+  },
+  {
+    "objectID": "posts/apple-health-tableau.html",
+    "href": "posts/apple-health-tableau.html",
+    "title": "Export Apple Health Data and Visualise with Tableau",
+    "section": "",
+    "text": "While I love working with online and public datasets, it’s always fun to work with my own data. My iPhone is always with me and has been recording walking distance and steps. I rarely left my apartment since the quarantine began in March, so I thought it would be interesting to see the change in my walking distance from 2016 to 2020."
+  },
+  {
+    "objectID": "posts/apple-health-tableau.html#export-data",
+    "href": "posts/apple-health-tableau.html#export-data",
+    "title": "Export Apple Health Data and Visualise with Tableau",
+    "section": "Export Data",
+    "text": "Export Data\n\n\n\n\n\n\nTap profile\n\n\n\n\n\n\n\nTap Export All Health Data\n\n\n\n\n\n\n\nExport\n\n\n\n\n\n\nSteps to export in Apple Health\n\n\n\n\nLaunch Health app on your iOS device\nTap profile photo on the top right corner\nScroll down and tap Export All Health Data\nTap Export and wait\nSave data (I use AirDrop to transfer the file to my MacBook)\n\nThe process generates an export.zip file. One unzipped, it contains a folder called apple_health_export with two .xml files. export.xml is the file that I will be working with."
+  },
+  {
+    "objectID": "posts/apple-health-tableau.html#organise-data",
+    "href": "posts/apple-health-tableau.html#organise-data",
+    "title": "Export Apple Health Data and Visualise with Tableau",
+    "section": "Organise Data",
+    "text": "Organise Data\nXML (Extensible Markup Language) is a data file. It is formatted much like an HTML document but uses custom tags to define objects and the data within each object. Atom and VSCode can both read XML files.\nHere is a snapshot of the export.xml file. The record type, HKQuantityTypeIdentifierDietaryWater, refers to my water intake. The entry also documents the source application, date, value, unit, etc.\n&lt;Record type=\"HKQuantityTypeIdentifierDietaryWater\" sourceName=\"Flo\" sourceVersion=\"4.10.3.1\" unit=\"mL\" creationDate=\"2018-09-18 10:59:02 -0500\" startDate=\"2018-09-17 11:00:00 -0500\" endDate=\"2018-09-17 11:00:00 -0500\" value=\"500\"&gt;\n&lt;Record type=\"HKQuantityTypeIdentifierDietaryWater\" sourceName=\"Shortcuts\" sourceVersion=\"754\" unit=\"mL\" creationDate=\"2019-01-23 21:16:36 -0500\" startDate=\"2019-01-23 21:16:36 -0500\" endDate=\"2019-01-23 21:16:36 -0500\" value=\"300\"/&gt;\nI needed to first transform the tag-based XML file to other formats that are easier to work with for me. xmltodict is a Python module that makes working with XML feel like you are working with JSON, as stated in the documentation. I installed the module via pip using pip install xmltodict command.\nHere’s my code for parsing XML data and organising data frame.\nimport xmltodict\nimport json\nimport numpy as np\nimport pandas as pd\n\n#Parse XML to dictionary\nwith open('export.xml') as f:\n    health = xmltodict.parse(f.read())\n\n#Extract desired data and turn into a Data Frame\ndata = pd.DataFrame(health['HealthData']['Record'])\n\n#Create two Data Frames for distance and steps walked\ndistance = data[data['@type'] == 'HKQuantityTypeIdentifierDistanceWalkingRunning'][['@value','@creationDate','@startDate','@endDate']]\nstep = data[data['@type'] == 'HKQuantityTypeIdentifierStepCount'][['@value','@creationDate','@startDate','@endDate']]\n\n#Turn the kilometers into float data type from object and others into datetime\ndistance['@value'] = distance['@value'].astype(float)\nfor column in distance.columns:\n    if column != '@value':\n        distance[column] = pd.to_datetime(distance[column])\n\n#Create a new column to get the time differences        \ndistance['@walkHours'] = distance['@endDate'] - distance['@startDate']\n\n#Resample to aggregate data by day and merge kilometres and walking time dataframes\ndata = pd.merge(\n    left = distance.resample(\"D\",on='@startDate')['@walkHours'].sum().reset_index(),\n    right = distance.resample(\"D\",on='@startDate')['@value'].sum().reset_index(),\n    on = '@startDate',\n    how = 'outer',\n    indicator = False).rename(columns={'@value':'@kms'})\n\n#Same with step\nstep['@value'] = step['@value'].astype(int)\nfor column in step.columns:\n    if column != '@value':\n        step[column] = pd.to_datetime(step[column])\n\n#Merge with earlier data\ndata = data.merge(\n    step.resample(\"D\",on='@startDate')['@value'].sum().reset_index(),\n    on='@startDate',\n    how='outer').rename(columns={'@value':'@steps'})\n\n#Turn HH:MM:SS into minutes.\ndata['@walkMins'] = round((data['@walkHours'].dt.total_seconds() / 60), 2)\ndata = data[data['@walkMins'] &lt; 1440]\n\n#Filter out incorrect entries\ndata['@startDate'] = data['@startDate'].dt.tz_localize(None)\n\n#Export to Excel\ndata.to_excel('health.xlsx')"
+  },
+  {
+    "objectID": "posts/apple-health-tableau.html#visualise-data",
+    "href": "posts/apple-health-tableau.html#visualise-data",
+    "title": "Export Apple Health Data and Visualise with Tableau",
+    "section": "Visualise Data",
+    "text": "Visualise Data\nLastly, I decided to use Tableau Public for visualisation as I enjoy its flexibility. Here is a static version of my dashboard. You can find the interactive version here. The design was inspired by Lindsey Poulter, who is absolutely genius with Tableau.\n\n\n\nTableau Dashboard"
+  },
+  {
+    "objectID": "posts/apple-health-tableau.html#conclusion",
+    "href": "posts/apple-health-tableau.html#conclusion",
+    "title": "Export Apple Health Data and Visualise with Tableau",
+    "section": "Conclusion",
+    "text": "Conclusion\nI expected to see more walking while I am travelling and much less after implementing social distancing rule. Surprisingly, I did not walk as much as I thought and the drop in 2020 was not as significant as expected. Wrapping up, I briefly explained the process of extracting Apple Health data, parsing XML file with Python, and visualising with Tableau Public.\n\nLink to Gist\nLink to Tableau dashboard"
+  },
+  {
+    "objectID": "projects/education-liberia.html",
+    "href": "projects/education-liberia.html",
+    "title": "Getting the Best Education",
+    "section": "",
+    "text": "The project, for international management and leadership class, required students to develop an original project based on research, apply the tools for problem analysis and project implementation, and practice team-working and management skills.\nThe team, in partnership with the Government of Liberia, codesigned the “Getting the Best Education: Rebuilding Liberia” Project, which aims to address a deficit in the quality of early childhood education."
+  },
+  {
+    "objectID": "projects/education-liberia.html#project-overview",
+    "href": "projects/education-liberia.html#project-overview",
+    "title": "Getting the Best Education",
+    "section": "Project Overview",
+    "text": "Project Overview\nConsidering the difficulty to address the problem from the national scale, we decided to start with a model district in Grand Gedeh, a county in Eastern Liberia, and focus on Early Childhood Education (ECE). Our goal is to increase the net enrolment rate in public school from 32% to 40% in 3 years in Grand Gedeh.\nWe developed three areas for improvement: advancing teaching skills, increasing resources for students, and raising community awareness for ECE."
+  },
+  {
+    "objectID": "projects/education-liberia.html#problem-analysis",
+    "href": "projects/education-liberia.html#problem-analysis",
+    "title": "Getting the Best Education",
+    "section": "Problem Analysis",
+    "text": "Problem Analysis\n\n\n\nProblem Analysis Tree\n\n\n\nAdvancing teaching skills\nMany ECE teachers did not have adequate training and certification, which comes from the reliance on volunteers and the absence of a curriculum and continuous training program; therefore, we will focus on recruiting qualified teachers by introducing housing programs. Meanwhile, the curriculum for current teacher training will be updated by experts and establish a professional development program.\n\n\nIncreasing resources for students\nThe shortage of quality schools and facilities and the long walking distance are some reasons that parents are unwilling to send their children for ECE, especially girls. To address this problem, we will hire contractors to repair existing, functional facilities and install new WASH facilities, establish shuttle service program and walking group companion, start free lunch program, and provide health screening service.\n\n\nRaising community awareness for ECE\nDue to the lack of information and understanding, parents send children to school when overage, or don’t. We will tackle these problems by making ECE information readily available with ECE centre, extending school operation hours, and offering adult classes and workshops."
+  },
+  {
+    "objectID": "projects/education-liberia.html#logframe",
+    "href": "projects/education-liberia.html#logframe",
+    "title": "Getting the Best Education",
+    "section": "Logframe",
+    "text": "Logframe\nFrom the previous graph, we listed out three long-term outcomes and the corresponding outputs and specific activities.\n\n\n\nProject LogFrame"
+  },
+  {
+    "objectID": "projects/education-liberia.html#gantt-chart-workplan",
+    "href": "projects/education-liberia.html#gantt-chart-workplan",
+    "title": "Getting the Best Education",
+    "section": "Gantt Chart / Workplan",
+    "text": "Gantt Chart / Workplan\nThe program is estimated to complete in three years. New semesters start in September so the first nine months will focus on administrative tasks and, after students are enrolled, programs for the children will begin.\n\n\n\nProject Gantt Chart, timeline, or work plan"
+  },
+  {
+    "objectID": "projects/education-liberia.html#finance",
+    "href": "projects/education-liberia.html#finance",
+    "title": "Getting the Best Education",
+    "section": "Finance",
+    "text": "Finance\nThe project has an estimated cost of $3,088,892 for the 3-year duration. Around 87.9% of the budget, $2,715,964, is directly spent on the project activities, and the rest of 12.1%, $372,928, covers personnel, administrative, and monitoring and evaluation cost.\nThese numbers came from UNESCO, the World Bank, UN-Habitat, and other international organisations’ report or estimation within five years.\nThe budget implementation will align with the sponsors’ motives both in the financial and policy aspects and manage resources efficiently and effectively."
+  },
+  {
+    "objectID": "projects/education-liberia.html#feedback-and-reflection",
+    "href": "projects/education-liberia.html#feedback-and-reflection",
+    "title": "Getting the Best Education",
+    "section": "Feedback and Reflection",
+    "text": "Feedback and Reflection\nWhile I had experience in designing development projects, my previous work was on a smaller scale, fragmented, and not well-documented. This project was my first entire and complete project, starting from problem analysis, during which I had to keep asking why and digging deeper to find the root causes, instead of approaching the problem with pre-determined solutions.\nThere were many challenges in the process. For a team of four with different backgrounds, communication is the key; and I think we could do better in communicating and making sure all are on the same page. Additionally, due to time constraints, we had to rush through narratives in the proposal.\nThat being said, I am thrilled with the outcome. I was able to see the problem with new perspectives and approach with new solutions. From sketching a problem tree to presenting the proposal, I read through dozens of documents on early childhood education and project design and implementation.\nAs one of the UN’s Sustainable Development Goals (SDGs), a quality early childhood education system is crucial to transform the world and build human capital. I hope that I will be able to continue working on this project and create a model district to observe the effects of these activities.\n\nAdditional Information\nThe project is done between September 2019 and December 2019 with guidance from Professor Jeb Beagles."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html",
+    "href": "projects/predict-contraception-report.html",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "",
+    "text": "The repository is available on GitHub."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html#introduction",
+    "href": "projects/predict-contraception-report.html#introduction",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "Introduction",
+    "text": "Introduction\nContraception is designed to prevent pregnancy. By preventing unintended pregnancy, contraceptive methods help women to avoid pregnancy- and birth-related morbidity and mortality. Ensuring access to contraception advances human rights, including the right to life and liberty, freedom of opinion and expression, and the right to work and education [@Kavanaugh2013ContraceptionAB]. In 2019, among the 1.9 billion women of reproductive age (WRA) living around the world [@3849735], 190 million women had an unmet need for family planning for various reasons, such as health concerns, lack of access, or opposition from others [@30e5e46b-6671-3140-bea5-511a746c9846].\nThe study aims to build classification models with machine-learning (ML) techniques to predict the use of contraception in Thailand, Mongolia, and Laos. Specifically, the goal is to identify WRA not using contraception. ML can often be more efficient in establishing a relationship between multiple features [@kotsiantis2007supervised] and may be able to recognise patterns in characteristics associated with not using contraception. While not all have an unmet need for family planning, being able to classify these individuals can provide a basis to expand access to contraception."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html#method",
+    "href": "projects/predict-contraception-report.html#method",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "Method",
+    "text": "Method\n\nData Source and Processing\nThe study uses data from the 6th Multiple Indicator Cluster Surveys (MICS), which are household surveys implemented by countries with the assistance from the United Nations Children’s Fund (UNICEF) to provide internationally comparable, statistically rigorous data on the situation of children and women. Data on the use of contraception are included in the women of reproductive age (15–49 years) module. The files published by the UNICEF are country-specific; therefore, the dataset for the analysis was created manually.\nFor features, in addition to the outcome, currently using a method to avoid pregnancy, a variable must be available in three datasets, comparable across nations, and have at least 95% response rate to be included. Eight variables meeting the criteria were selected as predictors: age; highest educational attainment; country-specific wealth percentile; marital status; country; residence (urban or rural); indicators for ever given birth and ever had child or children who later died. Values for the highest education attainment were re-coded1 to standardise the responses. For instances, observations with “No Response,” “Don’t know,” “NA,” or missing data in any variable were excluded to ensure the quality of the data. Overall, the dataset has 58,356 cases.\n\n\nAnalysis Strategy\nFive ML models were used to predict the use of contraception:\n\nK-nearest neighbour (KNN),\nDecision tree,\nRandom forest,\nLogistic regression with Bayesian classifier,\nGeneralised additive model (GAM)\n\nKNN and tree-based models are non-parametric methods that do not make explicit assumptions about the relationships among variables. Since most variables are qualitative, these models provide higher flexibility and potentially better predictive performance. On the other hand, logistic regression and GAM are non-linear functions that estimate the probability for observation to belong in a particular category and are selected to take advantage of the numerical variable,_age_. The Bayesian classifier then classifies a case to the category with the largest probability.\nThe dataset was split into training (85%) and validation (15%) according to the distribution of the target variable. Predictive models were developed with the training set and evaluated with 10-fold cross-validation to identify the best forms or parameters with the lowest error rate for each model. Once every model was optimised, the validation set was used to test the performance on the accuracy, sensitivity, specificity, positive prediction value (PPV), and negative prediction value (NPV)."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html#discussion",
+    "href": "projects/predict-contraception-report.html#discussion",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "Discussion",
+    "text": "Discussion\n\n\n\nSelected characteristics of the study population\n\n\nThe table shows that out of 58,356 samples, 49.74% use contraception, and 50.26% do not. The median age is 35 and 28, respectively. There are considerable differences in contraceptive use by marital status and by experience giving birth. Only 2.7% and 23.1% of never and formerly married women use contraception, while 66.1% currently married individuals do. Women who have never given birth have a significantly lower prevalence of contraceptive use (7%) than those with experience giving birth (64.4%).\n\nModel Training\nThree models have parameters: k, the number of neighbours, for KNN; maxdepth, maximum depth of any node of the final tree, for decision tree; mtry, the number of variables tried at each split, for the random forest. They were provided with a set of parameters and evaluated with ten-fold cross-validation. For logistic regression and GAM, models without parameters, various formulas or predictor specifications were given to cross-validate.\n\nKNN\n\n\n\n10-fold cross-validation error for KNN\n\n\nA list of integers, from 5 to 23 with an interval of two, was provided for k. The result indicates that the model using nine neighbours (k = 9) has the lowest 10-fold cross-validation error rate of 25.78 per cent.\n\n\nDecision Tree\n\n\n\n10-fold cross-validation error for decision tree\n\n\nCross-validation results for ten maxdepth parameters are provided in the figure. After two, increasing tree depth does not yield improvements in error rate. The best tree (maxdepth = 2) has two splits, one for the indicator for ever given birth and one for marital status.\nAccording to the model, women who have never given birth are predicted to be not using contraception. For people who had experience giving birth, if they were formerly married or in a union, the outcome is not using contraception. If they were currently or never married, the model predicted them to be using methods to avoid pregnancy. The cross-validation error rate is 25.21 per cent.\n\n\nRandom Forest & Bagging\n\n\n\nVariable importance for random forest\n\n\nThe mtry parameter is nine for bagging and three for random forest2. Both models have 500 trees. The 10-fold cross-validation error rate is 25.60% for bagging and 23.33% for random forest; therefore, random forest with mtry of three is selected. Figure 3 presents the importance measures, the mean decrease in accuracy, for the five most important variables.\nThe mstatFormer and mstatNever refer to formerly married and never married categories in the marital status (mstat) feature.\n\n\nLogistic regression with Bayesian classifier\nTwo sets of three formulas were given. The first one included age, education attainment, marital status, the indicator for ever given birth, and interaction between country and country-specific wealth percentile. The other one was similar to the first one, but residence (urban or rural) replaced wealth percentile in interaction. For each set, a second- and a third-degree polynomial for age were provided. Overall, the formula with second-degree polynomial on age and interaction between country and wealth percentile had the lowest cross-validation error of 23.59%.\n\n\nGeneralised Additive Model (GAM)\nGAM allowed the age variable to be fitted with spline functions, potentially providing more flexibility. The basis was derived from the result of the best logistic regression formula. Basis cubic spline, cubic spline with one knot, and natural cubic spline with one knot were trained. Because in some surveys, the upper age is taken as 44 years,⁵ the knot was placed on 44. Cross-validation results showed that cubic spline with a knot on 44 had the lowest error rate of 23.57%, suggesting that placing the knot yielded improvement for the model.\n\n\nModel Training Comparison\n\n\n\nCross-validation error distribution\n\n\nFigure 4 shows the distributions of 10-fold accuracy for five models. Random forest has the highest accuracy of 76.67%, followed by the 76.43% of GAM; 76.42% of logistic regression; 74.49% of decision tree; 74.23% of KNN. The GAM model has the smallest range, indicating consistency in predictive performance, however, given there are only ten folds, the distribution may not be representative. Surprisingly, in contrast to the initial strategy that non-parametric models would have better performance, KNN and decision tree did worse than parametric ones.\n\n\n\nModel Testing\n\n\n\nTesting result\n\n\nUsing the validation set, which contains 8,752 observations, each model is tested with unseen data. Table 2 provided confusion matrices and performance measures. It can be seen that Type I Error (False Positive) occurs much more frequently than Type II Error (False Negative), suggesting that the models are generally better at identifying WRA currently using contraception than labelling those who are not.\nAmong the five models, random forest has the highest accuracy of 77.56%. Decision tree scores the highest in sensitivity and negative predictive value (NPV) at 94.14% and 90.88%, respectively. That is, when a WRA is using contraception, there is a 94.14% probability that decision tree will label her as using. And when an individual is predicted to be not using contraception by the decision tree, there is a 90.88% probability that she is not using any methods to avoid pregnancy. As for specificity and positive predictive value (PPV), the best performance is seen on logistic regression with Bayesian classifier with a specificity of 65.08% and a PPV of 71.80%. In this analysis, in which the goal is to classify women of reproductive age who are not using contraception, specificity is considered to be the most important performance metric, making logistic regression and Bayesian classifier the best model."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html#conclusion",
+    "href": "projects/predict-contraception-report.html#conclusion",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe study develops five classification models to predict the use of contraception in Thailand, Laos, and Mongolia using MICS microdata and machine learning techniques. Random forest model has the highest accuracy of 77.56 per cent and shows that marital status, country, and age are the most important predictors for contraception use. However, logistic regression with Bayesian classifier is selected to be the most fitted one for its ability to identify women of reproductive age who are not using contraception. When an individual is not using any methods to avoid pregnancy, there is a 65.08% of probability that logistic regression will correctly label the individual.\nThere are some limitations. Firstly, MICS is a cross-sectional survey that provides a snapshot of the population. Because some methods are reversible, such as intrauterine devices and contraceptive implants, MICS does not capture the patterns influencing an individual’s decision to change the adoption of contraception. Secondly, only a few variables from MICS are included in the analysis as described in Data Source and Process. As MICS data files contain more than one module, such as information on household characteristics, children’s health, and household members, merging WRA module with others will allow more variables to be analysed in this study. It is not done currently because UNICEF does not provide documentation on how to identify a unique individual across several modules.\nOverall, while there are still many areas for improvement for the models, the study examined the determinants that influence the use of contraception and provided an example of how machine learning can be applied to the development sector.\nThis paper was finished on 30 November 2020 by Yu-En Hsu with guidance from Dr Lopoo."
+  },
+  {
+    "objectID": "projects/predict-contraception-report.html#footnotes",
+    "href": "projects/predict-contraception-report.html#footnotes",
+    "title": "Predicting Use of Contraception in Asia with Machine Learning Algorithms",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe countries have different education systems and response categories. For example, Laos has “Post-Secondary” and Mongolia has “College”, and both are re-coded to “Higher”.↩︎\nIn an ideal scenario with better computing power, I would try all integers from 1 to 9. However, even with just two mtry, it took nearly an hour to run.↩︎"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Test Blog",
     "section": "",
-    "text": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel\n\n\n\nQuarto\n\ncPanel\n\n\n\nCloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder\n\n\n\n\n\nApr 29, 2024\n\n\n\n\n\nNo matching items"
+    "text": "States and territories of the US\n\n\nNames and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023.\n\n\n\n\n\nNov 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel\n\n\n\nQuarto\n\ncPanel\n\n\n\nCloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder\n\n\n\n\n\nApr 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAltair + hrbrthemes = Beautiful and readable charts in Python\n\n\nCustom altair theme config with hrbrthemes styling for aesthetic and readability\n\n\n\n\n\nApr 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nExport Apple Health Data and Visualise with Tableau\n\n\nStep by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.\n\n\n\n\n\nJan 11, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nAutomate Data Collection with Selenium in Python\n\n\nUsing Selenium to automate Google Chrome for data collection in python, including iterating through a date-picker and a dropdown list, clicking submit button, waiting for results, and extracting returned result\n\n\n\n\n\nJan 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\niTaiwan Free Wifi\n\n\nVisualising geospatial data in Tableau\n\n\n\n\n\nDec 30, 2019\n\n\n\n\n\nNo matching items"
   }
 ]

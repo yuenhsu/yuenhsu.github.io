@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yu-En Hsu">
-<meta name="dcterms.date" content="2024-04-29">
-<meta name="description" content="Cloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder">
+<meta name="dcterms.date" content="2021-01-11">
+<meta name="description" content="Step by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.">
 
-<title>Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel – Yu-En Hsu</title>
+<title>Export Apple Health Data and Visualise with Tableau – Yu-En Hsu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -167,16 +167,12 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Quarto</div>
-    <div class="quarto-category">cPanel</div>
-  </div>
-  </div>
+<h1 class="title">Export Apple Health Data and Visualise with Tableau</h1>
+</div>
 
 <div>
   <div class="description">
-    Cloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder
+    Step by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.
   </div>
 </div>
 
@@ -193,7 +189,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 29, 2024</p>
+      <p class="date">January 11, 2021</p>
     </div>
   </div>
   
@@ -205,204 +201,133 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>I’ve been a little bit obsessed with Quarto since I discovered it, and I am exploring the possibilities of replacing WordPress with Quarto. Obviously, WordPress is way more than just a publishing system, but I mostly use it to write and share. Also, I am getting frustrated with Elementor editor, and I cannot comprehend CSS layout to save my own life. Quarto, for my usage, seems to be the perfect candidate. It provides me great flexibility, particularly in styling, without the burden of specifying everything. That’s great for me because I love switching out fonts and colors, but I do not want to figure out layout for desktop and mobile.</p>
+<p>While I love working with online and public datasets, it’s always fun to work with my own data. My iPhone is always with me and has been recording walking distance and steps. I rarely left my apartment since the quarantine began in March, so I thought it would be interesting to see the change in my walking distance from 2016 to 2020.</p>
+<section id="export-data" class="level2">
+<h2 class="anchored" data-anchor-id="export-data">Export Data</h2>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://i.imgflip.com/8owaxw.jpg" class="img-fluid figure-img"></p>
-<figcaption>My thoughts while I browse Google Fonts sorted by Newest</figcaption>
+<p><img src="../posts/images/health_export_1.png" class="img-fluid figure-img"></p>
+<figcaption>Tap profile</figcaption>
 </figure>
 </div>
-<section id="what-youll-need" class="level3">
-<h3 class="anchored" data-anchor-id="what-youll-need">What you’ll need</h3>
-<ul>
-<li><strong>Custom domain</strong> — I purchased my domains through Namecheap. If you are not looking to host your Quarto website on custom domain, this post is not for you. Please review the <a href="https://quarto.org/docs/publishing/">Publishing Basics</a> in which Quarto listed several free options to host a site under a branded domain.</li>
-<li><strong>Hosting</strong> — I have the Stellar Shared Hosting plan through Namecheap, which uses cPanel. I already paid for the service, so I am trying to figure this out. Again, if you’re not looking to self-host-ish the website, this post is not for you. You can host the website on GitHub Pages and <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages">use custom domains for your page</a>.</li>
-</ul>
-<p>For WordPress, after installing via cPanel, everything was done on a browser, and all data is stored somewhere in cPanel. For Quarto, my plan is</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../posts/images/health_export_2.png" class="img-fluid figure-img"></p>
+<figcaption>Tap Export All Health Data</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../posts/images/health_export_3.png" class="img-fluid figure-img"></p>
+<figcaption>Export</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Steps to export in Apple Health</p>
+</div>
+</div>
+</div>
 <ol type="1">
-<li>host Quarto website project on GitHub as a private repository,</li>
-<li>edit on my laptop with VS Code or RStudio and render to HTML and sync the changes to GitHub,</li>
-<li>clone the repo to cPanel, and</li>
-<li>publish on custom domain by setting up document root at the rendered output directory of the project.</li>
+<li>Launch <strong>Health</strong> app on your iOS device</li>
+<li>Tap profile photo on the top right corner</li>
+<li>Scroll down and tap <strong>Export All Health Data</strong></li>
+<li>Tap <strong>Export</strong> and wait</li>
+<li>Save data (I use AirDrop to transfer the file to my MacBook)</li>
 </ol>
-<p>Once setup, whenever I make edits and syncs to GitHub, I will need to update the repo in cPanel through git.</p>
+<p>The process generates an <em>export.zip</em> file. One unzipped, it contains a folder called <code>apple_health_export</code> with two <code>.xml</code> files. <code>export.xml</code> is the file that I will be working with.</p>
 </section>
+<section id="organise-data" class="level2">
+<h2 class="anchored" data-anchor-id="organise-data">Organise Data</h2>
+<p>XML (Extensible Markup Language) is a data file. It is formatted much like an HTML document but uses custom tags to define objects and the data within each object. <a href="https://atom.io/">Atom</a> and <a href="https://code.visualstudio.com/">VSCode</a> can both read XML files.</p>
+<p>Here is a snapshot of the <code>export.xml</code> file. The record type, <code>HKQuantityTypeIdentifierDietaryWater</code>, refers to my water intake. The entry also documents the source application, date, value, unit, etc.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span><span class="ot"> type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span><span class="ot"> sourceName=</span><span class="st">"Flo"</span><span class="ot"> sourceVersion=</span><span class="st">"4.10.3.1"</span><span class="ot"> unit=</span><span class="st">"mL"</span><span class="ot"> creationDate=</span><span class="st">"2018-09-18 10:59:02 -0500"</span><span class="ot"> startDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span><span class="ot"> endDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span><span class="ot"> value=</span><span class="st">"500"</span>&gt;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span><span class="ot"> type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span><span class="ot"> sourceName=</span><span class="st">"Shortcuts"</span><span class="ot"> sourceVersion=</span><span class="st">"754"</span><span class="ot"> unit=</span><span class="st">"mL"</span><span class="ot"> creationDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> startDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> endDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> value=</span><span class="st">"300"</span>/&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I needed to first transform the tag-based XML file to other formats that are easier to work with for me. <a href="https://github.com/martinblech/xmltodict"><code>xmltodict</code></a> is a Python module that makes working with XML feel like you are working with <a href="http://docs.python.org/library/json.html">JSON</a>, as stated in the documentation. I installed the module via pip using <code>pip install xmltodict</code> command.</p>
+<p>Here’s my code for parsing XML data and organising data frame.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xmltodict</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Parse XML to dictionary</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'export.xml'</span>) <span class="im">as</span> f:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    health <span class="op">=</span> xmltodict.parse(f.read())</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract desired data and turn into a Data Frame</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame(health[<span class="st">'HealthData'</span>][<span class="st">'Record'</span>])</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Create two Data Frames for distance and steps walked</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>distance <span class="op">=</span> data[data[<span class="st">'@type'</span>] <span class="op">==</span> <span class="st">'HKQuantityTypeIdentifierDistanceWalkingRunning'</span>][[<span class="st">'@value'</span>,<span class="st">'@creationDate'</span>,<span class="st">'@startDate'</span>,<span class="st">'@endDate'</span>]]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>step <span class="op">=</span> data[data[<span class="st">'@type'</span>] <span class="op">==</span> <span class="st">'HKQuantityTypeIdentifierStepCount'</span>][[<span class="st">'@value'</span>,<span class="st">'@creationDate'</span>,<span class="st">'@startDate'</span>,<span class="st">'@endDate'</span>]]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Turn the kilometers into float data type from object and others into datetime</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>distance[<span class="st">'@value'</span>] <span class="op">=</span> distance[<span class="st">'@value'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> distance.columns:</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> column <span class="op">!=</span> <span class="st">'@value'</span>:</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        distance[column] <span class="op">=</span> pd.to_datetime(distance[column])</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a new column to get the time differences        </span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>distance[<span class="st">'@walkHours'</span>] <span class="op">=</span> distance[<span class="st">'@endDate'</span>] <span class="op">-</span> distance[<span class="st">'@startDate'</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#Resample to aggregate data by day and merge kilometres and walking time dataframes</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.merge(</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    left <span class="op">=</span> distance.resample(<span class="st">"D"</span>,on<span class="op">=</span><span class="st">'@startDate'</span>)[<span class="st">'@walkHours'</span>].<span class="bu">sum</span>().reset_index(),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    right <span class="op">=</span> distance.resample(<span class="st">"D"</span>,on<span class="op">=</span><span class="st">'@startDate'</span>)[<span class="st">'@value'</span>].<span class="bu">sum</span>().reset_index(),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    on <span class="op">=</span> <span class="st">'@startDate'</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    how <span class="op">=</span> <span class="st">'outer'</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    indicator <span class="op">=</span> <span class="va">False</span>).rename(columns<span class="op">=</span>{<span class="st">'@value'</span>:<span class="st">'@kms'</span>})</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#Same with step</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>step[<span class="st">'@value'</span>] <span class="op">=</span> step[<span class="st">'@value'</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> step.columns:</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> column <span class="op">!=</span> <span class="st">'@value'</span>:</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        step[column] <span class="op">=</span> pd.to_datetime(step[column])</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">#Merge with earlier data</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.merge(</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    step.resample(<span class="st">"D"</span>,on<span class="op">=</span><span class="st">'@startDate'</span>)[<span class="st">'@value'</span>].<span class="bu">sum</span>().reset_index(),</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    on<span class="op">=</span><span class="st">'@startDate'</span>,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    how<span class="op">=</span><span class="st">'outer'</span>).rename(columns<span class="op">=</span>{<span class="st">'@value'</span>:<span class="st">'@steps'</span>})</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#Turn HH:MM:SS into minutes.</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'@walkMins'</span>] <span class="op">=</span> <span class="bu">round</span>((data[<span class="st">'@walkHours'</span>].dt.total_seconds() <span class="op">/</span> <span class="dv">60</span>), <span class="dv">2</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data[data[<span class="st">'@walkMins'</span>] <span class="op">&lt;</span> <span class="dv">1440</span>]</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter out incorrect entries</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'@startDate'</span>] <span class="op">=</span> data[<span class="st">'@startDate'</span>].dt.tz_localize(<span class="va">None</span>)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#Export to Excel</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>data.to_excel(<span class="st">'health.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="creating-a-key-on-cpanel" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-key-on-cpanel">Creating a key on cPanel</h2>
-<section id="using-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="using-terminal">Using Terminal</h3>
-<p>If Terminal is not available, follow the steps in <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/10040/2210/how-to-enable-ssh-shell-in-cpanel/">How to enable SSH (Shell) in cPanel</a> (help article is from Namecheap but should be the same for other hosting provider).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ecdsa <span class="at">-b</span> 521 <span class="at">-C</span> <span class="st">"EMAIL"</span> <span class="at">-f</span> ~/.ssh/KEYFILE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="visualise-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualise-data">Visualise Data</h2>
+<p>Lastly, I decided to use Tableau Public for visualisation as I enjoy its flexibility. Here is a static version of my dashboard. You can find the <a href="https://public.tableau.com/views/WalkingStatusfrom2015to2020/Dashboard1?:display_count=y&amp;:origin=viz_share_link">interactive version here</a>. The design was inspired by <a href="https://public.tableau.com/profile/lindsey.poulter8872#!/">Lindsey Poulter</a>, who is absolutely genius with Tableau.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../posts/images/health_tableau.png" class="img-fluid figure-img"></p>
+<figcaption>Tableau Dashboard</figcaption>
+</figure>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I expected to see more walking while I am travelling and much less after implementing social distancing rule. Surprisingly, I did not walk as much as I thought and the drop in 2020 was not as significant as expected. Wrapping up, I briefly explained the process of extracting Apple Health data, parsing XML file with Python, and visualising with Tableau Public.</p>
 <ul>
-<li><code>ssh-keygen</code> (red underline) is the command</li>
-<li><code>-t ecdsa</code> (pink underline) specifies the type to be <code>ecdsa</code>. I cannot recall the reason I chose this one, but it happened to work. To see other key type accepted, see <a href="https://github.blog/2021-09-01-improving-git-protocol-security-github/">Improving Git protocol security on GitHub</a>.</li>
-<li><code>-b 521</code> (yellow underline) specifies the bits to be <code>521</code></li>
-<li><code>-C "EMAIL"</code> (green underline) specifies a comment to add to your public key, enclosed in double quotes. This is helpful when identifying which public keys you have authorized in a remote system, so it is common practice to add your email address as the comment.</li>
-<li><code>-f ~/.ssh/KEYFILE</code> (blue underline) is the name for the keys. With the <code>-f</code> flag, there is no need to specify the public key name as it will always be the same name as the private key, but with <code>.pub</code> as the suffix.</li>
+<li><a href="https://gist.github.com/yuenhsu/4d40b6c4ccc512e8884ff3c60ccdbfb6">Link to Gist</a></li>
+<li><a href="https://public.tableau.com/profile/api/publish/WalkingStatusfrom2015to2020/Dashboard1">Link to Tableau dashboard</a></li>
 </ul>
-<p>See <a href="https://man7.org/linux/man-pages/man1/ssh-keygen.1.html"><code>ssh-keygen</code> man page</a> for more options, but the ones listed above were all I needed.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_cli_annotated.png" class="img-fluid figure-img"></p>
-<figcaption>Terminal <code>ssh-keygen</code> output</figcaption>
-</figure>
-</div>
-<p>After running this command, the system will prompt you to enter a passphrase, but I usually just hit <strong>Enter</strong> to not set a passphrase (purple box). Finally, terminal shows output (olive? box), including path to private key and public key, fingerprint, and randomart image.</p>
-</section>
-<section id="using-ui" class="level3">
-<h3 class="anchored" data-anchor-id="using-ui">Using UI</h3>
-<p>If accessing terminal is not possible, you can still generate keys through UI. However, this approach provides fewer key type/size and requires key password. Follow the steps in <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9428/89/how-to-connect-via-ssh-using-keys/">How to connect via SSH using keys</a>.</p>
-</section>
-</section>
-<section id="authorising-the-key" class="level2">
-<h2 class="anchored" data-anchor-id="authorising-the-key">Authorising the key</h2>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_ui_keys.png" class="img-fluid figure-img"></p>
-<figcaption>To authorise, click <strong>Manage</strong> then <strong>Authorise</strong></figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_ui_auth.png" class="img-fluid figure-img"></p>
-<figcaption>Once authorised, <strong>View/Download</strong> the public key for the next step</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Authorising the key created</p>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-the-key-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="adding-the-key-to-github">Adding the key to GitHub</h2>
-<p>From the repository, click <strong>Settings</strong>, click <strong>Deploy Keys</strong> on the sidebar, then click <strong>Add keys</strong>. In the Key textbox, paste the public key copied from the last step. Toggle <strong>Allow write access</strong> if needed.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_github_add_keys.png" class="img-fluid figure-img"></p>
-<figcaption>Paste the <strong>Public key</strong> to <strong>Deployed Keys</strong> in the repository</figcaption>
-</figure>
-</div>
-</section>
-<section id="testing-connection-on-cpanel" class="level2">
-<h2 class="anchored" data-anchor-id="testing-connection-on-cpanel">Testing connection on cPanel</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_cli_test_connection.png" class="img-fluid figure-img"></p>
-<figcaption>Testing connection via terminal</figcaption>
-</figure>
-</div>
-<p>Use the following command to see whether it worked:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If not, like the output from the screenshot, you can add <code>-i ~/.ssh/KEYFILE</code> to specify which keyfile to use.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com <span class="at">-i</span> ~/.ssh/KEYFILE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="sec-cloning-repo" class="level2">
-<h2 class="anchored" data-anchor-id="sec-cloning-repo">Cloning the repository</h2>
-<p>Although cPanel has a Git™ Version Control option, allowing users to set up repositories via UI, it does not work for private repo. To clone a private repository, you must use the SSH protocol rather than the Git or HTTPS protocols.</p>
-<p>Copy the SSH key from GitHub, launch terminal from cPanel, and type <code>git clone</code> then paste the SSH Key. The entire command should look like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:USERNAME/REPO_NAME.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:yuenhsu/website-quarto.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Congrats! The repository is now cloned to cPanel.</p>
-</section>
-<section id="pointing-domain-to-rendered-output" class="level2">
-<h2 class="anchored" data-anchor-id="pointing-domain-to-rendered-output">Pointing domain to rendered output</h2>
-<p>Directory for rendered output is configured with <code>output-dir</code>. Since I did not specify, the default directory is <code>_site</code>. From cPanel domains, click <strong>Manage</strong> on the target domain, and update the document root to <code>REPO_NAME/_site</code>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/domain_document_root.png" class="img-fluid figure-img"></p>
-<figcaption>Update domain document root to rendered output directory</figcaption>
-</figure>
-</div>
-</section>
-<section id="checking-the-url" class="level2">
-<h2 class="anchored" data-anchor-id="checking-the-url">Checking the URL</h2>
-<p>Give it a few minutes then visit the URL.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/website_final.png" class="img-fluid figure-img"></p>
-<figcaption>Live website</figcaption>
-</figure>
-</div>
-<p>If it works, congrats! If it doesn’t, keep reading. To update, push the changes to GitHub then run <code>git pull</code> on cPanel terminal. You can even switch between branches. As long as the rendered output is at the document root, everything should work.</p>
-</section>
-<section id="troubleshooting" class="level2">
-<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
-<section id="git-error-code-128" class="level3">
-<h3 class="anchored" data-anchor-id="git-error-code-128">Git error code 128</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://global.discourse-cdn.com/gitlab/original/2X/0/065a2bbdb7d98180fba006a02278af4b4393cde4.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Git cloning error 128</figcaption>
-</figure>
-</div>
-<p>If you are seeing the error message shown in the symptoms section above, you must use the SSH protocol rather than the Git or HTTPS protocols. The URLs that your Git provider gives you to use for the SSH protocol might start with <code>ssh://</code>, or for example in the case of Github, will just start with a username: <code>git@</code>.</p>
-<p>In short, private repository cannot be cloned this way. Follow the steps in <a href="#sec-cloning-repo" class="quarto-xref">Section&nbsp;6</a> to clone with SSH protocol.</p>
-</section>
-<section id="permission-denied-publickey" class="level3">
-<h3 class="anchored" data-anchor-id="permission-denied-publickey">Permission denied (publickey)</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/KEYFILE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Run the command to add the keyfile. If any error, start ssh agent first:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="kw">`</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="kw">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="could-not-open-a-connection-to-your-authentication-agent" class="level3">
-<h3 class="anchored" data-anchor-id="could-not-open-a-connection-to-your-authentication-agent">Could not open a connection to your authentication agent</h3>
-<p>Becuase the ssh agent was not started. Run the following command to start:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="kw">`</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="kw">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="https://stackoverflow.com/a/17848593">Answer from here</a></p>
-</section>
-<section id="creating-a-config-file" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-config-file">Creating a <code>config</code> file</h3>
-<p>From <strong>File Manager</strong>, navigate to <strong><code>.ssh</code></strong> folder. If there is no <strong><code>config</code></strong> file, create one and change permissions to 0600 (User Read and Write are checked and all others unchecked.)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_filemanager_folder.png" class="img-fluid figure-img"></p>
-<figcaption>cPanel File Manager <code>.ssh</code> folder</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../posts/images/ssh_file_permission.png" class="img-fluid figure-img"></p>
-<figcaption><code>config</code> file permission setting</figcaption>
-</figure>
-</div>
-<p>Edit the file and paste the following content with correct info:</p>
-<div class="sourceCode" id="annotated-cell-9"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com-REPO</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Hostname</span> github.com</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">IdentityFile</span><span class="op">=</span>~/.ssh/KEYFILE</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Replace <code>REPO</code> with repository name.</span>
-</dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="2" data-code-annotation="2">As is</span>
-</dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="3">Replace <code>KEYFILE</code> with key filename to private key, that is, without <code>.pub</code> suffix.</span>
-</dd>
-</dl>
-<p>For example:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com-website-quarto</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Hostname</span> github.com</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">IdentityFile</span><span class="op">=</span>~/.ssh/quarto_ecdsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
