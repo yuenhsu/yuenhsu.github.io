@@ -1,3 +1,19 @@
+# Quarto
+.quarto/
+_site/
+
+# Macbook
+.DS_STORE
+.vscode/
+.idea/
+.venv/
+
+#R
+# History files
+.Rhistory
+.Rapp.history
+.Rproj.user/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
