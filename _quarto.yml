@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Yu-En Hsu"
+  google-analytics: "G-FRQ30Q4RJP"
+  description: "Hey! I am Yu-En."
+  draft-mode: unlinked
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    fontsize: '17px'
+    link-external-newwindow: true
+    link-external-filter: "(yuenhsu|yhsu10)"
+    link-external-icon: true

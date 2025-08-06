@@ -1,0 +1,176 @@
+---
+title: "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel"
+description: "Cloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder"
+date: "2024-04-29"
+categories: [Quarto, cPanel]
+---
+
+## Overview
+
+I've been a little bit obsessed with Quarto since I discovered it, and I am exploring the possibilities of replacing WordPress with Quarto. Obviously, WordPress is way more than just a publishing system, but I mostly use it to write and share. Also, I am getting frustrated with Elementor editor, and I cannot comprehend CSS layout to save my own life. Quarto, for my usage, seems to be the perfect candidate. It provides me great flexibility, particularly in styling, without the burden of specifying everything. That's great for me because I love switching out fonts and colors, but I do not want to figure out layout for desktop and mobile.
+
+![My thoughts while I browse Google Fonts sorted by Newest](https://i.imgflip.com/8owaxw.jpg)
+
+### What you'll need
+
+-   **Custom domain** --- I purchased my domains through Namecheap. If you are not looking to host your Quarto website on custom domain, this post is not for you. Please review the [Publishing Basics](https://quarto.org/docs/publishing/) in which Quarto listed several free options to host a site under a branded domain.
+-   **Hosting** --- I have the Stellar Shared Hosting plan through Namecheap, which uses cPanel. I already paid for the service, so I am trying to figure this out. Again, if you're not looking to self-host-ish the website, this post is not for you. You can host the website on GitHub Pages and [use custom domains for your page](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages).
+
+For WordPress, after installing via cPanel, everything was done on a browser, and all data is stored somewhere in cPanel. For Quarto, my plan is
+
+1.  host Quarto website project on GitHub as a private repository,
+2.  edit on my laptop with VS Code or RStudio and render to HTML and sync the changes to GitHub,
+3.  clone the repo to cPanel, and
+4.  publish on custom domain by setting up document root at the rendered output directory of the project.
+
+Once setup, whenever I make edits and syncs to GitHub, I will need to update the repo in cPanel through git.
+
+## Creating a key on cPanel
+
+### Using Terminal
+
+If Terminal is not available, follow the steps in [How to enable SSH (Shell) in cPanel](https://www.namecheap.com/support/knowledgebase/article.aspx/10040/2210/how-to-enable-ssh-shell-in-cpanel/) (help article is from Namecheap but should be the same for other hosting provider).
+
+``` bash
+ssh-keygen -t ecdsa -b 521 -C "EMAIL" -f ~/.ssh/KEYFILE
+```
+
+-   `ssh-keygen` (red underline) is the command
+-   `-t ecdsa` (pink underline) specifies the type to be `ecdsa`. I cannot recall the reason I chose this one, but it happened to work. To see other key type accepted, see [Improving Git protocol security on GitHub](https://github.blog/2021-09-01-improving-git-protocol-security-github/).
+-   `-b 521` (yellow underline) specifies the bits to be `521`
+-   `-C "EMAIL"` (green underline) specifies a comment to add to your public key, enclosed in double quotes. This is helpful when identifying which public keys you have authorized in a remote system, so it is common practice to add your email address as the comment.
+-   `-f ~/.ssh/KEYFILE` (blue underline) is the name for the keys. With the `-f` flag, there is no need to specify the public key name as it will always be the same name as the private key, but with `.pub` as the suffix.
+
+See [`ssh-keygen` man page](https://man7.org/linux/man-pages/man1/ssh-keygen.1.html) for more options, but the ones listed above were all I needed.
+
+![Terminal `ssh-keygen` output](/posts/images/ssh_cli_annotated.png)
+
+After running this command, the system will prompt you to enter a passphrase, but I usually just hit **Enter** to not set a passphrase (purple box). Finally, terminal shows output (olive? box), including path to private key and public key, fingerprint, and randomart image.
+
+### Using UI
+
+If accessing terminal is not possible, you can still generate keys through UI. However, this approach provides fewer key type/size and requires key password. Follow the steps in [How to connect via SSH using keys](https://www.namecheap.com/support/knowledgebase/article.aspx/9428/89/how-to-connect-via-ssh-using-keys/).
+
+## Authorising the key
+
+::: {layout-ncol="2"}
+![To authorise, click **Manage** then **Authorise**](/posts/images/ssh_ui_keys.png)
+
+![Once authorised, **View/Download** the public key for the next step](/posts/images/ssh_ui_auth.png)
+
+Authorising the key created
+:::
+
+## Adding the key to GitHub
+
+From the repository, click **Settings**, click **Deploy Keys** on the sidebar, then click **Add keys**. In the Key textbox, paste the public key copied from the last step. Toggle **Allow write access** if needed.
+
+![Paste the **Public key** to **Deployed Keys** in the repository](/posts/images/ssh_github_add_keys.png)
+
+## Testing connection on cPanel
+
+![Testing connection via terminal](/posts/images/ssh_cli_test_connection.png)
+
+Use the following command to see whether it worked:
+
+``` bash
+ssh -T git@github.com
+```
+
+If not, like the output from the screenshot, you can add `-i ~/.ssh/KEYFILE` to specify which keyfile to use.
+
+``` bash
+ssh -T git@github.com -i ~/.ssh/KEYFILE
+```
+
+## Cloning the repository {#sec-cloning-repo}
+
+Although cPanel has a Git™ Version Control option, allowing users to set up repositories via UI, it does not work for private repo. To clone a private repository, you must use the SSH protocol rather than the Git or HTTPS protocols.
+
+Copy the SSH key from GitHub, launch terminal from cPanel, and type `git clone` then paste the SSH Key. The entire command should look like:
+
+``` bash
+git clone git@github.com:USERNAME/REPO_NAME.git
+```
+
+For example:
+
+``` bash
+git clone git@github.com:yuenhsu/website-quarto.git
+```
+
+Congrats! The repository is now cloned to cPanel.
+
+## Pointing domain to rendered output
+
+Directory for rendered output is configured with `output-dir`. Since I did not specify, the default directory is `_site`. From cPanel domains, click **Manage** on the target domain, and update the document root to `REPO_NAME/_site`.
+
+![Update domain document root to rendered output directory](/posts/images/domain_document_root.png)
+
+## Checking the URL
+
+Give it a few minutes then visit the URL.
+
+![Live website](/posts/images/website_final.png)
+
+If it works, congrats! If it doesn't, keep reading. To update, push the changes to GitHub then run `git pull` on cPanel terminal. You can even switch between branches. As long as the rendered output is at the document root, everything should work.
+
+## Troubleshooting
+
+### Git error code 128
+
+![Git cloning error 128](https://global.discourse-cdn.com/gitlab/original/2X/0/065a2bbdb7d98180fba006a02278af4b4393cde4.jpeg)
+
+If you are seeing the error message shown in the symptoms section above, you must use the SSH protocol rather than the Git or HTTPS protocols. The URLs that your Git provider gives you to use for the SSH protocol might start with `ssh://`, or for example in the case of Github, will just start with a username: `git@`.
+
+In short, private repository cannot be cloned this way. Follow the steps in @sec-cloning-repo to clone with SSH protocol.
+
+### Permission denied (publickey)
+
+``` bash
+ssh-add ~/.ssh/KEYFILE
+```
+
+Run the command to add the keyfile. If any error, start ssh agent first:
+
+``` bash
+eval `ssh-agent -s`
+```
+
+### Could not open a connection to your authentication agent
+
+Becuase the ssh agent was not started. Run the following command to start:
+
+``` bash
+eval `ssh-agent -s`
+```
+
+[Answer from here](https://stackoverflow.com/a/17848593)
+
+### Creating a `config` file
+
+From **File Manager**, navigate to **`.ssh`** folder. If there is no **`config`** file, create one and change permissions to 0600 (User Read and Write are checked and all others unchecked.)
+
+![cPanel File Manager `.ssh` folder](/posts/images/ssh_filemanager_folder.png)
+
+![`config` file permission setting](/posts/images/ssh_file_permission.png)
+
+Edit the file and paste the following content with correct info:
+
+``` bash
+Host github.com-REPO # <1>
+    Hostname github.com # <2>
+    IdentityFile=~/.ssh/KEYFILE # <3>
+```
+
+1.  Replace `REPO` with repository name.
+2.  As is
+3.  Replace `KEYFILE` with key filename to private key, that is, without `.pub` suffix.
+
+For example:
+
+``` bash
+Host github.com-website-quarto
+    Hostname github.com
+    IdentityFile=~/.ssh/quarto_ecdsa
+```
