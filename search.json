@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Medium\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n\n  \n  \n\n\nJust like the United Nations (UN)!\nI am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nMaster of Public Administration | Dec 2020\n  Maxwell School of Citizenship and Public Affairs, Syracuse University | Syracuse, NY\n\nBachelor of Business Administration | Jun 2017\n  Fu Jen Catholic University | Taipei, Taiwan"
+  },
+  {
+    "objectID": "about.html#awards-and-scholarships",
+    "href": "about.html#awards-and-scholarships",
+    "title": "About",
+    "section": "Awards and Scholarships",
+    "text": "Awards and Scholarships\n\nMaxwell Dean’s Award ($10,098) | Aug 2020\nCenter of Policy Research Scholarship ($500) | Aug 2020\nAjello Fellowship ($2,500) | Aug 2020\nMaxwell Dean’s Award ($1,683) | May 2020\nGeorge Schaefer Spring Scholarship ($1,000) | Mar 2020"
+  },
+  {
+    "objectID": "about.html#cool-things",
+    "href": "about.html#cool-things",
+    "title": "About",
+    "section": "Cool things",
+    "text": "Cool things\n\nGeneva Challenge Contestant | Apr 2020 – Jul 2020\nHosted by The Graduate Institute, Geneva (IHEID)\nCreated development proposal for promoting social inclusion and sustainability\nInternational Student Ambassador | Sep 2019 – Jun 2020 Public Administration International Relations Association, Syracuse, NY Represented international students in meetings and organised events to promote inclusivity\nWinner at simulation competition | Aug 13-15, 2019 Sponsored by the Maxwell School ﹘ Negotiated a redevelopment plan for a post-war country Disaster Recovery Volunteer Dec 2017 – Jan 2018 All Hands and Hearts, Baton Rouge, LA & Port Aransas, TX ﹘ Assisted in community reconstruction after the 2016 Louisiana floods and emergency response in Texas following Hurricane Harvey Sea Turtle Rescue Nov 2017 Turtle Conservation, Las Penitas, Nicaragua ﹘ Participated in mangrove reforestation and beach clean-up; observed turtle hatching with marine biologists Team Member Sep 2016 – May 2017 You Sei Fantastic Association, Taitung, Taiwan ﹘ Developed and executed a social project to host winter camp for students in rural area; raised money through crowdfunding with farm produces from students’ families English Instructor Jun 2016 – Jul 2016 The Happy School, Phnom Penh, Cambodia ﹘ Designed course curriculum to provide a systematic approach to improve children’s English ability, communicated children’s performance with parents, talked to tuk-tuk drivers on the street and encouraged them to allow their children to receive free education Renovation Volunteer Jan 2016 – Feb 2016 The Mirror Foundation, Chiang Rai, Thailand ﹘ Contributed to museum construction Community Outreach Intern Jun 2012 – Aug 2012 Eurogems, Treviso, Italy ﹘ Organised events to engage members of the community, encouraging participation of social programs and reducing cultural distances"
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html",
+    "href": "posts/quarto-github-cpanel.html",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "",
+    "text": "I’ve been a little bit obsessed with Quarto since I discovered it, and I am exploring the possibilities of replacing WordPress with Quarto. Obviously, WordPress is way more than just a publishing system, but I mostly use it to write and share. Also, I am getting frustrated with Elementor editor, and I cannot comprehend CSS layout to save my own life. Quarto, for my usage, seems to be the perfect candidate. It provides me great flexibility, particularly in styling, without the burden of specifying everything. That’s great for me because I love switching out fonts and colors, but I do not want to figure out layout for desktop and mobile.\n\n\n\nMy thoughts while I browse Google Fonts sorted by Newest\n\n\n\n\n\nCustom domain — I purchased my domains through Namecheap. If you are not looking to host your Quarto website on custom domain, this post is not for you. Please review the Publishing Basics in which Quarto listed several free options to host a site under a branded domain.\nHosting — I have the Stellar Shared Hosting plan through Namecheap, which uses cPanel. I already paid for the service, so I am trying to figure this out. Again, if you’re not looking to self-host-ish the website, this post is not for you. You can host the website on GitHub Pages and use custom domains for your page.\n\nFor WordPress, after installing via cPanel, everything was done on a browser, and all data is stored somewhere in cPanel. For Quarto, my plan is\n\nhost Quarto website project on GitHub as a private repository,\nedit on my laptop with VS Code or RStudio and render to HTML and sync the changes to GitHub,\nclone the repo to cPanel, and\npublish on custom domain by setting up document root at the rendered output directory of the project.\n\nOnce setup, whenever I make edits and syncs to GitHub, I will need to update the repo in cPanel through git."
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#overview",
+    "href": "posts/quarto-github-cpanel.html#overview",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "",
+    "text": "I’ve been a little bit obsessed with Quarto since I discovered it, and I am exploring the possibilities of replacing WordPress with Quarto. Obviously, WordPress is way more than just a publishing system, but I mostly use it to write and share. Also, I am getting frustrated with Elementor editor, and I cannot comprehend CSS layout to save my own life. Quarto, for my usage, seems to be the perfect candidate. It provides me great flexibility, particularly in styling, without the burden of specifying everything. That’s great for me because I love switching out fonts and colors, but I do not want to figure out layout for desktop and mobile.\n\n\n\nMy thoughts while I browse Google Fonts sorted by Newest\n\n\n\n\n\nCustom domain — I purchased my domains through Namecheap. If you are not looking to host your Quarto website on custom domain, this post is not for you. Please review the Publishing Basics in which Quarto listed several free options to host a site under a branded domain.\nHosting — I have the Stellar Shared Hosting plan through Namecheap, which uses cPanel. I already paid for the service, so I am trying to figure this out. Again, if you’re not looking to self-host-ish the website, this post is not for you. You can host the website on GitHub Pages and use custom domains for your page.\n\nFor WordPress, after installing via cPanel, everything was done on a browser, and all data is stored somewhere in cPanel. For Quarto, my plan is\n\nhost Quarto website project on GitHub as a private repository,\nedit on my laptop with VS Code or RStudio and render to HTML and sync the changes to GitHub,\nclone the repo to cPanel, and\npublish on custom domain by setting up document root at the rendered output directory of the project.\n\nOnce setup, whenever I make edits and syncs to GitHub, I will need to update the repo in cPanel through git."
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#creating-a-key-on-cpanel",
+    "href": "posts/quarto-github-cpanel.html#creating-a-key-on-cpanel",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Creating a key on cPanel",
+    "text": "Creating a key on cPanel\n\nUsing Terminal\nIf Terminal is not available, follow the steps in How to enable SSH (Shell) in cPanel (help article is from Namecheap but should be the same for other hosting provider).\nssh-keygen -t ecdsa -b 521 -C \"EMAIL\" -f ~/.ssh/KEYFILE\n\nssh-keygen (red underline) is the command\n-t ecdsa (pink underline) specifies the type to be ecdsa. I cannot recall the reason I chose this one, but it happened to work. To see other key type accepted, see Improving Git protocol security on GitHub.\n-b 521 (yellow underline) specifies the bits to be 521\n-C \"EMAIL\" (green underline) specifies a comment to add to your public key, enclosed in double quotes. This is helpful when identifying which public keys you have authorized in a remote system, so it is common practice to add your email address as the comment.\n-f ~/.ssh/KEYFILE (blue underline) is the name for the keys. With the -f flag, there is no need to specify the public key name as it will always be the same name as the private key, but with .pub as the suffix.\n\nSee ssh-keygen man page for more options, but the ones listed above were all I needed.\n\n\n\nTerminal ssh-keygen output\n\n\nAfter running this command, the system will prompt you to enter a passphrase, but I usually just hit Enter to not set a passphrase (purple box). Finally, terminal shows output (olive? box), including path to private key and public key, fingerprint, and randomart image.\n\n\nUsing UI\nIf accessing terminal is not possible, you can still generate keys through UI. However, this approach provides fewer key type/size and requires key password. Follow the steps in How to connect via SSH using keys."
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#authorising-the-key",
+    "href": "posts/quarto-github-cpanel.html#authorising-the-key",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Authorising the key",
+    "text": "Authorising the key\n\n\n\n\n\n\nTo authorise, click Manage then Authorise\n\n\n\n\n\n\n\nOnce authorised, View/Download the public key for the next step\n\n\n\n\n\n\nAuthorising the key created"
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#adding-the-key-to-github",
+    "href": "posts/quarto-github-cpanel.html#adding-the-key-to-github",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Adding the key to GitHub",
+    "text": "Adding the key to GitHub\nFrom the repository, click Settings, click Deploy Keys on the sidebar, then click Add keys. In the Key textbox, paste the public key copied from the last step. Toggle Allow write access if needed.\n\n\n\nPaste the Public key to Deployed Keys in the repository"
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#testing-connection-on-cpanel",
+    "href": "posts/quarto-github-cpanel.html#testing-connection-on-cpanel",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Testing connection on cPanel",
+    "text": "Testing connection on cPanel\n\n\n\nTesting connection via terminal\n\n\nUse the following command to see whether it worked:\nssh -T git@github.com\nIf not, like the output from the screenshot, you can add -i ~/.ssh/KEYFILE to specify which keyfile to use.\nssh -T git@github.com -i ~/.ssh/KEYFILE"
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#sec-cloning-repo",
+    "href": "posts/quarto-github-cpanel.html#sec-cloning-repo",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Cloning the repository",
+    "text": "Cloning the repository\nAlthough cPanel has a Git™ Version Control option, allowing users to set up repositories via UI, it does not work for private repo. To clone a private repository, you must use the SSH protocol rather than the Git or HTTPS protocols.\nCopy the SSH key from GitHub, launch terminal from cPanel, and type git clone then paste the SSH Key. The entire command should look like:\ngit clone git@github.com:USERNAME/REPO_NAME.git\nFor example:\ngit clone git@github.com:yuenhsu/website-quarto.git\nCongrats! The repository is now cloned to cPanel."
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#pointing-domain-to-rendered-output",
+    "href": "posts/quarto-github-cpanel.html#pointing-domain-to-rendered-output",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Pointing domain to rendered output",
+    "text": "Pointing domain to rendered output\nDirectory for rendered output is configured with output-dir. Since I did not specify, the default directory is _site. From cPanel domains, click Manage on the target domain, and update the document root to REPO_NAME/_site.\n\n\n\nUpdate domain document root to rendered output directory"
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#checking-the-url",
+    "href": "posts/quarto-github-cpanel.html#checking-the-url",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Checking the URL",
+    "text": "Checking the URL\nGive it a few minutes then visit the URL.\n\n\n\nLive website\n\n\nIf it works, congrats! If it doesn’t, keep reading. To update, push the changes to GitHub then run git pull on cPanel terminal. You can even switch between branches. As long as the rendered output is at the document root, everything should work."
+  },
+  {
+    "objectID": "posts/quarto-github-cpanel.html#troubleshooting",
+    "href": "posts/quarto-github-cpanel.html#troubleshooting",
+    "title": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\nGit error code 128\n\n\n\nGit cloning error 128\n\n\nIf you are seeing the error message shown in the symptoms section above, you must use the SSH protocol rather than the Git or HTTPS protocols. The URLs that your Git provider gives you to use for the SSH protocol might start with ssh://, or for example in the case of Github, will just start with a username: git@.\nIn short, private repository cannot be cloned this way. Follow the steps in Section 6 to clone with SSH protocol.\n\n\nPermission denied (publickey)\nssh-add ~/.ssh/KEYFILE\nRun the command to add the keyfile. If any error, start ssh agent first:\neval `ssh-agent -s`\n\n\nCould not open a connection to your authentication agent\nBecuase the ssh agent was not started. Run the following command to start:\neval `ssh-agent -s`\nAnswer from here\n\n\nCreating a config file\nFrom File Manager, navigate to .ssh folder. If there is no config file, create one and change permissions to 0600 (User Read and Write are checked and all others unchecked.)\n\n\n\ncPanel File Manager .ssh folder\n\n\n\n\n\nconfig file permission setting\n\n\nEdit the file and paste the following content with correct info:\n1Host github.com-REPO\n2    Hostname github.com\n3    IdentityFile=~/.ssh/KEYFILE\n\n1\n\nReplace REPO with repository name.\n\n2\n\nAs is\n\n3\n\nReplace KEYFILE with key filename to private key, that is, without .pub suffix.\n\n\nFor example:\nHost github.com-website-quarto\n    Hostname github.com\n    IdentityFile=~/.ssh/quarto_ecdsa"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Test Blog",
+    "section": "",
+    "text": "Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel\n\n\n\nQuarto\n\ncPanel\n\n\n\nCloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder\n\n\n\n\n\nApr 29, 2024\n\n\n\n\n\nNo matching items"
+  }
+]

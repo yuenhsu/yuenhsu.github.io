@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+#refs>div.csl-entry,
+#footnotes li {
+    margin-block-end: 0.5rem;
+}
+
+.quarto-title .quarto-categories .quarto-category {
+    font-size: .75em;
+    line-height: 1em;
+    opacity: 1;
+}
+
+div.sourceCode {
+    overflow: hidden;
+}
+
+main img {
+    border: 1px solid #edf2f4;
+    box-shadow: 0 .5rem 1rem rgba(0 , 0, 0, 0.15) ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
