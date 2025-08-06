@@ -1,0 +1,66 @@
+---
+title: "States and territories of the US"
+description: "Names and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023."
+date: "2024-11-11"
+---
+
+Search results for US states territories JSON return outdated results that contain former territories (e.g., Palau). The best, up-to-date resources, [Wikipedia](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States), requires extra processing to use the values, which I did and put the results in ready-to-use format. Lastly, I shared some questions and answers I had while compiling the material at the bottom of the story. Hope this resource is helpful for anyone reading!
+
+## The list
+
+The lists are published in this [gist](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c). There are 3 combinations, each with array and object format.
+
+1. 50 states: [Array](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-array_states-json) & [Object](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-object_states-json)
+2. 50 states + federal district: [Array](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-array_states_federaldistrict-json) & [Object](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-object_states_federaldistrict-json)
+3. 50 states + federal district + 5 territories: [Array](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-array_states_federaldistrict_territories-json) & [Object](https://gist.github.com/yuenhsu/536a613b079f6344456243985354290c#file-object_states_federaldistrict_territories-json)
+
+### Array (of object) format
+
+```json
+[
+    {
+        "name": "Alabama",
+        "abbreviation": "AL"
+    },
+    {
+        "name": "Alaska",
+        "abbreviation": "AK"
+    },
+]
+```
+
+### Object format
+
+The key is the abbreviation, and the value is the full name.
+
+```json
+{
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AZ": "Arizona",
+}
+```
+
+## Questions I had
+
+### What are the five territories?
+
+1. American Samoa, 
+2. Guam, 
+3. Northern Mariana Islands, 
+4. Puerto Rico, and 
+5. U.S. Virgin Islands. 
+
+Technically, there are more territories; however, they are either uninhabited or disputed. Given the purpose of the list is to use in forms, there’s no reason to list out other territories.
+
+### How about Micronesia, Marshall Islands, and Palau?
+
+All of these three countries are freely associated states (FAS). From CIA’s World Factbook on the Federated States of Micronesia (FSM)[@cia-no-dateA], on the Marshall Islands[@cia-no-dateB], and on Palau[@cia-no-dateC],
+
+> In 1982, the FSM signed a Compact of Free Association (COFA) with the US, which granted the [FSM/Marshall Islands] financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;
+
+> in 1982, the Marshall Islands signed a Compact of Free Association (COFA) with the US, which granted the Marshall Islands financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities;
+
+> In 1982, Palau signed a Compact of Free Association (COFA) with the US, which granted Palau financial assistance and access to many US domestic programs in exchange for exclusive US military access and defense responsibilities.
+
+They are not US territories, but they have tight connections with the US government on diplomatic, economic, and military relations. But again, many countries have tight connections with the US. To sum, as long as the scope of the form focus on domestic area, FSM, Marshall Islands, and Palau should not be listed as choices for states.

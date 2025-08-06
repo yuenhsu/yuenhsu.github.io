@@ -1,0 +1,210 @@
+---
+title: "Altair + hrbrthemes = Beautiful and readable charts in Python"
+description: "Custom altair theme config with hrbrthemes styling for aesthetic and readability"
+date: "2024-04-23"
+jupyter: python3
+execute: 
+  enabled: false
+  cache: true
+---
+
+```{python}
+#| label: load-data-lib
+#| code-fold: true
+
+from dotenv import dotenv_values
+import pandas as pd
+from requests import request
+import altair as alt
+
+config = dotenv_values(".env")
+response = request("GET", f"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={config['API_KEY_EIA']}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000")
+result = response.json()
+
+raw_data = pd.json_normalize(result['response']['data'])
+one_cols = raw_data.nunique().loc[lambda x: x==1].index
+ref = raw_data[
+    raw_data.nunique().loc[lambda x: x==1].index
+].drop_duplicates().T.to_dict()[0]
+
+df = raw_data.drop(columns=one_cols).assign(
+    period=pd.to_datetime(raw_data['period']+"-01"),
+    customers=pd.to_numeric(raw_data['customers']),
+    price=pd.to_numeric(raw_data['price'])
+)
+```
+
+```{python}
+#| label: fig-default
+#| fig-cap: "Use altair default setting"
+alt.Chart(
+    df, 
+    width="container",
+    title=alt.Title(
+        "Average monthly price of electricity", 
+        subtitle=["Source: U.S. Energy Information Administration"])
+).mark_line().encode(
+    x=alt.X("period", title="Period"), 
+    y=alt.Y("price:Q", title="Cents per kWh"), 
+    color=alt.Color("stateid:N", title="Region").sort("-y"),
+).display(actions=False)
+```
+
+I find the chart difficult to read, mostly because of the tiny text. Is it because I am among 4% [@jcm12083045] of population with severe myopia? Maybe. Or, perhaps the text size is truly too small?
+
+## hrbrthemes inspired altair theme
+
+I am using Roboto Condensed as the example here, but hrbrthemes [@bob_rudis_2019_2545422] provides other font options. 
+
+![hrbrthemes Roboto Condensed example](https://github.com/hrbrmstr/hrbrthemes/raw/master/man/figures/README-rc-1.png){#fig-rc-example width=80%}
+
+### Adopted features
+
+-   Sufficient spacing around the chart and between elements
+-   Chart title: Largest size and bold weight font
+-   Chart subtitle: Second largest size and light weight font
+-   Axis label: Fontsize comparable to subtitle and normal weight font
+-   Axis domain/baseline and ticks: Removed
+
+### Not adopted
+
+-   Axis title alignment
+-   Caption: Not available in altair
+
+### FYI
+
+-   The first tick is aligned to the boundary of the axis. The remaining ticks are centered.
+-   ggplot2 doesn't always display zero.
+
+## Customising altair
+
+### Loading Google font
+
+I'm using JupyterLab, so I used magic command to load the fonts not available on my system.
+
+```{python}
+#| label: load-font
+
+%%html
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap')
+</style>
+```
+
+### Defining custom theme
+
+It's essentially a function that returns a dictionary of configuration
+
+```{python}
+#| label: theme_ipsum_rc
+
+def theme_ipsum_rc() -> dict:
+    font_family = "Roboto Condensed"
+    weight_light = 300
+    weight_bold = 500
+    size_base = 15
+    size_sm = 13
+    size_xs = 12
+    return {
+        "config": {
+            "font": font_family,
+            "padding": 30,
+            "title": {
+                "fontSize": 22,
+                "fontWeight": weight_bold,
+                "subtitleFontSize": 17,
+                "subtitleFontWeight": weight_light,
+                "subtitlePadding": 10,
+                "frame": "group",
+                "dy": -20,
+                "anchor": "start",
+            },
+            "axis": {
+                "labelFontSize": size_base,
+                "labelFontWeight": weight_light,
+                "titleFontSize": size_xs,
+                "titleFontWeight": weight_bold,
+                "domain": False,
+                "ticks": False,
+            },
+            "header": {
+                "labelFontSize": 18,
+                "labelFontWeight": weight_bold,
+                "labelAlign": "left",
+                "labelAnchor": "start",
+                "labelPadding": 20,
+                "title": None,
+            },
+            "legend": {
+                "labelFontSize": size_sm,
+                "titleFontSize": size_base,
+                "titleFontWeight": weight_bold,
+                "columnPadding": 13,
+                "rowPadding": 8,
+                "titlePadding": 10,
+            },
+            "mark": {
+                "fontSize": size_base,
+            },
+            "view": {"stroke": None},
+        }
+    }
+```
+
+### Registering and using the theme
+
+Calling `alt.themes.enable(theme_name)` affects all charts throughout the session. To only apply it on a single chart, use `with` statement as described in [Changing the Theme](https://altair-viz.github.io/user_guide/customization.html#changing-the-theme).
+
+```{python}
+#| label: fig-styled
+#| fig-cap: "Use custom theme. If you're viewing on mobile, it'd look cropped. See @fig-ouput-custom-font for the full chart."
+
+# Register
+alt.themes.register("theme_ipsum_rc", theme_ipsum_rc)
+# Enable
+alt.themes.enable("theme_ipsum_rc")
+
+# Chart
+alt.Chart(
+    df, 
+    width="container",
+    title=alt.Title(
+        "Average monthly price of electricity", 
+        subtitle=["Source: U.S. Energy Information Administration"])
+).mark_line().encode(
+    x=alt.X("period", title="Period"), 
+    y=alt.Y("price:Q", title="Cents per kWh"), 
+    color=alt.Color("stateid:N", title="Region").sort("-y"),
+).display(renderer="svg", actions=False)
+```
+
+### Exporting to PNG
+
+Since the font is not available on my device, saving the chart with `chart.save("output.png")` uses the default system font. Downloading and adding the fonts could probably work, but I am looking for more of a temporary workaround. So here's what I did:
+
+First, I download the fonts from [Google Fonts](https://fonts.google.com/) and unzipped the file. Then I specified the unzipped font directory with [vl_convert](https://github.com/vega/vl-convert).
+
+To install via pip:
+
+``` python
+pip install vl-convert-python
+```
+
+Once installed, import the package and specify the folder:
+
+```{python}
+#| label: load-font-dir
+#| eval: false
+import vl_convert
+vl_convert.register_font_directory(font_dir='FONT_DIRECTORY')
+```
+
+Then save the chart again, and it should use the custom font. See [System font requirements](https://github.com/vega/vl-convert?tab=readme-ov-file#system-font-requirements) for more detail.
+
+::: {#fig-output layout-nrow="2"}
+![System font](/posts/images/altair_output_system_font.png){#fig-ouput-system-font}
+
+![Custom font](/posts/images/altair_output_custom_font.png){#fig-ouput-custom-font}
+
+Altair outputs
+:::

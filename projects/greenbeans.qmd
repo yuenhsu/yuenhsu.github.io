@@ -1,0 +1,19 @@
+---
+title: "GreenBeans"
+subtitle: "Development Proposal for A More Sustainable World"
+description: "Proposal submission to 2020 Geneva Challenge, a contest for graduate students to address the challenges of social inclusion. My team and I applied various evaluation approaches, such as needs assessment and theory of change, and had a great time putting what we learnt into practice."
+date: "2021-01-10"
+categories: [Needs Assessment]
+---
+
+Geneva Challenge is an international contest hosted by the Graduate Institute Geneva for graduate students to present innovative and pragmatic solutions to address various social issues. For more information, [see the official webpage](https://graduateinstitute.ch/geneva-challenge/2020). The [full report is available in PDF](/projects/2020-Geneva-Challenge.pdf).
+
+## Executive Summary
+
+Climate change is a top concern among millennials and Gen Z, and the 2019 school strike for climate change, one of the most notable movements by students, proves the youths' desire for more significant and actionable plans from the governments. In addition to policies for making collective progress, increasing awareness and educating citizens on climate change are crucial for contribution on individual and community levels.
+
+The United Nations launched several programs to expand climate change education, starting from 1992's Earth Summit. Although the discussions were restricted to formal education by the end of 1999, programs in the 2000s expanded to informal channels through media and network. Still, after reviewing relevant materials, the team identified a persistent need for a platform that will engage multiple stakeholders, particularly students and youths. Moreover, the existing solutions in climate change education did not provide motivations for behavioural change in real life. To address the issue, our innovation 
+
+GreenBeans, an application for climate change education, brings together mobile and adaptive learning that utilises learning experience design to create a solution that builds community around beginning enthusiasts, climate change learners and educators, experienced eco-activists. Overall, GreenBeans provides a personalised learning journey that will provide motivations for behavioural change.
+
+![Cover page for the final project report](/projects/images/Geneva-compressed.jpg)

@@ -21,3 +21,4 @@ format:
     link-external-newwindow: true
     link-external-filter: "(yuenhsu|yhsu10)"
     link-external-icon: true
+    author: "Yu-En Hsu"
