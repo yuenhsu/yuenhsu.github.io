@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/highlight-styles.html",
       "/posts/us-states-territories.html",
       "/posts/quarto-github-cpanel.html",
       "/posts/altair-hrbr.html",

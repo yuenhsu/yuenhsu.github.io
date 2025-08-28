@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yu-En Hsu">
-<meta name="dcterms.date" content="2019-12-22">
-<meta name="description" content="Using Cityline and Census data, I examine and visualise income, education level, and resolve time distribution for trash related complaints.">
+<meta name="dcterms.date" content="2025-07-16">
+<meta name="description" content="with examples">
 
-<title>Cityline Syracuse – Yu-En Hsu</title>
+<title>Custom function in Polars – Yu-En Hsu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +22,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -80,6 +134,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </script>
+<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../assets/styles.css">
@@ -88,7 +143,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -138,37 +193,32 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cityline Syracuse</h1>
-<p class="subtitle lead">Exploratory Data Analysis with Python</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Data Visualisation</div>
-    <div class="quarto-category">Python</div>
-  </div>
-  </div>
+<h1 class="title">Custom function in Polars</h1>
+</div>
 
 <div>
   <div class="description">
-    Using Cityline and Census data, I examine and visualise income, education level, and resolve time distribution for trash related complaints.
+    with examples
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Yu-En Hsu </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 22, 2019</p>
+      <p class="date">July 16, 2025</p>
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 28, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -177,108 +227,125 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </header>
 
 
-<p>The project, for data-driven decision-making class, required students to apply Python skills to merge, clean, and analyze several datasets, and to interpret the results to make policy recommendations. My colleagues, Daniela and Hailey, and I decided to focus on trash-related complaints to the City of Syracuse. The research began with two questions:</p>
+<p>As someone who works across data science and operations research, I spend a lot of time wrangling large datasets—sometimes messy, sometimes massive, often both. For years, pandas was my go-to tool, but once I found Polars, I haven’t looked back. Okay, fine, I did look back once or twice but they don’t count.</p>
+<p>My example will be calculating percentage of total formatted as percentage.</p>
 <ul>
-<li>Is there a pattern between the demographic profile of each neighbourhood and frequency of complaints?</li>
-<li>Is there a difference in time to resolve?</li>
+<li>Input is a list of numbers: <code>[100, 100, 300]</code></li>
+<li>Output is a list of percentage: <code>[20%, 20%, 60%]</code></li>
 </ul>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>The research is based on three datasets: <a href="https://data.syrgov.net/datasets/0aa5fcd76dbd4f2cabf2aeb1ddd0179e_0"><em>Cityline Calls for Service</em></a> (Cityline), <a href="https://data.syrgov.net/datasets/0aa5fcd76dbd4f2cabf2aeb1ddd0179e_0"><em>Parcel Data April 2018</em></a> (Parcel), and <a href="https://www.socialexplorer.com/explore-tables"><em>American Community Survey (ACS) 5-Year Estimates from 2013-2017</em></a>. The first two datasets are collected and managed by the city of Syracuse and ACS is accessed via Social Explorer.</p>
-<ul>
-<li>Cityline: contains 57,110 complaints about non-emergency problems in the city of Syracuse received through the Cityline system.</li>
-<li>Parcel: contains 41,623 entries of parcel information.</li>
-<li>ACS: contains 140 census tracts and demographic information for each tract in the county.</li>
-</ul>
-<p>We used Parcel to obtain Census Tract for each of the complaints in Cityline then merged with ACS for demographic information.</p>
-<section id="data-cleaning-and-merging" class="level3">
-<h3 class="anchored" data-anchor-id="data-cleaning-and-merging">Data cleaning and Merging</h3>
-<p>Check out the code on <a href="https://github.com/yuenhsu/Cityline-Syracuse">GitHub</a>. The research is based on three datasets: Cityline Calls for Service (Cityline), Parcel Data April 2018 (Parcel), and American Community Survey (ACS) 5-Year Estimates from 2013-2017. The first two datasets are collected and managed by the city of Syracuse and ACS is accessed via Social Explorer. Cityline: contains 57,110 complaints about non-emergency problems in the city of Syracuse received through the Cityline system. Parcel: contains 41,623 entries of parcel information. ACS: contains 140 census tracts and demographic information for each tract in the county. We used Parcel to obtain Census Tract for each of the complaint in Cityline then merged with ACS for demographic information.)! The cleaning process involved the following activities:</p>
-<ul>
-<li>Remove incorrect addresses</li>
-<li>Replace direction abbreviation to full name and move it to the front</li>
-<li>Concatenate number and street name for full address</li>
-<li>Remove duplicated entries</li>
-<li>Reformat census tract into standard FIPS</li>
-</ul>
-<p>After extracting complaint types that we wanted to work with, we had 7,064 entries left for analysis.</p>
-</section>
-</section>
-<section id="major-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="major-challenge">Major Challenge</h2>
-<p>The boundaries for census tract and TNT sectors differ, however, with one census tract spreading over several sectors and one sector containing multiple census tracts (see below). Therefore the neighborhood demographic characteristic analysis would be inaccurate.</p>
-<p><img src="../projects/images/cityline-Syracuse-TNT-overlap.png" class="img-fluid"></p>
-<p>After consulting with Professor and conducting several failed attempts to tabulate intersection in ArcGIS system, the team decided to compare the census tract map and TNT sector map side by side and assign each tract to the sector with larger proportion of the tract in order to move forward.</p>
-</section>
-<section id="population" class="level2">
-<h2 class="anchored" data-anchor-id="population">Population</h2>
-<p>The following graph summarizes our findings regarding population. Northside indeed had a higher percentage of complaints than other sectors, accounting for 27.16% of the population and 33.49% of the trash complaints. Southside and Westside follow a similar pattern in that the proportion of complaints exceeds the proportion of the population.</p>
-<p>On the contrary, around 22.53% of the population live in Eastside and only 15.69% of the complaints are from there. Downtown, Eastwood, Lakefront, and Valley sectors followed a similar trend. We can conclude that, although there is not a strong relation, the more population a neighborhood has, the more trash complaints it reports.</p>
-<p><img src="../projects/images/Cityline-Syracuse-Proportion-Population-Complaints-Bar-Chart.png" class="img-fluid"></p>
-</section>
-<section id="education-level" class="level2">
-<h2 class="anchored" data-anchor-id="education-level">Education Level</h2>
-<p>When analyzing the Complaint Type by Education Level, the characteristics of sectors with high levels of trash complainers were from neighborhoods where residents predominantly had a high school degree, and no college degree. This trend was apparent across trash complaint types.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../projects/images/Cityline-Syracuse-Education-Complaint-Type.png" class="img-fluid figure-img"></p>
-<figcaption>Cityline-Syracuse-Education-Complaint-Type</figcaption>
-</figure>
+<div id="63b44df0" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">21</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pl.DataFrame(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"colour"</span>: random.choices([<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>], k<span class="op">=</span><span class="dv">50</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"value"</span>:random.choices(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>), k<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    }, schema<span class="op">=</span>{<span class="st">'colour'</span>: pl.Categorical, <span class="st">'value'</span>: pl.Int16}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>There was variation in education level by sector as well, with Downtown, Eastside and Lakefront having the greatest percentage of college graduates, and the Eastwood, Northside, Southside, Valley and Westside having highest percentages of high school graduates without a college degree.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../projects/images/Cityline-Syracuse-Education-TNT.png" class="img-fluid figure-img"></p>
-<figcaption>Cityline-Syracuse-Education-TNT</figcaption>
-</figure>
+<section id="expression" class="level2">
+<h2 class="anchored" data-anchor-id="expression">Expression</h2>
+<p>In Polars, an expression is a lazy representation of a data transformation. Expressions are modular and flexible, which means you can use them as building blocks to build more complex expressions <span class="citation" data-cites="polars-2025">(<a href="#ref-polars-2025" role="doc-biblioref">Polars 2025</a>)</span>.</p>
+<p>In this super simply example, I want to add one to the <code>value</code> column then multiple by ten.</p>
+<section id="approach-1-use-polars-built-in-function" class="level3">
+<h3 class="anchored" data-anchor-id="approach-1-use-polars-built-in-function">Approach 1: Use Polars built-in function</h3>
+<div id="01cd3aa0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).add(<span class="dv">1</span>).mul(<span class="dv">10</span>).alias(<span class="st">"result"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        ((pl.col(<span class="st">"value"</span>) <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">10</span>).alias(<span class="st">"result2"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="median-house-income-level" class="level2">
-<h2 class="anchored" data-anchor-id="median-house-income-level">Median House Income Level</h2>
-<p>A subtle positive relationship between complaint frequency and median income level was observed, neighborhoods with high median household income level had more trash related complaints.</p>
-<p>As the following scatterplot shows, Time to Resolve varied mainly between 2.5 and 7.5 days across income levels. Interestingly, income levels above $40,000 were actually centered around a higher time to close than lower income levels.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../projects/images/Cityline-Syracuse-Median-House-Income-Time-Resolve.png" class="img-fluid figure-img"></p>
-<figcaption>Cityline-Syracuse-Median-House-Income-Time-Resolve</figcaption>
-</figure>
+<section id="approach-2-python-custom-function" class="level3">
+<h3 class="anchored" data-anchor-id="approach-2-python-custom-function">Approach 2: Python custom function</h3>
+<div id="805332cd" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one_multiply_ten(input_num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (input_num <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        .map_elements(add_one_multiply_ten, return_dtype<span class="op">=</span>pl.Int16)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        .alias(<span class="st">"result"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="limitations" class="level2">
-<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<section id="lack-of-individual-demographic-information" class="level3">
-<h3 class="anchored" data-anchor-id="lack-of-individual-demographic-information">Lack of Individual Demographic Information</h3>
-<p>Across all TNT sectors, none had a complaint rate over 7%. Furthermore, whether some complaints were repeatedly filed by one individual is unknown.</p>
+<section id="approach-3-polars-custom-function" class="level3">
+<h3 class="anchored" data-anchor-id="approach-3-polars-custom-function">Approach 3: Polars custom function</h3>
+<p>Here I created 2 custom functions to achieve the same result. The first one uses Polars built-in functions, and the second one uses UDF from appraoch 2. See <a href="https://docs.pola.rs/api/python/stable/reference/api.html">Polars Documentation on Extending API</a> for other examples.</p>
+<div id="762756e7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">@pl.api.register_expr_namespace</span>(<span class="st">"me"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Me:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, expr: pl.Expr) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._expr <span class="op">=</span> expr</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_one_mul_ten(<span class="va">self</span>) <span class="op">-&gt;</span> pl.Expr:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._expr.add(<span class="dv">1</span>).mul(<span class="dv">10</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_one(<span class="va">self</span>) <span class="op">-&gt;</span> pl.Expr:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._expr.add(<span class="dv">1</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mul_ten(<span class="va">self</span>) <span class="op">-&gt;</span> pl.Expr:</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._expr.mul(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The best part about this approach is that I can chain the custom functions to all expressions!</p>
+<div id="587a3a94" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).me.add_one_mul_ten().alias(<span class="st">"udf"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).me.add_one().me.mul_ten().alias(<span class="st">"chain_udfs"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).<span class="bu">max</span>().me.add_one_mul_ten().alias(<span class="st">"max_then_udf"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).me.add_one_mul_ten().truediv(<span class="dv">50</span>).ceil().alias(<span class="st">"udf_then_func"</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Additionally, I can apply the function to group by as well.</p>
+<div id="191a1e8a" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    data.group_by(<span class="st">"colour"</span>).agg(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).mean().alias(<span class="st">"avg"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).mean().me.add_one_mul_ten().alias(<span class="st">"avg_then_udf"</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).mean().me.add_one_mul_ten().<span class="bu">round</span>().alias(<span class="st">"avg_then_udf_round"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="problems-establishing-geographic-boundaries" class="level3">
-<h3 class="anchored" data-anchor-id="problems-establishing-geographic-boundaries">Problems Establishing Geographic Boundaries</h3>
-<p>Census Tract boundaries do not line up with TnT Sector boundaries and so the TnT Sector demographics and time to close analyses cannot be matched perfectly.</p>
 </section>
-<section id="inaccurate-data" class="level3">
-<h3 class="anchored" data-anchor-id="inaccurate-data">Inaccurate Data</h3>
-<p>The original Cityline and Parcel datasets contain many errors. Even system information, such as open and close time, are inaccurate, and many complaints are marked to resolve at midnight, resulting in negative numbers for time to resolve.</p>
+<section id="series" class="level2">
+<h2 class="anchored" data-anchor-id="series">Series</h2>
+<p>I rarely use Series.</p>
+<div id="2c19d179" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spongebob_case(input_txt: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(input_txt)):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (i <span class="op">%</span> <span class="dv">2</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> input_txt[i].lower()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> input_txt[i].upper()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In conclusion, no significant patterns were found. The number of trash related complaints is not significantly correlated with any demographic variable and time to resolve.</p>
-</section>
-<section id="recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
-<ul>
-<li>Close times must be entered accurately and immediately after a complaint has been resolved.</li>
-<li>There should also be a greater clarification as to what variables mean. The meaning of Location versus Address for example should be clear.</li>
-<li>In order that more demographic analyses can be performed using the TnT sectors, theTnT non-profit should consider drawing boundaries to match with relevant census tracts.</li>
-</ul>
-<section id="additional-information" class="level3">
-<h3 class="anchored" data-anchor-id="additional-information">Additional Information</h3>
-<p>The research started in September 2019 and finished in December 2019 with the guidance from Dr Matt Young.</p>
+<section id="dataframe" class="level2">
+
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">DataFrame</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-polars-2025" class="csl-entry" role="listitem">
+Polars. 2025. <span>“<span class="nocase">Expressions and Contexts - Polars User Guide</span>.”</span> <a href="https://docs.pola.rs/user-guide/concepts/expressions-and-contexts/">https://docs.pola.rs/user-guide/concepts/expressions-and-contexts/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
