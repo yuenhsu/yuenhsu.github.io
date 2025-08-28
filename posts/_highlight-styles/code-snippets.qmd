@@ -1,0 +1,14 @@
+
+``` python
+import math
+
+class Circle:
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    def area(self, precision: int = 2) -> float:
+        return round(math.pi * self.radius ** 2, precision)
+
+c = Circle(3)
+print(c.area())
+```

@@ -1,3 +1,4 @@
 format: 
   html: 
     author: "Yu-En Hsu"
+    toc: true

@@ -1,0 +1,9 @@
+---
+highlight-style: monokai
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

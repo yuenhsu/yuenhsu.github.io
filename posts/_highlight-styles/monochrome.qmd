@@ -1,0 +1,9 @@
+---
+highlight-style: monochrome
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

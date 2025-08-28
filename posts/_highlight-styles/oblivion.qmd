@@ -1,0 +1,9 @@
+---
+highlight-style: oblivion
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

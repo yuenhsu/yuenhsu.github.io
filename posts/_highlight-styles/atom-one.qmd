@@ -1,0 +1,9 @@
+---
+highlight-style: atom-one
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

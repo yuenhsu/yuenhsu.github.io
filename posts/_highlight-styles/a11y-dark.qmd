@@ -1,0 +1,9 @@
+---
+highlight-style: a11y-dark
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

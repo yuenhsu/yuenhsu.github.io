@@ -1,0 +1,134 @@
+---
+title: "Custom function in Polars"
+description: "with examples"
+date: "2025-07-16"
+date-modified: today
+execute:
+    eval: false
+---
+
+As someone who works across data science and operations research, I spend a lot of time wrangling large datasets—sometimes messy, sometimes massive, often both. For years, pandas was my go-to tool, but once I found Polars, I haven’t looked back. Okay, fine, I did look back once or twice but they don't count.
+
+My example will be calculating percentage of total formatted as percentage.
+
+-   Input is a list of numbers: `[100, 100, 300]`
+-   Output is a list of percentage: `[20%, 20%, 60%]`
+
+```{python}
+import polars as pl
+import random
+
+random.seed(21)
+data = pl.DataFrame(
+    {
+        "colour": random.choices(["Red", "Blue", "Yellow"], k=50),
+        "value":random.choices(range(1, 20), k=50)
+    }, schema={'colour': pl.Categorical, 'value': pl.Int16}
+)
+
+print(data)
+```
+
+## Expression
+
+In Polars, an expression is a lazy representation of a data transformation. Expressions are modular and flexible, which means you can use them as building blocks to build more complex expressions [@polars-2025]. 
+
+In this super simply example, I want to add one to the `value` column then multiple by ten.
+
+### Approach 1: Use Polars built-in function
+
+```{python}
+print(
+    data.with_columns(
+        pl.col("value").add(1).mul(10).alias("result"),
+        ((pl.col("value") + 1) * 10).alias("result2"),
+    )
+)
+```
+
+### Approach 2: Python custom function
+
+```{python}
+#| warning: false
+def add_one_multiply_ten(input_num: int) -> int:
+    return (input_num + 1) * 10
+
+
+print(
+    data.with_columns(
+        pl.col("value")
+        .map_elements(add_one_multiply_ten, return_dtype=pl.Int16)
+        .alias("result")
+    )
+)
+```
+
+### Approach 3: Polars custom function
+
+Here I created 2 custom functions to achieve the same result. The first one uses Polars built-in functions, and the second one uses UDF from appraoch 2. See [Polars Documentation on Extending API](https://docs.pola.rs/api/python/stable/reference/api.html) for other examples.
+
+```{python}
+@pl.api.register_expr_namespace("me")
+class Me:
+    def __init__(self, expr: pl.Expr) -> None:
+        self._expr = expr
+
+    def add_one_mul_ten(self) -> pl.Expr:
+        return self._expr.add(1).mul(10)
+
+    def add_one(self) -> pl.Expr:
+        return self._expr.add(1)
+
+    def mul_ten(self) -> pl.Expr:
+        return self._expr.mul(10)
+```
+
+The best part about this approach is that I can chain the custom functions to all expressions! 
+
+```{python}
+print(
+    data.with_columns(
+        pl.col("value").me.add_one_mul_ten().alias("udf"),
+        pl.col("value").me.add_one().me.mul_ten().alias("chain_udfs"),
+        pl.col("value").max().me.add_one_mul_ten().alias("max_then_udf"),
+        pl.col("value").me.add_one_mul_ten().truediv(50).ceil().alias("udf_then_func"),
+    )
+)
+```
+
+Additionally, I can apply the function to group by as well. 
+
+```{python}
+print(
+    data.group_by("colour").agg(
+        pl.col("value").mean().alias("avg"),
+        pl.col("value").mean().me.add_one_mul_ten().alias("avg_then_udf"),
+        pl.col("value").mean().me.add_one_mul_ten().round().alias("avg_then_udf_round"),
+    )
+)
+#
+```
+
+
+
+## Series
+
+I rarely use Series.
+
+```{python}
+def spongebob_case(input_txt: str) -> str:
+    result = ""
+    for i in range(len(input_txt)):
+        if (i % 2) == 0:
+            result += input_txt[i].lower()
+        else:
+            result += input_txt[i].upper()
+    return result
+```
+
+## DataFrame
+
+
+```{python}
+
+```

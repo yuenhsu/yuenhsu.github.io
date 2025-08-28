@@ -1,0 +1,9 @@
+---
+highlight-style: github
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

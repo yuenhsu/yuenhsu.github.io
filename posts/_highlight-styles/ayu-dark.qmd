@@ -1,0 +1,9 @@
+---
+highlight-style: ayu-dark
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

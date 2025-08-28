@@ -1,0 +1,9 @@
+---
+highlight-style: printing
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

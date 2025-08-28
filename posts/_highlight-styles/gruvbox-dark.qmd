@@ -1,0 +1,9 @@
+---
+highlight-style: gruvbox-dark
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::

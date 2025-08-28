@@ -1,0 +1,9 @@
+---
+highlight-style: espresso
+---
+
+::: {#snip}
+
+{{< include /drafts/highlight-styles/code-snippets.qmd >}}
+
+:::
