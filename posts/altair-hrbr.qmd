@@ -4,7 +4,7 @@ description: "Custom altair theme config with hrbrthemes styling for aesthetic a
 date: "2024-04-23"
 jupyter: python3
 execute: 
-  enabled: false
+  enabled: true
   cache: true
 ---
 
@@ -12,13 +12,15 @@ execute:
 #| label: load-data-lib
 #| code-fold: true
 
-from dotenv import dotenv_values
+from dotenv import load_dotenv
+import os
 import pandas as pd
 from requests import request
 import altair as alt
 
-config = dotenv_values(".env")
-response = request("GET", f"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={config['API_KEY_EIA']}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000")
+load_dotenv()
+
+response = request("GET", f"https://api.eia.gov/v2/electricity/retail-sales/data/?api_key={os.getenv('API_KEY_EIA')}&frequency=monthly&data[0]=customers&data[1]=price&facets[sectorid][]=RES&facets[stateid][]=ENC&facets[stateid][]=ESC&facets[stateid][]=MAT&facets[stateid][]=MTN&facets[stateid][]=NEW&facets[stateid][]=PACC&facets[stateid][]=PACN&facets[stateid][]=SAT&start=2020-01&sort[0][column]=period&sort[0][direction]=asc&offset=0&length=5000")
 result = response.json()
 
 raw_data = pd.json_normalize(result['response']['data'])
