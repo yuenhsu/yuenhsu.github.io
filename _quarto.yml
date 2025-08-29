@@ -6,7 +6,7 @@ website:
   google-analytics: "G-FRQ30Q4RJP"
   description: "Hey! I am Yu-En."
   favicon: assets/pelican.png
-  draft-mode: unlinked
+  draft-mode: visible
   site-url: "https://yuenhsu.com/"
   navbar:
     logo: assets/pelican.png
@@ -24,9 +24,14 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      - cosmo
+      - assets/theme1.scss
+    toc: true
     css: assets/styles.css
     fontsize: '17px'
+    highlight-style: "github-dark"
     link-external-newwindow: true
     link-external-filter: "(yuenhsu|yhsu10)"
     link-external-icon: true
+    code-block-bg-padding: ""
