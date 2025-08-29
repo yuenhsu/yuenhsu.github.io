@@ -248,7 +248,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <li>Input is a list of numbers: <code>[100, 100, 300]</code></li>
 <li>Output is a list of percentage: <code>[20%, 20%, 60%]</code></li>
 </ul>
-<div id="7e7377a9" class="cell" data-execution_count="1">
+<div id="528cd8d2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -268,7 +268,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <p>In this super simply example, I want to add one to the <code>value</code> column then multiple by ten.</p>
 <section id="approach-1-use-polars-built-in-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-1-use-polars-built-in-function">Approach 1: Use Polars built-in function</h3>
-<div id="564a3907" class="cell" data-execution_count="2">
+<div id="c346606f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).add(<span class="dv">1</span>).mul(<span class="dv">10</span>).alias(<span class="st">"result"</span>),</span>
@@ -279,7 +279,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </section>
 <section id="approach-2-python-custom-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-2-python-custom-function">Approach 2: Python custom function</h3>
-<div id="26be7f3b" class="cell" data-execution_count="3">
+<div id="bd96f8ca" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one_multiply_ten(input_num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (input_num <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">10</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -296,7 +296,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <section id="approach-3-polars-custom-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-3-polars-custom-function">Approach 3: Polars custom function</h3>
 <p>Here I created 2 custom functions to achieve the same result. The first one uses Polars built-in functions, and the second one uses UDF from appraoch 2. See <a href="https://docs.pola.rs/api/python/stable/reference/api.html">Polars Documentation on Extending API</a> for other examples.</p>
-<div id="c460296a" class="cell" data-execution_count="4">
+<div id="61f8ad1f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">@pl.api.register_expr_namespace</span>(<span class="st">"me"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Me:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, expr: pl.Expr) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
@@ -312,7 +312,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._expr.mul(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The best part about this approach is that I can chain the custom functions to all expressions!</p>
-<div id="e803a4c7" class="cell" data-execution_count="5">
+<div id="97e8b51a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).me.add_one_mul_ten().alias(<span class="st">"udf"</span>),</span>
@@ -323,7 +323,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Additionally, I can apply the function to group by as well.</p>
-<div id="b3dbd3c6" class="cell" data-execution_count="6">
+<div id="ce5401cd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    data.group_by(<span class="st">"colour"</span>).agg(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).mean().alias(<span class="st">"avg"</span>),</span>
@@ -338,7 +338,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <section id="series" class="level2">
 <h2 class="anchored" data-anchor-id="series">Series</h2>
 <p>I rarely use Series.</p>
-<div id="d41b865c" class="cell" data-execution_count="7">
+<div id="c8b2942c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spongebob_case(input_txt: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(input_txt)):</span>
