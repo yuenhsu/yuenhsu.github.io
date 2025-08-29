@@ -91,6 +91,27 @@
     "text": "Executive Summary\nClimate change is a top concern among millennials and Gen Z, and the 2019 school strike for climate change, one of the most notable movements by students, proves the youths’ desire for more significant and actionable plans from the governments. In addition to policies for making collective progress, increasing awareness and educating citizens on climate change are crucial for contribution on individual and community levels.\nThe United Nations launched several programs to expand climate change education, starting from 1992’s Earth Summit. Although the discussions were restricted to formal education by the end of 1999, programs in the 2000s expanded to informal channels through media and network. Still, after reviewing relevant materials, the team identified a persistent need for a platform that will engage multiple stakeholders, particularly students and youths. Moreover, the existing solutions in climate change education did not provide motivations for behavioural change in real life. To address the issue, our innovation\nGreenBeans, an application for climate change education, brings together mobile and adaptive learning that utilises learning experience design to create a solution that builds community around beginning enthusiasts, climate change learners and educators, experienced eco-activists. Overall, GreenBeans provides a personalised learning journey that will provide motivations for behavioural change.\n\n\n\nCover page for the final project report"
   },
   {
+    "objectID": "drafts/polars-udf.html",
+    "href": "drafts/polars-udf.html",
+    "title": "Custom function in Polars",
+    "section": "",
+    "text": "As someone who works across data science and operations research, I spend a lot of time wrangling large datasets—sometimes messy, sometimes massive, often both. For years, pandas was my go-to tool, but once I found Polars, I haven’t looked back. Okay, fine, I did look back once or twice but they don’t count.\nMy example will be calculating percentage of total formatted as percentage.\nimport polars as pl\nimport random\n\nrandom.seed(21)\ndata = pl.DataFrame(\n    {\n        \"colour\": random.choices([\"Red\", \"Blue\", \"Yellow\"], k=50),\n        \"value\":random.choices(range(1, 20), k=50)\n    }, schema={'colour': pl.Categorical, 'value': pl.Int16}\n)\n\nprint(data)"
+  },
+  {
+    "objectID": "drafts/polars-udf.html#expression",
+    "href": "drafts/polars-udf.html#expression",
+    "title": "Custom function in Polars",
+    "section": "Expression",
+    "text": "Expression\nIn Polars, an expression is a lazy representation of a data transformation. Expressions are modular and flexible, which means you can use them as building blocks to build more complex expressions (Polars 2025).\nIn this super simply example, I want to add one to the value column then multiple by ten.\n\nApproach 1: Use Polars built-in function\n\nprint(\n    data.with_columns(\n        pl.col(\"value\").add(1).mul(10).alias(\"result\"),\n        ((pl.col(\"value\") + 1) * 10).alias(\"result2\"),\n    )\n)\n\n\n\nApproach 2: Python custom function\n\ndef add_one_multiply_ten(input_num: int) -&gt; int:\n    return (input_num + 1) * 10\n\n\nprint(\n    data.with_columns(\n        pl.col(\"value\")\n        .map_elements(add_one_multiply_ten, return_dtype=pl.Int16)\n        .alias(\"result\")\n    )\n)\n\n\n\nApproach 3: Polars custom function\nHere I created 2 custom functions to achieve the same result. The first one uses Polars built-in functions, and the second one uses UDF from appraoch 2. See Polars Documentation on Extending API for other examples.\n\n@pl.api.register_expr_namespace(\"me\")\nclass Me:\n    def __init__(self, expr: pl.Expr) -&gt; None:\n        self._expr = expr\n\n    def add_one_mul_ten(self) -&gt; pl.Expr:\n        return self._expr.add(1).mul(10)\n\n    def add_one(self) -&gt; pl.Expr:\n        return self._expr.add(1)\n\n    def mul_ten(self) -&gt; pl.Expr:\n        return self._expr.mul(10)\n\nThe best part about this approach is that I can chain the custom functions to all expressions!\n\nprint(\n    data.with_columns(\n        pl.col(\"value\").me.add_one_mul_ten().alias(\"udf\"),\n        pl.col(\"value\").me.add_one().me.mul_ten().alias(\"chain_udfs\"),\n        pl.col(\"value\").max().me.add_one_mul_ten().alias(\"max_then_udf\"),\n        pl.col(\"value\").me.add_one_mul_ten().truediv(50).ceil().alias(\"udf_then_func\"),\n    )\n)\n\nAdditionally, I can apply the function to group by as well.\n\nprint(\n    data.group_by(\"colour\").agg(\n        pl.col(\"value\").mean().alias(\"avg\"),\n        pl.col(\"value\").mean().me.add_one_mul_ten().alias(\"avg_then_udf\"),\n        pl.col(\"value\").mean().me.add_one_mul_ten().round().alias(\"avg_then_udf_round\"),\n    )\n)\n#"
+  },
+  {
+    "objectID": "drafts/polars-udf.html#series",
+    "href": "drafts/polars-udf.html#series",
+    "title": "Custom function in Polars",
+    "section": "Series",
+    "text": "Series\nI rarely use Series.\n\ndef spongebob_case(input_txt: str) -&gt; str:\n    result = \"\"\n    for i in range(len(input_txt)):\n        if (i % 2) == 0:\n            result += input_txt[i].lower()\n        else:\n            result += input_txt[i].upper()\n    return result"
+  },
+  {
     "objectID": "posts/apple-health-tableau.html",
     "href": "posts/apple-health-tableau.html",
     "title": "Export Apple Health Data and Visualise with Tableau",
