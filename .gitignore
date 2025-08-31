@@ -1,7 +1,7 @@
 # Quarto
 .quarto/
 _site/
-posts/.jupyter_cache/
+.jupyter_cache/
 
 # Macbook
 .DS_STORE
