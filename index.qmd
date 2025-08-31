@@ -3,6 +3,7 @@ pagetitle: "Yu-En Hsu"
 description-meta: "This is where I share things"
 date-meta: "2025-04-20"
 toc: false
+comments: false
 ---
 
 Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun! 
