@@ -1,6 +1,7 @@
 ---
 title: "Projects"
 subtitle: "Essentially longer posts focusing more on research and writing"
+comments: false
 title-block-banner: true
 listing:
   contents: projects

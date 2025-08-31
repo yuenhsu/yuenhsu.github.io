@@ -1,6 +1,7 @@
 ---
 title: "Posts"
 subtitle: "Sharing my solution to very specific issues/questions and other fun things"
+comments: false
 title-block-banner: true
 listing:
   contents: posts

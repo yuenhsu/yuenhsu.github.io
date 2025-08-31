@@ -19,6 +19,17 @@ website:
   page-footer: 
     center: |
       <a  href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a>
+  comments: 
+    giscus: 
+      repo: yuenhsu/yuenhsu.github.io
+      repo-id: R_kgDOPZcehw
+      category: General
+      category-id: DIC_kwDOPZceh84Cuzgu
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
+      theme: preferred_color_scheme
+      language: en
 
 bibliography: references.bib
 
