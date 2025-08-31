@@ -4,7 +4,7 @@ description: "Custom altair theme config with hrbrthemes styling for aesthetic a
 date: "2024-04-23"
 jupyter: python3
 execute: 
-  enabled: true
+  enabled: false
   cache: true
 ---
 
