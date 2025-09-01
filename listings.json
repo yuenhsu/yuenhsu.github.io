@@ -19,5 +19,17 @@
       "/projects/education-liberia.html",
       "/projects/cityline-syracuse.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/highlight-styles.html",
+      "/posts/us-states-territories.html",
+      "/posts/quarto-github-cpanel.html",
+      "/posts/altair-hrbr.html",
+      "/posts/apple-health-tableau.html",
+      "/posts/web-scrape-selenium.html",
+      "/posts/itaiwan-tableau.html"
+    ]
   }
 ]

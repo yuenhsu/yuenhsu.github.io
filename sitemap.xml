@@ -2,66 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yuenhsu.com/posts.html</loc>
-    <lastmod>2025-08-31T17:31:51.859Z</lastmod>
+    <lastmod>2025-08-31T18:12:46.913Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.com/index.html</loc>
-    <lastmod>2025-08-31T17:31:43.174Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/projects/cityline-syracuse.html</loc>
-    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/projects/greenbeans.html</loc>
-    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/drafts/polars-udf.html</loc>
-    <lastmod>2025-08-29T13:18:48.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/apple-health-tableau.html</loc>
-    <lastmod>2025-04-20T00:35:25.399Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/altair-hrbr.html</loc>
-    <lastmod>2025-08-31T17:23:42.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/quarto-github-cpanel.html</loc>
-    <lastmod>2025-08-06T17:04:21.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/web-scrape-selenium.html</loc>
-    <lastmod>2025-03-07T19:26:15.931Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/highlight-styles.html</loc>
-    <lastmod>2025-08-29T13:28:30.544Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/us-states-territories.html</loc>
-    <lastmod>2025-04-20T01:04:01.013Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/posts/itaiwan-tableau.html</loc>
-    <lastmod>2025-03-07T19:26:15.930Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuenhsu.com/projects/education-liberia.html</loc>
-    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
+    <loc>https://yuenhsu.com/projects.html</loc>
+    <lastmod>2025-08-31T18:12:46.913Z</lastmod>
   </url>
   <url>
     <loc>https://yuenhsu.com/projects/predict-contraception-report.html</loc>
     <lastmod>2025-03-07T19:26:15.935Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.com/projects.html</loc>
-    <lastmod>2025-08-31T17:31:56.503Z</lastmod>
+    <loc>https://yuenhsu.com/projects/education-liberia.html</loc>
+    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
   </url>
   <url>
-    <loc>https://yuenhsu.com/about.html</loc>
-    <lastmod>2025-08-06T17:04:21.237Z</lastmod>
+    <loc>https://yuenhsu.com/posts/itaiwan-tableau.html</loc>
+    <lastmod>2025-03-07T19:26:15.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/us-states-territories.html</loc>
+    <lastmod>2025-04-20T01:04:01.013Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/highlight-styles.html</loc>
+    <lastmod>2025-08-29T13:28:30.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/web-scrape-selenium.html</loc>
+    <lastmod>2025-03-07T19:26:15.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/quarto-github-cpanel.html</loc>
+    <lastmod>2025-08-06T17:04:21.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/altair-hrbr.html</loc>
+    <lastmod>2025-08-31T17:23:42.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/posts/apple-health-tableau.html</loc>
+    <lastmod>2025-04-20T00:35:25.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/drafts/polars-udf.html</loc>
+    <lastmod>2025-08-29T13:18:48.593Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/projects/greenbeans.html</loc>
+    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/projects/cityline-syracuse.html</loc>
+    <lastmod>2025-03-07T19:26:15.933Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuenhsu.com/index.html</loc>
+    <lastmod>2025-09-01T14:01:02.055Z</lastmod>
   </url>
 </urlset>

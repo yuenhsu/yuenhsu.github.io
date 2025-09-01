@@ -6,8 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-04-20">
-<meta name="description" content="This is where I share things">
 
 <title>Yu-En Hsu</title>
 <style>
@@ -33,16 +31,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/pelican.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-484ff8113e894621cbafc19e0d2cbb83.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ecc61a68dc7ca6300d575fcfa9d9ce54.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e66fef7f734ca3d0889552c303be520a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-post-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-post-listing'] = new List('listing-post-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FRQ30Q4RJP"></script>
 
 <script type="text/javascript">
@@ -80,6 +108,35 @@ gtag('js', new Date());
 gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -109,10 +166,6 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -133,26 +186,157 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
 
 
-<p>Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun!</p>
-<p>I am currently moving my website from WordPress to Quarto.</p>
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+    <img src="assets/profile.jpg" class="about-image
+  round " style="height: 200px; width: 200px;">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Yu-En Hsu</h1>
+<p class="subtitle lead">About me</p>
+</div>
+<div class="quarto-title-meta">
+  </div>
+</header>
+    <div class="about-links">
+  <a href="http://medium.com/@yuenhsu" class="about-link" rel="" target="">
+    <i class="bi bi-medium"></i>
+     <span class="about-link-text">Medium</span>
+  </a>
+  <a href="https://www.linkedin.com/in/yuenhsu/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="http://github.com/yuenhsu" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+  </div>
+  <div class="about-contents"><div id="hello-block">
+<section id="hi-i-am-yu-en." class="level1">
+<h1>Hi, I am Yu-En.</h1>
+<p>Just like the United Nations (UN)!</p>
+<p>I am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity.</p>
+</section>
+</div></div>
+</div>
+
+<section id="work" class="level2">
+<h2 data-anchor-id="work">Work</h2>
+<ul>
+<li><strong>Author</strong>: Hsu, Yu-En, &amp; Baldi, Elettra. (2020, November 17). Understanding Usability of SDG National Reporting Platforms. Open Data Watch. <a href="https://web.archive.org/web/20230605031920/https://opendatawatch.com/publications/understanding-usability-of-sdg-national-reporting-platforms/">https://opendatawatch.com/publications/understanding-usability-of-sdg-national-reporting-platforms/</a></li>
+<li><strong>Contributor</strong>: Nicole R Morgan, Katie E Davenport, Jillian R Rodgers, &amp; Daniel F Perkins. (2022). A Comparison Study of Onward to Opportunity (O2O) Utilizing a Matched Comparison Group from The Veterans Metrics Initiative (TVMI). Scholarsphere. <a href="https://doi.org/10.26207/Z1PT-0540">https://doi.org/10.26207/Z1PT-0540</a></li>
+<li><strong>Contributor</strong>: Badiee, S., Crowell, J., Noe, L., Pittman, A., Rudow, C., &amp; Swanson, E. (2021). Open data for official statistics: History, principles, and implementation. Statistical Journal of the IAOS, 37(1), 139–159. <a href="https://doi.org/10.3233/sji-200761">https://doi.org/10.3233/sji-200761</a></li>
+<li><strong>Volunteer</strong>: Global 50/50. (2021). About Us. Global 50/50. <a href="https://global5050.org/the-sex-gender-and-covid-19-project/about-us/">https://global5050.org/the-sex-gender-and-covid-19-project/about-us/</a></li>
+</ul>
+</section>
+<section id="education" class="level2">
+<h2 data-anchor-id="education">Education</h2>
+<div class="line-block"><strong>Master of Public Administration</strong> | Dec 2020<br>
+&nbsp;&nbsp;Maxwell School of Citizenship and Public Affairs, Syracuse University | Syracuse, NY<br>
+&nbsp;&nbsp;Certificate of Advanced Study in Data Analytics for Public Policy<br>
+<br>
+<strong>Bachelor of Business Administration</strong> | Jun 2017<br>
+&nbsp;&nbsp;Fu Jen Catholic University | Taipei, Taiwan</div>
+</section>
+<section id="awards-and-scholarships" class="level2">
+<h2 data-anchor-id="awards-and-scholarships">Awards and Scholarships</h2>
+<ul>
+<li>Maxwell Dean’s Award | Aug 2020</li>
+<li>Center of Policy Research Scholarship | Aug 2020</li>
+<li>Ajello Fellowship | Aug 2020</li>
+<li>Maxwell Dean’s Award | May 2020</li>
+<li>George Schaefer Spring Scholarship | Mar 2020</li>
+</ul>
+</section>
+<section id="recent-posts" class="level2">
+<h2 data-anchor-id="recent-posts">Recent Posts</h2>
+<div id="listing-post-listing" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+Title
+</th>
+
+<th>
+Description
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-listing-date-sort="1756353600000" data-listing-file-modified-sort="1756474110544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1101" data-listing-title-sort="Complete Quarto Syntax Highlighting A Preview of All Styles (Light &amp; Dark Mode)" data-listing-filename-sort="highlight-styles.qmd">
+<td>
+<a href="./posts/highlight-styles.html" class="title listing-title">Complete Quarto Syntax Highlighting A Preview of All Styles (Light &amp; Dark Mode)</a>
+</td>
+<td>
+<span class="listing-description">Discover and preview every syntax highlighting style available in Quarto. This guide includes a full gallery and the Python scripts used to create it. </span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-date-sort="1731301200000" data-listing-file-modified-sort="1745111041013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="446" data-listing-title-sort="States and territories of the US" data-listing-filename-sort="us-states-territories.qmd">
+<td>
+<a href="./posts/us-states-territories.html" class="title listing-title">States and territories of the US</a>
+</td>
+<td>
+<span class="listing-description">Names and abbreviations of 50 states + 1 federal district + 5 territories in JSON array and object, updated in 2023.</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="UXVhcnRvJTJDY1BhbmVs" data-listing-date-sort="1714363200000" data-listing-file-modified-sort="1754499861240" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1146" data-listing-title-sort="Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel" data-listing-filename-sort="quarto-github-cpanel.qmd">
+<td>
+<a href="./posts/quarto-github-cpanel.html" class="title listing-title">Hosting private Quarto repo on GitHub and publishing the website on custom domain with cPanel</a>
+</td>
+<td>
+<span class="listing-description">Cloning private repository via SSH from GitHub to cPanel and setting domain document root to rendered output subfolder</span>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-date-sort="1713844800000" data-listing-file-modified-sort="1756661022803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207" data-listing-title-sort="Altair + hrbrthemes = Beautiful and readable charts in Python" data-listing-filename-sort="altair-hrbr.qmd">
+<td>
+<a href="./posts/altair-hrbr.html" class="title listing-title">Altair + hrbrthemes = Beautiful and readable charts in Python</a>
+</td>
+<td>
+<span class="listing-description">Custom altair theme config with hrbrthemes styling for aesthetic and readability</span>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-date-sort="1610341200000" data-listing-file-modified-sort="1745109325399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="611" data-listing-title-sort="Export Apple Health Data and Visualise with Tableau" data-listing-filename-sort="apple-health-tableau.qmd">
+<td>
+<a href="./posts/apple-health-tableau.html" class="title listing-title">Export Apple Health Data and Visualise with Tableau</a>
+</td>
+<td>
+<span class="listing-description">Step by step tutorial on exporting my Apple Health data and visualising my daily walk trends in Tableau.</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 
 
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -235,8 +419,6 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
-            // default icon
-            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -557,11 +739,11 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
+<p>© 2019-2025, Yu-En Hsu</p>
 </div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
+</div>
   </div>
 </footer>
 
