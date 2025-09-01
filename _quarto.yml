@@ -8,16 +8,18 @@ website:
   favicon: assets/pelican.png
   draft-mode: visible
   site-url: "https://yuenhsu.com/"
+  repo-url: https://github.com/yuenhsu/yuenhsu.github.io
   navbar:
     logo: assets/pelican.png
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
       - projects.qmd
       - posts.qmd
   page-footer: 
-    center: |
+    border: true
+    center: © 2019-2025, Yu-En Hsu
+    right: |
       <a  href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a>
   comments: 
     giscus: 

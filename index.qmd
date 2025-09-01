@@ -1,11 +1,70 @@
 ---
-pagetitle: "Yu-En Hsu"
-description-meta: "This is where I share things"
-date-meta: "2025-04-20"
+title: "Yu-En Hsu"
+subtitle: "About me"
+link-external-icon: false
 toc: false
 comments: false
+listing: 
+  id: post-listing
+  contents: posts
+  sort: "date desc"
+  type: table
+  max-items: 5
+  fields: [title, description]
+  sort-ui: false
+  filter-ui: false
+about:
+  id: hello-block
+  image: assets/profile.jpg
+  image-shape: round
+  image-width: 200px
+  template: trestles
+  links:
+    - icon: medium
+      text: Medium
+      href: http://medium.com/@yuenhsu
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yuenhsu/
+    - icon: github
+      text: Github
+      href: http://github.com/yuenhsu
 ---
 
-Hi, I am Yu-En. This is where I share my work, findings, and random stuff I discovered, tried, and learnt. I also test new fonts, colours, and layouts becuase CSS is so much fun! 
+::: {#hello-block}
+# Hi, I am Yu-En.
 
-I am currently moving my website from WordPress to Quarto.
+Just like the United Nations (UN)!
+
+I am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity.
+:::
+
+## Work
+
+- **Author**: Hsu, Yu-En, & Baldi, Elettra. (2020, November 17). Understanding Usability of SDG National Reporting Platforms. Open Data Watch. [https://opendatawatch.com/publications/understanding-usability-of-sdg-national-reporting-platforms/](https://web.archive.org/web/20230605031920/https://opendatawatch.com/publications/understanding-usability-of-sdg-national-reporting-platforms/)
+- **Contributor**: Nicole R Morgan, Katie E Davenport, Jillian R Rodgers, & Daniel F Perkins. (2022). A Comparison Study of Onward to Opportunity (O2O) Utilizing a Matched Comparison Group from The Veterans Metrics Initiative (TVMI). Scholarsphere. [https://doi.org/10.26207/Z1PT-0540](https://doi.org/10.26207/Z1PT-0540)
+- **Contributor**: Badiee, S., Crowell, J., Noe, L., Pittman, A., Rudow, C., & Swanson, E. (2021). Open data for official statistics: History, principles, and implementation. Statistical Journal of the IAOS, 37(1), 139–159. [https://doi.org/10.3233/sji-200761](https://doi.org/10.3233/sji-200761)
+- **Volunteer**: Global 50/50. (2021). About Us. Global 50/50. [https://global5050.org/the-sex-gender-and-covid-19-project/about-us/](https://global5050.org/the-sex-gender-and-covid-19-project/about-us/)
+
+
+## Education
+
+| **Master of Public Administration** | Dec 2020
+|   Maxwell School of Citizenship and Public Affairs, Syracuse University | Syracuse, NY
+|   Certificate of Advanced Study in Data Analytics for Public Policy
+|
+| **Bachelor of Business Administration** | Jun 2017
+|   Fu Jen Catholic University | Taipei, Taiwan
+
+## Awards and Scholarships
+
+-  Maxwell Dean's Award | Aug 2020
+-  Center of Policy Research Scholarship | Aug 2020
+-  Ajello Fellowship | Aug 2020
+-  Maxwell Dean's Award | May 2020
+-  George Schaefer Spring Scholarship | Mar 2020
+
+## Recent Posts
+
+::: {#post-listing}
+:::
