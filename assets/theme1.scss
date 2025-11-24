@@ -1,9 +1,12 @@
-/*-- scss:defaults --*/
-
 // Import
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:wght@100..900&family=National+Park:wght@200..800&family=Onest:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
+/*-- scss:defaults --*/
 // Font
 $font-family-sans-serif: 'Source Sans 3' !default;
 $font-family-monospace: 'Source Code Pro' !default;
 $headings-font-family: 'Bricolage Grotesque' !default;
+
+$font-size-root: 17px !default;
+$code-bg: #fff;
+$code-color: #d63384 !default;
