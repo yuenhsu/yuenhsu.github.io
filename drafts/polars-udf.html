@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.12">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,10 +95,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-603de1f9962fd2f01f489fa68a7b01ad.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-13671a5e6d85bc141e022bb2abbf5965.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-304c9265de6cfca9cf1f45366f7af0d1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8163fad6e515f4b427f6954838187fbf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -138,7 +138,6 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <meta name="quarto:status" content="draft">
 
 
-<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -233,7 +232,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 24, 2025</p>
+      <p class="date-modified">November 28, 2025</p>
     </div>
   </div>
     
@@ -250,7 +249,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <li>Input is a list of numbers: <code>[100, 100, 300]</code></li>
 <li>Output is a list of percentage: <code>[20%, 20%, 60%]</code></li>
 </ul>
-<div id="5874d9d9" class="cell" data-execution_count="1">
+<div id="8786909d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -270,7 +269,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <p>In this super simply example, I want to add one to the <code>value</code> column then multiple by ten.</p>
 <section id="approach-1-use-polars-built-in-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-1-use-polars-built-in-function">Approach 1: Use Polars built-in function</h3>
-<div id="ee016876" class="cell" data-execution_count="2">
+<div id="50a29151" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).add(<span class="dv">1</span>).mul(<span class="dv">10</span>).alias(<span class="st">"result"</span>),</span>
@@ -281,7 +280,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </section>
 <section id="approach-2-python-custom-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-2-python-custom-function">Approach 2: Python custom function</h3>
-<div id="306c30d2" class="cell" data-execution_count="3">
+<div id="e7f63e21" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one_multiply_ten(input_num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (input_num <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">10</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -298,7 +297,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <section id="approach-3-polars-custom-function" class="level3">
 <h3 class="anchored" data-anchor-id="approach-3-polars-custom-function">Approach 3: Polars custom function</h3>
 <p>Here I created 2 custom functions to achieve the same result. The first one uses Polars built-in functions, and the second one uses UDF from appraoch 2. See <a href="https://docs.pola.rs/api/python/stable/reference/api.html">Polars Documentation on Extending API</a> for other examples.</p>
-<div id="c479e594" class="cell" data-execution_count="4">
+<div id="207ded56" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">@pl.api.register_expr_namespace</span>(<span class="st">"me"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Me:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, expr: pl.Expr) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
@@ -314,7 +313,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._expr.mul(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The best part about this approach is that I can chain the custom functions to all expressions!</p>
-<div id="d55fe88b" class="cell" data-execution_count="5">
+<div id="e0c869cc" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data.with_columns(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).me.add_one_mul_ten().alias(<span class="st">"udf"</span>),</span>
@@ -325,7 +324,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Additionally, I can apply the function to group by as well.</p>
-<div id="ba4a8e39" class="cell" data-execution_count="6">
+<div id="bc6ce053" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    data.group_by(<span class="st">"colour"</span>).agg(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"value"</span>).mean().alias(<span class="st">"avg"</span>),</span>
@@ -340,7 +339,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <section id="series" class="level2">
 <h2 class="anchored" data-anchor-id="series">Series</h2>
 <p>I rarely use Series.</p>
-<div id="2bde68a0" class="cell" data-execution_count="7">
+<div id="4a8533d4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spongebob_case(input_txt: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(input_txt)):</span>
