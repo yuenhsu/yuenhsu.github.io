@@ -10,3 +10,39 @@ $headings-font-family: 'Bricolage Grotesque' !default;
 $font-size-root: 17px !default;
 $code-bg: #fff;
 $code-color: #d63384 !default;
+
+/*-- scss:rules --*/
+main {
+    img {
+        border: 1px solid #edf2f4;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+h3.listing-title>a {
+    font-weight: unset !important;
+}
+
+.quarto-title .quarto-categories .quarto-category,
+div.quarto-post .listing-categories .listing-category {
+    font-size: 0.8em;
+    line-height: 1em;
+    opacity: 1;
+}
+
+div.sourceCode {
+    overflow: hidden;
+    border-radius: 4pt;
+
+    pre.sourceCode {
+        font-size: 0.8em;
+        padding: 1em;
+    }
+}
+
+#refs>div.csl-entry,
+#footnotes li {
+    margin-block-end: 0.5rem;
+}

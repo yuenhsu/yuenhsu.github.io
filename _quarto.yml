@@ -42,7 +42,6 @@ format:
       - cosmo
       - assets/theme1.scss
     toc: true
-    css: assets/styles.css
     highlight-style: "github-dark"
     link-external-newwindow: true
     link-external-filter: "(yuenhsu|yhsu10)"
