@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.12">
+<meta name="generator" content="quarto-1.9.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Export Apple Health Data and Visualise with Tableau – Yu-En Hsu</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -76,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-13671a5e6d85bc141e022bb2abbf5965.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7035d126abaaa7482cac3981eb4297e0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8163fad6e515f4b427f6954838187fbf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-01d49fd8f990028d672578ac8fab52d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -268,8 +271,8 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="organise-data">Organise Data</h2>
 <p>XML (Extensible Markup Language) is a data file. It is formatted much like an HTML document but uses custom tags to define objects and the data within each object. <a href="https://atom.io/">Atom</a> and <a href="https://code.visualstudio.com/">VSCode</a> can both read XML files.</p>
 <p>Here is a snapshot of the <code>export.xml</code> file. The record type, <code>HKQuantityTypeIdentifierDietaryWater</code>, refers to my water intake. The entry also documents the source application, date, value, unit, etc.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span><span class="ot"> type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span><span class="ot"> sourceName=</span><span class="st">"Flo"</span><span class="ot"> sourceVersion=</span><span class="st">"4.10.3.1"</span><span class="ot"> unit=</span><span class="st">"mL"</span><span class="ot"> creationDate=</span><span class="st">"2018-09-18 10:59:02 -0500"</span><span class="ot"> startDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span><span class="ot"> endDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span><span class="ot"> value=</span><span class="st">"500"</span>&gt;</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span><span class="ot"> type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span><span class="ot"> sourceName=</span><span class="st">"Shortcuts"</span><span class="ot"> sourceVersion=</span><span class="st">"754"</span><span class="ot"> unit=</span><span class="st">"mL"</span><span class="ot"> creationDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> startDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> endDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span><span class="ot"> value=</span><span class="st">"300"</span>/&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span> <span class="ot">type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span> <span class="ot">sourceName=</span><span class="st">"Flo"</span> <span class="ot">sourceVersion=</span><span class="st">"4.10.3.1"</span> <span class="ot">unit=</span><span class="st">"mL"</span> <span class="ot">creationDate=</span><span class="st">"2018-09-18 10:59:02 -0500"</span> <span class="ot">startDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span> <span class="ot">endDate=</span><span class="st">"2018-09-17 11:00:00 -0500"</span> <span class="ot">value=</span><span class="st">"500"</span>&gt;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Record</span> <span class="ot">type=</span><span class="st">"HKQuantityTypeIdentifierDietaryWater"</span> <span class="ot">sourceName=</span><span class="st">"Shortcuts"</span> <span class="ot">sourceVersion=</span><span class="st">"754"</span> <span class="ot">unit=</span><span class="st">"mL"</span> <span class="ot">creationDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span> <span class="ot">startDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span> <span class="ot">endDate=</span><span class="st">"2019-01-23 21:16:36 -0500"</span> <span class="ot">value=</span><span class="st">"300"</span>/&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I needed to first transform the tag-based XML file to other formats that are easier to work with for me. <a href="https://github.com/martinblech/xmltodict"><code>xmltodict</code></a> is a Python module that makes working with XML feel like you are working with <a href="http://docs.python.org/library/json.html">JSON</a>, as stated in the documentation. I installed the module via pip using <code>pip install xmltodict</code> command.</p>
 <p>Here’s my code for parsing XML data and organising data frame.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xmltodict</span>
@@ -792,7 +795,7 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2019-2025, Yu-En Hsu</p>
+<p>© 2019-2026, Yu-En Hsu</p>
 </div>
     <div class="nav-footer-right">
 <p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>

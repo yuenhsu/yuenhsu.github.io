@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.12">
+<meta name="generator" content="quarto-1.9.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Predicting Use of Contraception in Asia with Machine Learning Algorithms – Yu-En Hsu</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +63,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-13671a5e6d85bc141e022bb2abbf5965.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7035d126abaaa7482cac3981eb4297e0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8163fad6e515f4b427f6954838187fbf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-01d49fd8f990028d672578ac8fab52d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -218,8 +220,8 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 <p>The repository is available on <a href="https://github.com/yuenhsu/Machine-Learning-Projects">GitHub</a>.</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Contraception is designed to prevent pregnancy. By preventing unintended pregnancy, contraceptive methods help women to avoid pregnancy- and birth-related morbidity and mortality. Ensuring access to contraception advances human rights, including the right to life and liberty, freedom of opinion and expression, and the right to work and education <span class="citation" data-cites="Kavanaugh2013ContraceptionAB">(<a href="#ref-Kavanaugh2013ContraceptionAB" role="doc-biblioref">Kavanaugh and Anderson 2013</a>)</span>. In 2019, among the 1.9 billion women of reproductive age (WRA) living around the world <span class="citation" data-cites="3849735">(<a href="#ref-3849735" role="doc-biblioref"><span>“Contraceptive Use by Method 2019 : Data Booklet”</span> 2019</a>)</span>, 190 million women had an unmet need for family planning for various reasons, such as health concerns, lack of access, or opposition from others <span class="citation" data-cites="30e5e46b-6671-3140-bea5-511a746c9846">(<a href="#ref-30e5e46b-6671-3140-bea5-511a746c9846" role="doc-biblioref">Sedgh and Hussain 2014</a>)</span>.</p>
-<p>The study aims to build classification models with machine-learning (ML) techniques to predict the use of contraception in Thailand, Mongolia, and Laos. Specifically, the goal is to identify WRA not using contraception. ML can often be more efficient in establishing a relationship between multiple features <span class="citation" data-cites="kotsiantis2007supervised">(<a href="#ref-kotsiantis2007supervised" role="doc-biblioref">Kotsiantis et al. 2007</a>)</span> and may be able to recognise patterns in characteristics associated with not using contraception. While not all have an unmet need for family planning, being able to classify these individuals can provide a basis to expand access to contraception.</p>
+<p>Contraception is designed to prevent pregnancy. By preventing unintended pregnancy, contraceptive methods help women to avoid pregnancy- and birth-related morbidity and mortality. Ensuring access to contraception advances human rights, including the right to life and liberty, freedom of opinion and expression, and the right to work and education <span class="citation" data-cites="Kavanaugh2013ContraceptionAB">(<a href="#ref-Kavanaugh2013ContraceptionAB" role="doc-biblioref">Kavanaugh and Anderson 2013</a>)</span>. In 2019, among the 1.9 billion women of reproductive age (WRA) living around the world <span class="citation" data-cites="3849735">(<a href="#ref-3849735" role="doc-biblioref"><em>Contraceptive Use by Method 2019 </em> 2019</a>)</span>, 190 million women had an unmet need for family planning for various reasons, such as health concerns, lack of access, or opposition from others <span class="citation" data-cites="30e5e46b-6671-3140-bea5-511a746c9846">(<a href="#ref-30e5e46b-6671-3140-bea5-511a746c9846" role="doc-biblioref">Sedgh and Hussain 2014</a>)</span>.</p>
+<p>The study aims to build classification models with machine-learning (ML) techniques to predict the use of contraception in Thailand, Mongolia, and Laos. Specifically, the goal is to identify WRA not using contraception. ML can often be more efficient in establishing a relationship between multiple features <span class="citation" data-cites="kotsiantis2007supervised">(<a href="#ref-kotsiantis2007supervised" role="doc-biblioref"><span class="nocase">Kotsiantis et al.</span> 2007</a>)</span> and may be able to recognise patterns in characteristics associated with not using contraception. While not all have an unmet need for family planning, being able to classify these individuals can provide a basis to expand access to contraception.</p>
 </section>
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Method</h2>
@@ -329,15 +331,15 @@ gtag('config', 'G-FRQ30Q4RJP', { 'anonymize_ip': true});
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-3849735" class="csl-entry" role="listitem">
-<span>“Contraceptive Use by Method 2019 : Data Booklet.”</span> 2019, 25 p. : <a href="http://digitallibrary.un.org/record/3849735">http://digitallibrary.un.org/record/3849735</a>.
+<em>Contraceptive Use by Method 2019 : Data Booklet</em>. 2019. ([New York] :. 2019), 25 p. : <a href="http://digitallibrary.un.org/record/3849735">http://digitallibrary.un.org/record/3849735</a>.
 </div>
 <div id="ref-Kavanaugh2013ContraceptionAB" class="csl-entry" role="listitem">
-Kavanaugh, Megan L., and Ragnar M. Anderson. 2013. <span>“Contraception and Beyond: The Health Benefits of Services Provided at Family Planning Centers.”</span> In. <a href="https://api.semanticscholar.org/CorpusID:10991343">https://api.semanticscholar.org/CorpusID:10991343</a>.
+Kavanaugh, Megan L., and Ragnar M. Anderson. 2013. <span>“Contraception and Beyond: The Health Benefits of Services Provided at Family Planning Centers.”</span> <a href="https://api.semanticscholar.org/CorpusID:10991343">https://api.semanticscholar.org/CorpusID:10991343</a>.
 </div>
 <div id="ref-kotsiantis2007supervised" class="csl-entry" role="listitem">
-Kotsiantis, Sotiris B, Ioannis Zaharakis, P Pintelas, et al. 2007. <span>“Supervised Machine Learning: A Review of Classification Techniques.”</span> <em>Emerging Artificial Intelligence Applications in Computer Engineering</em> 160 (1): 3–24.
+<span class="nocase">Kotsiantis, Sotiris B, Ioannis Zaharakis, P Pintelas, et al.</span> 2007. <span>“Supervised Machine Learning: A Review of Classification Techniques.”</span> <em>Emerging Artificial Intelligence Applications in Computer Engineering</em> 160 (1): 3–24.
 </div>
 <div id="ref-30e5e46b-6671-3140-bea5-511a746c9846" class="csl-entry" role="listitem">
 Sedgh, Gilda, and Rubina Hussain. 2014. <span>“Reasons for Contraceptive Nonuse Among Women Having Unmet Need for Contraception in Developing Countries.”</span> <em>Studies in Family Planning</em> 45 (2): 151–69. <a href="http://www.jstor.org/stable/24642139">http://www.jstor.org/stable/24642139</a>.
@@ -792,7 +794,7 @@ Sedgh, Gilda, and Rubina Hussain. 2014. <span>“Reasons for Contraceptive Nonus
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2019-2025, Yu-En Hsu</p>
+<p>© 2019-2026, Yu-En Hsu</p>
 </div>
     <div class="nav-footer-right">
 <p><a href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a></p>
