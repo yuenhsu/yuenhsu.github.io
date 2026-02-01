@@ -19,7 +19,7 @@ website:
       - posts.qmd
   page-footer: 
     border: true
-    center: © 2019-2025, Yu-En Hsu
+    center: © 2019-2026, Yu-En Hsu
     right: |
       <a  href="https://icons8.com/icon/iibADLuA7AH6/pelican">Pelican</a> icon by <a href="https://icons8.com">Icons8</a>
   comments: 
