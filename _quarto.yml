@@ -47,4 +47,3 @@ format:
     link-external-filter: "(yuenhsu|yhsu10)"
     link-external-icon: true
     include-in-header: assets/gtm_head.html
-    include-before-body: assets/gtm_body.html
