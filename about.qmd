@@ -26,7 +26,7 @@ about:
 
 Just like the United Nations (UN)!
 
-I am an Operations Research Specialist at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity.
+I am the Evaluation Technical Lead at the Institute for Veterans and Military Families (IVMF) at Syracuse University, providing technical expertise in program evaluation. With a focus on data quality, I collaborate with experts to standardise collection strategy and strengthen data integrity.
 :::
 
 ## Work
