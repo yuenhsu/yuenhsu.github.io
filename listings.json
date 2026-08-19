@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/power-bi-map-legend-diy.html",
       "/posts/highlight-styles.html",
       "/posts/us-states-territories.html",
       "/posts/quarto-github-cpanel.html",
@@ -14,6 +15,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/power-bi-map-legend-diy.html",
       "/posts/highlight-styles.html",
       "/posts/us-states-territories.html",
       "/posts/quarto-github-cpanel.html",
