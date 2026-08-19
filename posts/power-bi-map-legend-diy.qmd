@@ -1,0 +1,85 @@
+---
+title: "DIY Gradient Legend for Power BI Shape Maps"
+subtitle: "Three-visual workaround"
+description: "No additional custom measure required and it's interactive!"
+categories: [Power BI]
+date: "2026-08-19"
+---
+
+Have you ever built a gorgeous shape map in Power BI, admired your work for about four seconds, and then thought *"wait, what do these colours even mean?"* And then, devastatingly realised *"oh shit, I can't add a legend?"* 
+
+If none of this sounds familiar, this post is not for you. If it does, welcome.
+
+## Gradient legend, not categorical
+
+This is about building a **gradient** colour legend, the kind you'd use for continuous or numerical values (on the left). Not a categorical one. If you're colour-coding a handful of discrete categories (on the right), Power BI's built-in legend already has you covered.
+
+::: {layout-ncol="2"}
+![Sample map with gradient legend](https://clauswilke.com/dataviz/geospatial_data_files/figure-html/population-density-counties-1.png)
+
+![Sample map with categorical legend](https://clauswilke.com/dataviz/geospatial_data_files/figure-html/median-income-counties-binned-1.png)
+:::
+
+The maps are linked from [Chapter 16 - Visualizing geospatial data](https://clauswilke.com/dataviz/geospatial-data.html) of [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/). It's a fantastic resource that I find myself constantly pull up.
+
+## The 30-second version
+
+Fake a legend by stitching together three separate visuals:
+
+- a **card** showing the minimum value,
+- an **image** showing the gradient bar, and
+- another **card** showing the maximum value.
+
+I tried a Text Box with dynamically text but it's unpredictable. I also tried writing dedicated `MAX()` and `MIN()` DAX measures to feed into cards. Both approaches technically work, right up until your filter context shifts or you add another dimension to the report, and suddenly you're debugging measures instead of looking at your map. The three-visual approach is the most straightforward to me so far.
+
+## Setting up the minimum value card
+
+![Setting up minimum](/posts/images/power_bi_setup_min_card.png){#fig-powerbi-min}
+
+In my example, I'm mapping the number of owner-occupied housing units across counties in New York State. "Owner occupied housing units" is the target measure, "County" is the dimension.
+
+1.  Add a **Card** visual.
+2.  Drag your target measure into the **Value** field, "Owner occupied housing units" for me. It'll default to Sum (or the aggregation you set for the measurement but it doesn't matter here).
+3.  Drag your dimension into the **Filter** pane, "County" for me. It loads as basic filtering, which just lets you manually check off items from a list.
+4.  Open the **Filter type** dropdown and switch it to **Top N**.
+5.  For the minimum card, select **Bottom 1**, then choose your target measure from the **By value** dropdown.
+
+![Setting up Top N filter](/posts/images/power_bi_filter_topn.png){#fig-powerbi-filter-topn}
+
+Congrats! But as you can see in @fig-powerbi-min, it looks like a KPI card, not a legend. So, head into **Format visual** and start stripping it down. I usually remove the card label entirely, shrink the font, kill the border, zero out the padding, and collapse every gap I can find. How far you need to take this depends entirely on your theme. There's no universal recipe here, just poke around until it looks good enough.
+
+## Duplicate it for the maximum (but finish tweaking first)
+
+Once your minimum card looks the way you want, duplicate it to create the maximum card. The only thing you need to change is flipping the filter from the **Bottom** in @fig-powerbi-filter-topn to **Top**.
+
+One tip that will save you real time: finish *all* your layout adjustments on the minimum card before you duplicate it. Every formatting tweak you make after duplicating has to be repeated on both cards, and there's nothing more tedious than nudging padding on two nearly-identical visuals and slowly losing track of which one you already fixed.
+
+## Making the gradient bar
+
+For the gradient image itself, I use the [Gradient Background Generator](https://mdigi.tools/gradient-generator/). Plug in your two colours, either from a custom palette you already have the hex codes for, or grabbed straight out of Power BI, double check the **Direction** setting matches how you want the gradient to read, then download the image.
+
+Back in Power BI, add an **Image** visual and load in the file you just downloaded. I switch the fit mode to **Stretch**, it makes resizing the image to fit your layout much less fiddly.
+
+## Putting the three visuals together
+
+Now line up your three visuals: minimum card, gradient image, maximum card. You can stack the values underneath the bar, or run everything horizontally like I did. 
+
+:::{.callout-tip}
+
+Right-align the minimum value and left-align the maximum value. It keeps the numbers hugging the bar instead of drifting into awkward whitespace or wrapping onto a second line.
+
+:::
+
+![Before and after of DIY interactive map legend](/posts/images/power_bi_legend_before_after.png){#fig-powerbi-before-after}
+
+![It's interactive!](/posts/images/power_bi_diy_legend_demo_1.gif)
+
+And there you go, an interactive gradient legend Power BI never gave you out of the box. This exmaple isn't particularly useful because the legend is filtered by the same dimension as the map, clicking on a county filters the legend down to that one county too, which makes the minimum and maximum value identical. Technically interactive, practically useless.
+
+## Practical example
+
+But if I add a second map and build a second legend for that map, clicking a county on the first map filters the second map down to its subdivisions, and the second legend updates to show the actual range of what you're looking at.
+
+![It's interactive and useful!](/posts/images/power_bi_diy_legend_demo_2_linked.gif)
+
+That's all! 
