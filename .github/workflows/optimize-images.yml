@@ -1,0 +1,48 @@
+name: Optimize images
+
+on:
+  pull_request:
+    paths:
+      - "**/*.jpg"
+      - "**/*.jpeg"
+      - "**/*.png"
+      - "**/*.webp"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.jpg"
+      - "**/*.jpeg"
+      - "**/*.png"
+      - "**/*.webp"
+
+jobs:
+  build:
+    name: Compress images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # On a PR, image-actions diffs the PR and commits compressed images
+      # straight back onto the PR branch. On a direct push to main, it has
+      # no PR to diff against and processes every image in the repo, so we
+      # run it in compressOnly mode and open a follow-up PR with any changes.
+      - name: Compress images
+        id: calibre
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: ${{ github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork) }}
+
+      - name: Open PR with compressed images
+        if: github.event_name == 'push'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Compress images"
+          title: "Compress images"
+          body: ${{ steps.calibre.outputs.markdown }}
+          branch: optimize-images
+          delete-branch: true
